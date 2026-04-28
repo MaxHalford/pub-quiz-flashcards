@@ -1,1 +1,4 @@
 .DS_Store
+.claude_output.json
+.claude_stderr.log
+*.pyc
