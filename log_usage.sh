@@ -34,7 +34,7 @@ ENTRY="## $DATE -- \`$SOURCE\`
 - Cost: \$$COST_FMT
 - Duration: $DURATION_FMT
 - Turns: $TURNS
-- Tokens: ${INPUT_TOKENS} input / ${OUTPUT_TOKENS} output
+- Tokens: ${INPUT_TOKENS} input / ${OUTPUT_TOKENS} output"
 
 if [ -n "$CODE_CHANGED" ]; then
   ENTRY="$ENTRY

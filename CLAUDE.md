@@ -37,3 +37,12 @@ uv run ty check .
 ```
 
 Fix any reported issue.
+
+### Summary format
+
+Your final response is logged automatically. Keep it to one short line, e.g.:
+
+- `Scraped 1 quiz (2015-11-21, 15 questions). No code changes.`
+- `Fixed date parsing in scrape.py. Scraped 1 quiz (2015-11-21, 15 questions).`
+
+No emoji, no markdown formatting, no bullet lists. Just a plain sentence.

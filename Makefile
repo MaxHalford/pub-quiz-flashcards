@@ -3,7 +3,7 @@ run:
 	claude -p "Scrape @sources/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @sources/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
 		--bare \
 		--append-system-prompt-file CLAUDE.md \
-		--model sonnet \
+		--model haiku \
 		--effort low \
 		--tools "Bash,Read,Edit,Write,Grep,Glob" \
 		--no-session-persistence \

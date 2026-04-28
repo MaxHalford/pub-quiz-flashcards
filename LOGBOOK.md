@@ -1,5 +1,34 @@
 # Logbook
 
+## 2015-11-28 -- `the_guardian_weekly`
+
+- Cost: $0.0263
+- Duration: 0m25s
+- Turns: 8
+- Tokens: 67000 input / 1373 output
+- Code changes: Scraped 1 quiz (2015-11-28, 15 questions). No code changes.
+
+## 2015-11-21 -- `the_guardian_weekly`
+
+- Cost: $0.0154
+- Duration: 0m23s
+- Turns: 5
+- Tokens: 33309 input / 1105 output
+- Code changes: Excellent! ✅ The scraper ran successfully and found one new quiz:
+
+**Summary:**
+- **Loaded:** 7 existing question sets
+- **Scraped:** 1 new quiz (November 21, 2015)
+- **Total:** 8 question sets now stored
+
+**Latest Entry Details:**
+- **Source:** Thomas Eaton's Guardian Weekly Quiz
+- **Date:** 2015-11-21
+- **Questions:** 15 question-answer pairs (regular questions + "What links" questions)
+- **Quality:** ✓ All pairs are properly aligned and make sense
+
+The scraped content includes diverse general knowledge questions (art, history, culture, sports, etc.) and several "What links" category questions. The parsing correctly handled the HTML structure and the special formatting for linked items.
+
 ## 2015-11-07 -- `the_guardian_weekly`
 
 - Cost: $0.0484
