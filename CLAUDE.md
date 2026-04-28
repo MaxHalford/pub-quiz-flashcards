@@ -4,12 +4,12 @@ This is a project for learning pub quiz questions, and associated knowledge. Que
 
 ## Scraping
 
-Each source has its own `scrape.py` file. For instance there is `sources/the_guardian_weekly/scrape.py` for Thomas Eaton's weekly quiz.
+Each source has its own `scrape.py` file. For instance there is `scrape/the_guardian_weekly/scrape.py` for Thomas Eaton's weekly quiz.
 
 Run the scrape script for a given source:
 
 ```sh
-uv run python sources/<source>/scrape.py
+uv run python scrape/<source>/scrape.py
 ```
 
 The script scrapes **one page at a time**. If there is nothing new to scrape, it exits without changes.
@@ -24,7 +24,9 @@ These scripts are mutable. They can raise an error because the structure of the 
 
 When updating a script, you should avoid adding try/catch exceptions. Instead, make the necessary changes to make the parsing go through. Further changes can always be made later for future formats. You also do not need to make the code retro-compatible, because the goal is only to keep the scripts up-to-date with the latest format.
 
-When you done running a scraping script, please take some time to review it as a whole. You can refactor and simplify it when it makes sense. The goal is to avoid patching it incrementally and creating a castle of cards.
+## Refactoring
+
+When you done repairing and running a scraping script, please take some time to review it as a whole. You can refactor and simplify it when it makes sense. The goal is to avoid patching it incrementally and ending up with a castle of cards. The script should be lean because what matters is that it works with the latest page, and does not need to support all formats.
 
 ### Linting and type checking
 
@@ -37,12 +39,3 @@ uv run ty check .
 ```
 
 Fix any reported issue.
-
-### Summary format
-
-Your final response is logged automatically. Keep it to one short line, e.g.:
-
-- `Scraped 1 quiz (2015-11-21, 15 questions). No code changes.`
-- `Fixed date parsing in scrape.py. Scraped 1 quiz (2015-11-21, 15 questions).`
-
-No emoji, no markdown formatting, no bullet lists. Just a plain sentence.

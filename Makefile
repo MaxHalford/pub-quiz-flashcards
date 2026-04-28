@@ -1,10 +1,8 @@
 run:
-	set -a && . ./.env && set +a && \
-	claude -p "Scrape @sources/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @sources/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
-		--bare \
-		--append-system-prompt-file CLAUDE.md \
+	claude -p "Scrape @scrape/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @scrape/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
+		--append-system-prompt-file scrape/CLAUDE.md \
 		--model haiku \
-		--effort low \
+		--effort medium \
 		--tools "Bash,Read,Edit,Write,Grep,Glob" \
 		--no-session-persistence \
 		--output-format json \

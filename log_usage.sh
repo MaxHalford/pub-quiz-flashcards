@@ -14,7 +14,7 @@ fi
 # --verbose + --output-format json produces a JSON array; the result is the last element
 RESULT_FILTER='if type == "array" then .[-1] else . end'
 
-QUESTIONS="sources/${SOURCE}/questions.json"
+QUESTIONS="scrape/${SOURCE}/questions.json"
 DATE=$(jq -r '.[-1].source_date // empty' "$QUESTIONS" 2>/dev/null || date -u +"%Y-%m-%d")
 COST=$(jq -r "($RESULT_FILTER) | .total_cost_usd // .cost_usd // 0" "$JSON")
 TURNS=$(jq -r "($RESULT_FILTER) | .num_turns // 0" "$JSON")
