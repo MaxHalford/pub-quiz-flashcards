@@ -2,9 +2,8 @@ import dataclasses
 import datetime as dt
 import json
 import logging
-from os import path
 import pathlib
-import typing
+import re
 
 import bs4
 import requests
@@ -26,104 +25,174 @@ class QuestionSet:
 
 
 class TheGuardianParser:
-
     def __init__(self, path: pathlib.Path):
         self.path = path
 
-    def find_pages_to_scrape(self, last_scraped_date: dt.date) -> typing.Generator[str]:
-        url = 'https://www.theguardian.com/theguardian/series/the-quiz-thomas-eaton?page=%d'
-        done = False
+    def get_next_page(self, last_scraped_date: dt.date) -> tuple[dt.date, str] | None:
+        """Return the oldest unscraped page, or None if everything is up to date."""
+        url_template = "https://www.theguardian.com/theguardian/series/the-quiz-thomas-eaton?page=%d"
+        candidates: list[tuple[dt.date, str]] = []
+        seen_urls: set[str] = set()
         page_no = 0
+        done = False
 
         while not done:
             page_no += 1
 
-            logger.info(f"Fetching index page {page_no}")
-            response = requests.get(url % page_no)
-            soup = bs4.BeautifulSoup(response.text, 'html.parser')
-            week_sections = soup.find_all('section', class_='fc-container')
+            response = requests.get(url_template % page_no)
+            soup = bs4.BeautifulSoup(response.text, "html.parser")
 
-            for ws in week_sections:
-                ws_date = dt.datetime.strptime(ws.get('data-id'), '%d %B %Y').date()
+            quiz_links = []
+            for link in soup.find_all("a"):
+                href = str(link.get("href", ""))
+                if (
+                    href.startswith("/lifeandstyle/")
+                    and "quiz" in href
+                    and "#" not in href
+                ):
+                    full_url = "https://www.theguardian.com" + href
+                    if full_url not in seen_urls:
+                        quiz_links.append(full_url)
+                        seen_urls.add(full_url)
 
-                if ws_date <= last_scraped_date:
-                    logger.info(f"Reached already-scraped date {ws_date}, stopping")
+            if not quiz_links:
+                logger.info(f"No quiz links found on page {page_no}, stopping")
+                break
+
+            for link in quiz_links:
+                parts = link.split("/")
+                # Some older URLs have /article/ before the date segments
+                date_start = 5 if "article" in parts else 4
+                year = int(parts[date_start])
+                month = dt.datetime.strptime(parts[date_start + 1], "%b").month
+                day = int(parts[date_start + 2])
+                link_date = dt.date(year, month, day)
+
+                if link_date <= last_scraped_date:
+                    logger.info(f"Reached already-scraped date {link_date}, stopping")
                     done = True
                     break
 
-                ws_link = next(
-                    link.get('href')
-                    for link in ws.find_all('a')
-                    if link.get('href', '').startswith('https://www.theguardian.com/lifeandstyle')
-                )
-                yield ws_link
+                candidates.append((link_date, link))
 
-    def scrape_page(self, url: str) -> QuestionSet:
+        if not candidates:
+            return None
+        return min(candidates, key=lambda x: x[0])
+
+    @staticmethod
+    def _split_on_br(p_tag: bs4.element.Tag) -> list[str]:
+        """Split a <p> tag's contents by <br/> into text segments."""
+        segments: list[str] = []
+        current: list[str] = []
+        for child in p_tag.children:
+            if isinstance(child, bs4.element.Tag) and child.name == "br":
+                segments.append("".join(current).strip())
+                current = []
+            else:
+                current.append(child.get_text())
+        segments.append("".join(current).strip())
+        return [s for s in segments if s]
+
+    @staticmethod
+    def _strip_number_prefix(text: str) -> str:
+        """Remove a leading number like '1 ' or '9 ' from text."""
+        return re.sub(r"^\d+\s+", "", text)
+
+    def scrape_page(self, url: str) -> list[QuestionAnswerPair]:
         logger.info(f"Scraping {url}")
-        ws_response = requests.get(url)
-        ws_soup = bs4.BeautifulSoup(ws_response.text, 'html.parser')
-        ws_date = dt.datetime.fromisoformat(
-            ws_soup.find('meta', property='article:published_time')['content']
-        ).date()
-        ws_questions_h2 = ws_soup.find('h2', id='the-questions')
-        ws_questions_p = ws_questions_h2.find_next_sibling('p')
-        ws_questions = []
+        response = requests.get(url)
+        soup = bs4.BeautifulSoup(response.text, "html.parser")
+
+        questions_h2 = soup.find("h2", id="the-questions")
+        assert questions_h2 is not None
+        questions_p = questions_h2.find_next_sibling("p")
+        assert questions_p is not None
+
+        raw_questions = self._split_on_br(questions_p)
+        questions = []
         what_links = False
-        for child in ws_questions_p.children:
-            if isinstance(child, bs4.element.Tag) and child.text.strip().lower() == 'what links':
+        for raw in raw_questions:
+            text = self._strip_number_prefix(raw)
+            if text.lower().startswith("what links"):
                 what_links = True
-                continue
-            if not isinstance(child, bs4.element.NavigableString):
-                continue
-            text = child.text.strip()
-            if not text or text == ':':
+                # The number for the first "what links" question may be on the
+                # same line (e.g. "What links:\n  9 ...") or the next segment.
+                rest = re.sub(r"^what links:?\s*", "", text, flags=re.IGNORECASE)
+                rest = self._strip_number_prefix(rest)
+                if rest:
+                    questions.append(f"What links: {rest}")
                 continue
             if what_links:
                 text = f"What links: {text}"
-            ws_questions.append(text)
+            questions.append(text)
 
-        ws_answers_h2 = ws_soup.find('h2', id='the-answers')
-        ws_answers_p = ws_answers_h2.find_next_sibling('p')
-        ws_answers = [
-            tag.text.strip().rstrip('.')
-            for tag in ws_answers_p.children
-            if isinstance(tag, bs4.element.NavigableString)
+        answers_h2 = soup.find("h2", id="the-answers")
+        assert answers_h2 is not None
+        answers_p = answers_h2.find_next_sibling("p")
+        assert answers_p is not None
+
+        answers = [
+            self._strip_number_prefix(s).rstrip(".")
+            for s in self._split_on_br(answers_p)
         ]
-        ws_question_answers = dict(zip(ws_questions, ws_answers))
 
-        question_set = QuestionSet(
-            pairs=[QuestionAnswerPair(q, a) for q, a in ws_question_answers.items()],
-            source_url=url,
-            source_date=ws_date,
+        assert len(questions) == len(answers), (
+            f"Mismatch: {len(questions)} questions vs {len(answers)} answers"
         )
-        return question_set
+        return [QuestionAnswerPair(q, a) for q, a in zip(questions, answers)]
 
     def run(self) -> None:
 
         # Load existing questions, so that we can append to them.
         try:
             questions = json.load(pathlib.Path(self.path).open())
-            logger.info(f"Loaded {len(questions)} existing question sets from {self.path}")
+            logger.info(
+                f"Loaded {len(questions)} existing question sets from {self.path}"
+            )
         except FileNotFoundError:
             logger.info(f"No existing file found at {self.path}, starting fresh")
             questions = []
 
         # Determine the date of the most recently scraped quiz, so that we only scrape new quizzes.
-        last_scraped_date = max(dt.date.fromisoformat(q['source_date']) for q in questions) if questions else dt.date.min
+        last_scraped_date = (
+            max(dt.date.fromisoformat(q["source_date"]) for q in questions)
+            if questions
+            else dt.date.min
+        )
         logger.info(f"Last scraped date: {last_scraped_date}")
 
-        for url in self.find_pages_to_scrape(last_scraped_date):
-            question_set = self.scrape_page(url)
-            questions.append(question_set)
+        result = self.get_next_page(last_scraped_date)
+        if result is None:
+            logger.info("Nothing new to scrape")
+            return
 
-            # Save after each scrape, so that if the script is interrupted, we don't lose progress.
-            pathlib.Path(self.path).write_text(json.dumps(questions, indent=4, sort_keys=True))
-            logger.info(f"Saved {len(questions)} question sets to {self.path}")
+        source_date, source_url = result
+        question_answers = self.scrape_page(source_url)
+        question_set = QuestionSet(
+            pairs=question_answers,
+            source_url=source_url,
+            source_date=source_date,
+        )
+        questions.append(dataclasses.asdict(question_set))
+
+        pathlib.Path(self.path).write_text(
+            json.dumps(questions, indent=4, sort_keys=True, default=str)
+        )
+        logger.info(f"Saved {len(questions)} question sets to {self.path}")
 
 
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-
+if __name__ == "__main__":
     here = pathlib.Path(__file__).parent
-    parser = TheGuardianParser(here / 'questions.json')
+    log_dir = here.parents[1] / "logs"
+    log_dir.mkdir(exist_ok=True)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler(log_dir / "the_guardian_weekly.log"),
+        ],
+    )
+
+    parser = TheGuardianParser(here / "questions.json")
     parser.run()

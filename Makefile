@@ -1,9 +1,15 @@
 run:
-	claude -p "Scrape @sources/$(filter-out $@,$(MAKECMDGOALS))" \
+	set -a && . ./.env && set +a && \
+	claude -p "Scrape @sources/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @sources/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
+		--bare \
+		--append-system-prompt-file CLAUDE.md \
+		--model sonnet \
+		--effort low \
+		--tools "Bash,Read,Edit,Write,Grep,Glob" \
+		--no-session-persistence \
 		--output-format json \
 		--dangerously-skip-permissions \
 		--verbose \
-		--max-turns 20 \
 		--max-budget-usd 5 \
 		> .claude_output.json 2>.claude_stderr.log || true
 	@cat .claude_stderr.log

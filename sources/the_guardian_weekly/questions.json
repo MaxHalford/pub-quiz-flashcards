@@ -1,1 +1,398 @@
-[]
+[
+    {
+        "pairs": [
+            {
+                "answer": "Collapse into neutron star/black hole (theoretically)",
+                "question": "Exceeding the Chandrasekhar limit results in what?"
+            },
+            {
+                "answer": "Harper Lee (Capote and Infamous)",
+                "question": "Catherine Keener and\u00a0Sandra Bullock have both played which writer?"
+            },
+            {
+                "answer": "Great white shark",
+                "question": "Which predator is Carcharodon carcharias?"
+            },
+            {
+                "answer": "Sydney Opera House",
+                "question": "Which world-famous building was designed\u00a0by Danish\u00a0architect J\u00f8rn\u00a0Utzon?"
+            },
+            {
+                "answer": "Drug Enforcement Administration",
+                "question": "Which US agency\u2019s\u00a0motto is \u201ctough work, vital\u00a0mission\u201d?"
+            },
+            {
+                "answer": "Six",
+                "question": "What is the smallest perfect number?"
+            },
+            {
+                "answer": "Spain (Euro 96)",
+                "question": "Which is the only\u00a0football team to\u00a0have lost to England on\u00a0penalties?"
+            },
+            {
+                "answer": "Northern Ireland and Scotland",
+                "question": "What are separated by the Straits of Moyle?"
+            },
+            {
+                "answer": "Tower of London towers",
+                "question": "What links: White; Bloody; Beauchamp; Bowyer; Constable; Salt?"
+            },
+            {
+                "answer": "Changed direction of traffic",
+                "question": "What links: Samoa (R-L, 2009); Ghana (L-R, 1974); Nigeria (L-R, 1972); Sweden (L-R, 1967)?"
+            },
+            {
+                "answer": "Humphry Davy: first isolated; invented for miners",
+                "question": "What links: Potassium, sodium and calcium; safety\u00a0lamp?"
+            },
+            {
+                "answer": "Barbara Hepworth works",
+                "question": "What links: Sphere with Inner\u00a0Form; Figure for\u00a0Landscape; Winged\u00a0Figure; Archaean?"
+            },
+            {
+                "answer": "Highest peaks in the Urals",
+                "question": "What links: Narodnaya; Karpinsky; Manaraga; Yamantau; Telpos-Iz?"
+            },
+            {
+                "answer": "Drumming rudiments",
+                "question": "What links: Drag; flam; roll;\u00a0paradiddle; diddle?"
+            },
+            {
+                "answer": "Played on screen by Michael Fassbender",
+                "question": "What links: Guy Fawkes; Bobby\u00a0Sands; Carl\u00a0Jung; Steve Jobs?"
+            }
+        ],
+        "source_date": "2015-10-03",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2015/oct/03/quiz-general-knowledge-guardian"
+    },
+    {
+        "pairs": [
+            {
+                "answer": "H Is For Hawk by Helen Macdonald",
+                "question": "Which award-winning book features\u00a0a raptor called\u00a0Mabel?"
+            },
+            {
+                "answer": "Michael Heseltine",
+                "question": "Which Conservative received the Freedom\u00a0of Liverpool\u00a0in 2012?"
+            },
+            {
+                "answer": "Science, technology, engineering and maths",
+                "question": "In education, what\u00a0are the Stem subjects?"
+            },
+            {
+                "answer": "Purim",
+                "question": "Fancy dress is a\u00a0feature of which Jewish festival?"
+            },
+            {
+                "answer": "Leo Tolstoy",
+                "question": "Who died at Astapovo railway station in 1910?"
+            },
+            {
+                "answer": "Garrotting",
+                "question": "What method of capital punishment was last used in Spain\u00a0in 1974?"
+            },
+            {
+                "answer": "Turkey",
+                "question": "The S\u00fcper Lig is which country\u2019s top football division?"
+            },
+            {
+                "answer": "Bleach",
+                "question": "What household item\u00a0is a solution of sodium hypochlorite?"
+            },
+            {
+                "answer": "Companies founded or co-founded by Elon Musk",
+                "question": "What links: PayPal; Zip2; Tesla\u00a0Motors; SpaceX?"
+            },
+            {
+                "answer": "Translated from to become archbishop of Canterbury: Welby; Williams; Carey; Runcie",
+                "question": "What links: Durham, 2013; Monmouth, 2002; Bath & Wells, 1991; St\u00a0Albans, 1980?"
+            },
+            {
+                "answer": "Their questions were asked in Jeremy Corbyn\u2019s first PMQs",
+                "question": "What links: Marie, Stephen, Paul, Claire, Gail and\u00a0Angela?"
+            },
+            {
+                "answer": "Mount Everest names: original survey; Nepalese; Tibetan",
+                "question": "What links: Peak XV; Sagarmatha; Chomolungma?"
+            },
+            {
+                "answer": "Women\u2019s golf major winners in 2015",
+                "question": "What links: Brittany Lincicome; Chun In-gee; Inbee\u00a0Park; Lydia Ko?"
+            },
+            {
+                "answer": "Paris arrondisements",
+                "question": "What links: Louvre (1st); Bourse (2nd); Temple (3rd); H\u00f4tel-de-Ville (4th)?"
+            },
+            {
+                "answer": "TV and film food outlets: The Sopranos; Pulp Fiction; Arrested Development; Breaking Bad",
+                "question": "What links: Satriale\u2019s Pork Store;\u00a0Big Kahuna Burger; Bluth\u2019s Frozen\u00a0Banana; Los Pollos Hermanos?"
+            }
+        ],
+        "source_date": "2015-10-10",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2015/oct/10/quiz-general-knowledge-guardian"
+    },
+    {
+        "pairs": [
+            {
+                "answer": "Germany",
+                "question": "\u201cToo big for Europe, too small for the world\u201d was Kissinger\u2019s verdict on which country?"
+            },
+            {
+                "answer": "London Underground",
+                "question": "Which map was modified to make the artwork The Great Bear?"
+            },
+            {
+                "answer": "The Lady Vanishes",
+                "question": "What film is about the disappearance of Miss Froy?"
+            },
+            {
+                "answer": "Battle of Britain",
+                "question": "A memorial to what battle stands at Capel-le-Ferne in Kent?"
+            },
+            {
+                "answer": "Balsamic vinegar",
+                "question": "Which condiment is made from reduced trebbiano grape juice?"
+            },
+            {
+                "answer": "George Osborne",
+                "question": "Who is the Master of the Mint?"
+            },
+            {
+                "answer": "Band Aid\u2019s Do They Know It\u2019s Christmas?",
+                "question": "II, 20 and 30 were the remakes of what?"
+            },
+            {
+                "answer": "Oysters (and bread and butter)",
+                "question": "What do the walrus and carpenter eat?"
+            },
+            {
+                "answer": "Named horses in Shakespeare plays",
+                "question": "What links: Barbary; Capilet; Dobbin; Surrey; Galathe; Curtal?"
+            },
+            {
+                "answer": "Countries in the Land of Oz",
+                "question": "What links: Munchkin; Winkie; Gillikin; Quadling?"
+            },
+            {
+                "answer": "UK woodpeckers",
+                "question": "What links: Wryneck; great spotted; lesser spotted; green?"
+            },
+            {
+                "answer": "Subjects of boxing biopics: Cinderella Man; Raging Bull; The Hurricane; The Fighter",
+                "question": "What links: James Braddock; Jake LaMotta; Rubin Carter; Micky Ward?"
+            },
+            {
+                "answer": "English words of Romany origin",
+                "question": "What links: Wonga; mush; chav; cushty?"
+            },
+            {
+                "answer": "River: founded R Cafe; R Phoenix; played R Song in Doctor Who",
+                "question": "What links: Ruth Rogers and Rose Gray; died outside the Viper Room; Alex Kingston?"
+            },
+            {
+                "answer": "Leaders\u2019 constituencies: Cameron; Corbyn; Farron",
+                "question": "What links: Witney; Islington North; Westmorland and Lonsdale?"
+            }
+        ],
+        "source_date": "2015-10-17",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2015/oct/17/quiz-general-knowledge-guardian"
+    },
+    {
+        "pairs": [
+            {
+                "answer": "Joe Orton",
+                "question": "Which playwright was jailed for defacing\u00a0library books?"
+            },
+            {
+                "answer": "Warsaw Radio Mast",
+                "question": "What was the world\u2019s\u00a0tallest structure until its collapse in 1991?"
+            },
+            {
+                "answer": "Art Blakey",
+                "question": "Who led the Jazz Messengers?"
+            },
+            {
+                "answer": "Untersee",
+                "question": "What does the\u00a0U\u00a0in\u00a0U-boat stand for?"
+            },
+            {
+                "answer": "Durban, South Africa",
+                "question": "What, in 2022, will\u00a0be the first African\u00a0city to host the Commonwealth Games?"
+            },
+            {
+                "answer": "Hilda Ogden (Jean Alexander)",
+                "question": "Who sang Wish Me Luck as she left\u00a0Coronation Street in\u00a01987?"
+            },
+            {
+                "answer": "Goldcrest and firecrest",
+                "question": "Similarly named, what are the UK\u2019s smallest birds?"
+            },
+            {
+                "answer": "Humber Bridge",
+                "question": "The A15 crosses which major bridge?"
+            },
+            {
+                "answer": "Elements named after astronomical objects: helium/sun; Mercury; tellurium/Earth; uranium/Uranus; neptunium/Neptune; cerium/Ceres; selenium/moon; plutonium/Pluto; palladium/Pallas",
+                "question": "What links: He; Hg; Te; U; Np; Ce; Se; Pu; Pd?"
+            },
+            {
+                "answer": "Columns/pillars dedicated to Horatio Nelson",
+                "question": "What links: Central London; Montreal; Great Yarmouth; Dublin (destroyed 1966)?"
+            },
+            {
+                "answer": "Dances in 3/4 time",
+                "question": "What links: Saraband; fandango;\u00a0waltz; minuet; mazurka; polonaise?"
+            },
+            {
+                "answer": "Films set in and around the oil industry",
+                "question": "What links: Boom Town; Hellfighters; Giant;\u00a0Local Hero; There Will Be Blood?"
+            },
+            {
+                "answer": "Violin Sonata No. 9: wrote; dedicated to; inspired title of 1889 novella",
+                "question": "What links: Beethoven; Rodolphe Kreutzer; Tolstoy?"
+            },
+            {
+                "answer": "Geographical extremes of mainland Australia",
+                "question": "What links: Cape York (N); Cape\u00a0Byron (E); Wilsons Promontory (S); Steep Point (W)?"
+            },
+            {
+                "answer": "Girls in book titles: Gone G; The G On The Train; The G With The Dragon Tattoo; G With A Pearl Earring",
+                "question": "What links: Amy Dunne; Rachel\u00a0Watson; Lisbeth\u00a0Salander; Griet?"
+            }
+        ],
+        "source_date": "2015-10-24",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2015/oct/24/quiz-general-knowledge-guardian"
+    },
+    {
+        "pairs": [
+            {
+                "answer": "Ho Chi Minh",
+                "question": "Which Communist leader was once a chef on the Newhaven-Dieppe ferry?"
+            },
+            {
+                "answer": "Mumbai (main train station)",
+                "question": "Where was Victoria renamed Chhatrapati Shivaji?"
+            },
+            {
+                "answer": "Frankfurter Allgemeine Zeitung",
+                "question": "Which German newspaper is known as the FAZ?"
+            },
+            {
+                "answer": "Wendy\u2019s",
+                "question": "Melinda Thomas is the mascot and namesake of which burger chain?"
+            },
+            {
+                "answer": "Helvellyn (Lake District)",
+                "question": "Striding Edge is a route up which British peak?"
+            },
+            {
+                "answer": "Archie Moore",
+                "question": "Who\u2019s the only boxer to face both Rocky Marciano and Muhammad Ali?"
+            },
+            {
+                "answer": "Ripon",
+                "question": "In which city is a horn blown every night at 9pm?"
+            },
+            {
+                "answer": "Vatican City",
+                "question": "Which European flag features crossed keys and a tiara?"
+            },
+            {
+                "answer": "Pantone colours of the year",
+                "question": "What links: Marsala (2015); Radiant Orchid (2014); Emerald (2013); Tangerine Tango (2012)?"
+            },
+            {
+                "answer": "Bridges over the Liffey in Dublin",
+                "question": "What links: Father Matthew; Ha\u2019penny; Mellows; Grattan; O\u2019Connell; O\u2019Donovan Rossa?"
+            },
+            {
+                "answer": "Mixed gender sports and events",
+                "question": "What links: Hopman Cup in tennis; eventing; korfball; ice dancing?"
+            },
+            {
+                "answer": "Wine bottle sizes smaller than 75cl",
+                "question": "What links: Piccolo; chopine; demi; clavelin?"
+            },
+            {
+                "answer": "One-off characters in The Simpsons",
+                "question": "What links: Shary Bobbins; Hank Scorpio; Lyle Langley; Frank Grimes; Vicki Valentine?"
+            },
+            {
+                "answer": "European enclave/exclaves: Russia; Italy; Spain; Germany",
+                "question": "What links: Kaliningrad; Campione d\u2019Italia; Ll\u00edvia; B\u00fcsingen am Hochrhein?"
+            },
+            {
+                "answer": "Died aged 32",
+                "question": "What links: Alexander the Great; Mary II; Karen Carpenter; Bill Hicks; Bruce Lee; Keith Moon?"
+            }
+        ],
+        "source_date": "2015-10-31",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2015/oct/31/thomas-eaton-quiz"
+    },
+    {
+        "pairs": [
+            {
+                "answer": "Belarus",
+                "question": "The KGB still operates in which European country?"
+            },
+            {
+                "answer": "Vocalese (not scat)",
+                "question": "Which style of jazz singing puts words to existing melodies or solos?"
+            },
+            {
+                "answer": "Baileys",
+                "question": "Who now sponsors the Women\u2019s Prize for Fiction?"
+            },
+            {
+                "answer": "Iain Duncan Smith",
+                "question": "Which cabinet member is the son of a flying ace and a ballerina?"
+            },
+            {
+                "answer": "Hebrew",
+                "question": "Which language is known as Ivrit to its speakers?"
+            },
+            {
+                "answer": "Baseball World Series winners",
+                "question": "Who receives the Commissioner\u2019s Trophy?"
+            },
+            {
+                "answer": "Shakespeare",
+                "question": "\u201cCurst be he that moves my bones\u201d is written on whose tomb?"
+            },
+            {
+                "answer": "Euboea",
+                "question": "After Crete, what is the next largest Greek island?"
+            },
+            {
+                "answer": "Born in 1685",
+                "question": "What links: JS Bach; GF Handel; Domenico Scarlatti?"
+            },
+            {
+                "answer": "Location of bog body discoveries",
+                "question": "What links: Yde; Lindow; Tollund; Weerdinge; Old Croghan; Gallagh?"
+            },
+            {
+                "answer": "Terrier breeds",
+                "question": "What links: Dandie Dinmont; Bedlington; Glen Of Imaal; Skye; Cairn?"
+            },
+            {
+                "answer": "Appeared on ITV\u2019s New Faces",
+                "question": "What links: Victoria Wood; Marti Caine; Lenny Henry; Michael Barrymore; Les Dennis?"
+            },
+            {
+                "answer": "Emblems on London Premier League club badges: Chelsea; Crystal Palace; Arsenal; Spurs; West Ham",
+                "question": "What links: Lion; eagle; cannon; cockerel; castle?"
+            },
+            {
+                "answer": "Chess-themed fictional works: Lewis Carroll; Vladimir Nabokov; Stefan Zweig; Agatha Christie",
+                "question": "What links: Through The Looking Glass; The Luzhin Defence; The Royal Game; The Big Four?"
+            },
+            {
+                "answer": "Cranial nerves",
+                "question": "What links: Olfactory; optic; facial; trochlear; vagus; hypoglossal (and six others)?"
+            }
+        ],
+        "source_date": "2015-11-07",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2015/nov/07/quiz-general-knowledge-guardian"
+    }
+]

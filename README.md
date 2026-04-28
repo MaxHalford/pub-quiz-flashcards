@@ -8,9 +8,4 @@ Scraping Thomas Eaton's [weekly quiz](https://www.theguardian.com/theguardian/se
 make run the_guardian_weekly
 ```
 
-## Token usage
-
-<!-- TOKEN_USAGE_TABLE -->
-| Date | Source | Cost (USD) | Turns | Duration | Status |
-| ---- | ------ | ---------- | ----- | -------- | ------ |
-<!-- TOKEN_USAGE_TABLE_END -->
+## Logs
