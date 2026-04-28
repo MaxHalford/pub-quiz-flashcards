@@ -87,26 +87,63 @@ class TheGuardianParser:
         html_str = str(p_tag)
         # Remove the p tag wrapper
         html_str = re.sub(r"^<p[^>]*>|</p>$", "", html_str)
-        # Split by <br> with optional / and optional attributes
+        # Split by <br> with optional / and optional attributes, but keep track of context
         parts = re.split(r"<br\s*/?.*?>", html_str)
         # Extract text from each HTML fragment and further split on numbered items
-        segments: list[str] = []
+        # Also track whether each segment is a continuation (doesn't start with <strong>N</strong>)
+        segments_with_flags: list[tuple[str, bool]] = []
         for part in parts:
+            # Check if this part starts with a <strong>N</strong> tag (new numbered item)
+            has_strong_number = bool(re.match(r"^\s*<strong>\d+</strong>", part))
             # Split on <strong>N</strong> patterns to handle multiple numbered items
             # without explicit line breaks between them
             items = re.split(r"<strong>\d+</strong>", part)
-            for item in items:
+            for j, item in enumerate(items):
                 soup = bs4.BeautifulSoup(item, "html.parser")
                 text = soup.get_text().strip()
                 if text:
-                    # Re-add the number prefix that was stripped
-                    segments.append(text)
+                    # If this is the first item (j==0), check if part had a leading <strong> tag
+                    # If not, and segments_with_flags is not empty, this is a continuation
+                    is_continuation = (
+                        j == 0
+                        and not has_strong_number
+                        and len(segments_with_flags) > 0
+                    )
+                    segments_with_flags.append((text, is_continuation))
+
+        # Merge continuation segments
+        segments: list[str] = []
+        for text, is_continuation in segments_with_flags:
+            # A segment is a continuation if:
+            # 1. It was marked as such during extraction (part without <strong> tag at start)
+            # 2. AND it doesn't start with a digit (no number prefix)
+            # 3. AND it's not a special header like "What links:"
+            is_special_header = text.lower().startswith(
+                ("what links", "the questions", "the answers")
+            )
+            should_merge = (
+                is_continuation
+                and text
+                and not text[0].isdigit()
+                and not is_special_header
+            )
+            if segments and should_merge:
+                # Continuation segment, append to previous
+                segments[-1] += " " + text
+            else:
+                segments.append(text)
         return segments
 
     @staticmethod
     def _strip_number_prefix(text: str) -> str:
-        """Remove a leading number like '1 ' or '9 ' from text."""
-        return re.sub(r"^\d+\s*", "", text)
+        """Remove a leading number and any following punctuation or whitespace.
+
+        Only strips numbers that are likely question prefixes (1-3 digits).
+        Preserves numbers that might be part of content (4+ digits).
+        If stripping would result in empty text, return the original text.
+        """
+        result = re.sub(r"^(\d{1,3})[\s:.,\-]+", "", text)
+        return result if result else text
 
     def scrape_page(self, url: str) -> list[QuestionAnswerPair]:
         logger.info(f"Scraping {url}")
@@ -161,27 +198,42 @@ class TheGuardianParser:
                     text = f"What links: {text}"
                 questions.append(text)
 
-            # Look for additional "What links" paragraphs after main questions
+            # Look for additional question paragraphs before answers section
             current = questions_p
             while current:
                 current = current.find_next_sibling("p")
-                if current == answers_h2 or current is None:
+                if current is None:
                     break
                 p_text = current.get_text().strip()
-                if p_text.lower().startswith("what links"):
-                    raw_what_links = self._split_on_br(current)
-                    for raw in raw_what_links:
-                        text = self._strip_number_prefix(raw)
-                        if text.lower().startswith("what links"):
-                            text = re.sub(
-                                r"^what links:?\s*",
-                                "",
-                                text,
-                                flags=re.IGNORECASE,
-                            )
-                            text = self._strip_number_prefix(text)
-                        if text:
-                            questions.append(f"What links: {text}")
+                # Stop if we've reached the answers paragraph
+                if answers_h2 and answers_h2.find_next_sibling("p") == current:
+                    break
+                # Skip empty paragraphs and non-question content
+                if not p_text or (
+                    not p_text[0].isdigit()
+                    and not p_text.lower().startswith("what links")
+                ):
+                    continue
+                # Process numbered paragraphs (continuation of questions)
+                raw_questions_cont = self._split_on_br(current)
+                for raw in raw_questions_cont:
+                    text = self._strip_number_prefix(raw)
+                    if text.lower().startswith("what links"):
+                        what_links = True
+                        rest = re.sub(
+                            r"^what links:?\s*",
+                            "",
+                            text,
+                            flags=re.IGNORECASE,
+                        )
+                        rest = self._strip_number_prefix(rest)
+                        if rest:
+                            questions.append(f"What links: {rest}")
+                        continue
+                    if what_links:
+                        text = f"What links: {text}"
+                    if text:
+                        questions.append(text)
         else:
             # New format without h2 headers: look for numbered paragraphs
             questions = []
