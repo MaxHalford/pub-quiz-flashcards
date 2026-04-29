@@ -1,5 +1,1321 @@
 # Logbook
 
+## 2026-04-25 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112708 input / 584 output
+
+## 2026-04-25 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112911 input / 627 output
+
+## 2026-04-18 -- `the_guardian_weekly`
+
+- Cost: $0.0182
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113187 input / 830 output
+
+## 2026-04-11 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113078 input / 599 output
+
+## 2026-04-04 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112871 input / 533 output
+
+## 2026-03-28 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 113016 input / 650 output
+
+## 2026-03-21 -- `the_guardian_weekly`
+
+- Cost: $0.0186
+- Duration: 0m14s
+- Turns: 3
+- Tokens: 112826 input / 1115 output
+
+## 2026-03-14 -- `the_guardian_weekly`
+
+- Cost: $0.0168
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112918 input / 741 output
+
+## 2026-03-07 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112869 input / 547 output
+
+## 2026-02-28 -- `the_guardian_weekly`
+
+- Cost: $0.0167
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112976 input / 716 output
+
+## 2026-02-21 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 113037 input / 645 output
+
+## 2026-02-14 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112863 input / 519 output
+
+## 2026-02-07 -- `the_guardian_weekly`
+
+- Cost: $0.0205
+- Duration: 0m11s
+- Turns: 4
+- Tokens: 151585 input / 663 output
+
+## 2026-01-31 -- `the_guardian_weekly`
+
+- Cost: $0.0167
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112911 input / 590 output
+
+## 2026-01-24 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m07s
+- Turns: 3
+- Tokens: 113039 input / 567 output
+
+## 2026-01-17 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112896 input / 532 output
+
+## 2026-01-10 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m07s
+- Turns: 3
+- Tokens: 112845 input / 533 output
+
+## 2026-01-03 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112838 input / 699 output
+
+## 2025-12-27 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112929 input / 589 output
+
+## 2025-12-20 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112886 input / 552 output
+
+## 2025-12-13 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112920 input / 540 output
+
+## 2025-12-06 -- `the_guardian_weekly`
+
+- Cost: $0.0174
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113281 input / 815 output
+
+## 2025-11-29 -- `the_guardian_weekly`
+
+- Cost: $0.0167
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113136 input / 702 output
+
+## 2025-11-22 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112873 input / 519 output
+
+## 2025-11-15 -- `the_guardian_weekly`
+
+- Cost: $0.0209
+- Duration: 0m10s
+- Turns: 4
+- Tokens: 151759 input / 706 output
+
+## 2025-11-08 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112919 input / 596 output
+
+## 2025-11-01 -- `the_guardian_weekly`
+
+- Cost: $0.0169
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113067 input / 594 output
+
+## 2025-10-25 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m14s
+- Turns: 3
+- Tokens: 112980 input / 525 output
+
+## 2025-10-18 -- `the_guardian_weekly`
+
+- Cost: $0.0169
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113279 input / 704 output
+
+## 2025-10-11 -- `the_guardian_weekly`
+
+- Cost: $0.0154
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112881 input / 471 output
+
+## 2025-10-04 -- `the_guardian_weekly`
+
+- Cost: $0.0186
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112909 input / 1106 output
+
+## 2025-09-27 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 113133 input / 650 output
+
+## 2025-09-20 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113075 input / 646 output
+
+## 2025-09-13 -- `the_guardian_weekly`
+
+- Cost: $0.0181
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113127 input / 818 output
+
+## 2025-09-06 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113131 input / 657 output
+
+## 2025-08-30 -- `the_guardian_weekly`
+
+- Cost: $0.0174
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113056 input / 837 output
+
+## 2025-08-23 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m07s
+- Turns: 3
+- Tokens: 112954 input / 522 output
+
+## 2025-08-16 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112978 input / 573 output
+
+## 2025-08-09 -- `the_guardian_weekly`
+
+- Cost: $0.0170
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113043 input / 745 output
+
+## 2025-08-02 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112892 input / 526 output
+
+## 2025-07-26 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 113038 input / 577 output
+
+## 2025-07-19 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112883 input / 590 output
+
+## 2025-07-12 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112855 input / 544 output
+
+## 2025-07-05 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 113003 input / 660 output
+
+## 2025-06-28 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112885 input / 541 output
+
+## 2025-06-21 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112863 input / 527 output
+
+## 2025-06-14 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112964 input / 523 output
+
+## 2025-06-07 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112880 input / 512 output
+
+## 2025-05-31 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113144 input / 618 output
+
+## 2025-05-24 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113046 input / 615 output
+
+## 2025-05-17 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112879 input / 562 output
+
+## 2025-05-10 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112888 input / 578 output
+
+## 2025-05-03 -- `the_guardian_weekly`
+
+- Cost: $0.0173
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113116 input / 668 output
+
+## 2025-04-26 -- `the_guardian_weekly`
+
+- Cost: $0.0167
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112912 input / 729 output
+
+## 2025-04-19 -- `the_guardian_weekly`
+
+- Cost: $0.0154
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112854 input / 473 output
+
+## 2025-04-12 -- `the_guardian_weekly`
+
+- Cost: $0.0191
+- Duration: 0m17s
+- Turns: 3
+- Tokens: 113029 input / 1195 output
+
+## 2025-04-05 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112929 input / 563 output
+
+## 2025-03-29 -- `the_guardian_weekly`
+
+- Cost: $0.0173
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113038 input / 689 output
+
+## 2025-03-22 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112988 input / 590 output
+
+## 2025-03-15 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112931 input / 628 output
+
+## 2025-03-08 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112997 input / 526 output
+
+## 2025-03-01 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112892 input / 569 output
+
+## 2025-02-22 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113144 input / 596 output
+
+## 2025-02-15 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112968 input / 597 output
+
+## 2025-02-08 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112843 input / 528 output
+
+## 2025-02-01 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112849 input / 515 output
+
+## 2025-01-25 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112944 input / 493 output
+
+## 2025-01-18 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113005 input / 609 output
+
+## 2025-01-11 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113078 input / 609 output
+
+## 2025-01-04 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113327 input / 741 output
+
+## 2024-12-28 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112977 input / 684 output
+
+## 2024-12-21 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113048 input / 679 output
+
+## 2024-12-14 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113074 input / 649 output
+
+## 2024-12-07 -- `the_guardian_weekly`
+
+- Cost: $0.0177
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113406 input / 855 output
+
+## 2024-11-30 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112828 input / 517 output
+
+## 2024-11-23 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113008 input / 667 output
+
+## 2024-11-16 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112851 input / 520 output
+
+## 2024-11-09 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112995 input / 623 output
+
+## 2024-11-02 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112875 input / 567 output
+
+## 2024-10-26 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112817 input / 564 output
+
+## 2024-10-19 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112923 input / 522 output
+
+## 2024-10-12 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113005 input / 606 output
+
+## 2024-10-05 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112868 input / 500 output
+
+## 2024-09-28 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112772 input / 519 output
+
+## 2024-09-21 -- `the_guardian_weekly`
+
+- Cost: $0.0155
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112873 input / 498 output
+
+## 2024-09-14 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113001 input / 618 output
+
+## 2024-09-07 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 113017 input / 603 output
+
+## 2024-08-31 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112851 input / 517 output
+
+## 2024-08-24 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 113235 input / 754 output
+
+## 2024-08-17 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112879 input / 541 output
+
+## 2024-08-03 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112949 input / 531 output
+
+## 2024-07-31 -- `the_guardian_weekly`
+
+- Cost: $0.0174
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113896 input / 622 output
+
+## 2024-07-27 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112878 input / 545 output
+
+## 2024-07-20 -- `the_guardian_weekly`
+
+- Cost: $0.0178
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112933 input / 807 output
+
+## 2024-07-13 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112849 input / 581 output
+
+## 2024-07-06 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112962 input / 591 output
+
+## 2024-06-29 -- `the_guardian_weekly`
+
+- Cost: $0.0167
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113195 input / 687 output
+
+## 2024-06-22 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112912 input / 562 output
+
+## 2024-06-15 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112923 input / 528 output
+
+## 2024-06-08 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112868 input / 525 output
+
+## 2024-06-01 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112878 input / 536 output
+
+## 2024-05-18 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112976 input / 518 output
+
+## 2024-05-11 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112931 input / 569 output
+
+## 2024-05-04 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113096 input / 662 output
+
+## 2024-04-27 -- `the_guardian_weekly`
+
+- Cost: $0.0179
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112922 input / 959 output
+
+## 2024-04-20 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112868 input / 600 output
+
+## 2024-04-13 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112930 input / 524 output
+
+## 2024-04-06 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112979 input / 685 output
+
+## 2024-03-30 -- `the_guardian_weekly`
+
+- Cost: $0.0155
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112876 input / 491 output
+
+## 2024-03-23 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112904 input / 562 output
+
+## 2024-03-16 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112830 input / 483 output
+
+## 2024-03-09 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112936 input / 641 output
+
+## 2024-03-02 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112830 input / 513 output
+
+## 2024-02-24 -- `the_guardian_weekly`
+
+- Cost: $0.0155
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112782 input / 516 output
+
+## 2024-02-17 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112855 input / 505 output
+
+## 2024-02-10 -- `the_guardian_weekly`
+
+- Cost: $0.0154
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112841 input / 469 output
+
+## 2024-02-03 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113083 input / 631 output
+
+## 2024-01-27 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112896 input / 518 output
+
+## 2024-01-20 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112957 input / 570 output
+
+## 2024-01-13 -- `the_guardian_weekly`
+
+- Cost: $0.0175
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113028 input / 862 output
+
+## 2024-01-06 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112825 input / 449 output
+
+## 2023-12-30 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 113115 input / 670 output
+
+## 2023-12-23 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112928 input / 509 output
+
+## 2023-12-16 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112944 input / 563 output
+
+## 2023-12-09 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112877 input / 553 output
+
+## 2023-12-02 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m17s
+- Turns: 3
+- Tokens: 112938 input / 596 output
+
+## 2023-11-18 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113107 input / 630 output
+
+## 2023-11-11 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112848 input / 554 output
+
+## 2023-10-28 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113053 input / 639 output
+
+## 2023-10-21 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112893 input / 526 output
+
+## 2023-10-14 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112897 input / 582 output
+
+## 2023-10-07 -- `the_guardian_weekly`
+
+- Cost: $0.0175
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113029 input / 719 output
+
+## 2023-09-30 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112905 input / 550 output
+
+## 2023-09-23 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113066 input / 677 output
+
+## 2023-09-16 -- `the_guardian_weekly`
+
+- Cost: $0.0212
+- Duration: 0m12s
+- Turns: 4
+- Tokens: 151714 input / 789 output
+
+## 2023-09-09 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112842 input / 539 output
+
+## 2023-09-02 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112877 input / 530 output
+
+## 2023-08-26 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112898 input / 630 output
+
+## 2023-08-19 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112945 input / 576 output
+
+## 2023-08-12 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113083 input / 638 output
+
+## 2023-08-05 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112899 input / 567 output
+
+## 2023-07-29 -- `the_guardian_weekly`
+
+- Cost: $0.0171
+- Duration: 0m25s
+- Turns: 3
+- Tokens: 113314 input / 756 output
+
+## 2023-07-22 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112900 input / 524 output
+
+## 2023-07-15 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m14s
+- Turns: 3
+- Tokens: 112985 input / 569 output
+
+## 2023-07-08 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112886 input / 561 output
+
+## 2023-07-01 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112857 input / 567 output
+
+## 2023-06-24 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112897 input / 531 output
+
+## 2023-06-17 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112907 input / 528 output
+
+## 2023-06-10 -- `the_guardian_weekly`
+
+- Cost: $0.0169
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113203 input / 724 output
+
+## 2023-06-03 -- `the_guardian_weekly`
+
+- Cost: $0.0167
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112991 input / 574 output
+
+## 2023-05-27 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113019 input / 570 output
+
+## 2023-05-20 -- `the_guardian_weekly`
+
+- Cost: $0.0200
+- Duration: 0m14s
+- Turns: 3
+- Tokens: 113205 input / 1345 output
+
+## 2023-05-13 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112865 input / 506 output
+
+## 2023-05-06 -- `the_guardian_weekly`
+
+- Cost: $0.0155
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112876 input / 481 output
+
+## 2023-04-29 -- `the_guardian_weekly`
+
+- Cost: $0.0153
+- Duration: 0m08s
+- Turns: 3
+- Tokens: 112825 input / 466 output
+
+## 2023-04-22 -- `the_guardian_weekly`
+
+- Cost: $0.0156
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112816 input / 512 output
+
+## 2023-04-15 -- `the_guardian_weekly`
+
+- Cost: $0.0168
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112785 input / 641 output
+
+## 2023-04-08 -- `the_guardian_weekly`
+
+- Cost: $0.0169
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112997 input / 756 output
+
+## 2023-04-01 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m26s
+- Turns: 3
+- Tokens: 112961 input / 565 output
+
+## 2023-03-25 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112896 input / 588 output
+
+## 2023-03-18 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112870 input / 554 output
+
+## 2023-03-11 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112923 input / 559 output
+
+## 2023-03-04 -- `the_guardian_weekly`
+
+- Cost: $0.0169
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112941 input / 767 output
+
+## 2023-02-25 -- `the_guardian_weekly`
+
+- Cost: $0.0169
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113154 input / 737 output
+
+## 2023-02-18 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112976 input / 689 output
+
+## 2023-02-11 -- `the_guardian_weekly`
+
+- Cost: $0.0174
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 113197 input / 667 output
+
+## 2023-02-04 -- `the_guardian_weekly`
+
+- Cost: $0.0157
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112891 input / 531 output
+
+## 2023-01-28 -- `the_guardian_weekly`
+
+- Cost: $0.0163
+- Duration: 0m14s
+- Turns: 3
+- Tokens: 113082 input / 609 output
+
+## 2023-01-21 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112976 input / 561 output
+
+## 2023-01-14 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112974 input / 709 output
+
+## 2023-01-07 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112978 input / 567 output
+
+## 2022-12-31 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 112840 input / 548 output
+
+## 2022-12-24 -- `the_guardian_weekly`
+
+- Cost: $0.0162
+- Duration: 0m16s
+- Turns: 3
+- Tokens: 112916 input / 627 output
+
+## 2022-12-17 -- `the_guardian_weekly`
+
+- Cost: $0.0159
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112910 input / 572 output
+
+## 2022-12-10 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112905 input / 596 output
+
+## 2022-12-03 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112864 input / 546 output
+
+## 2022-11-26 -- `the_guardian_weekly`
+
+- Cost: $0.0166
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112966 input / 567 output
+
+## 2022-11-19 -- `the_guardian_weekly`
+
+- Cost: $0.0164
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112846 input / 554 output
+
+## 2022-11-12 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112842 input / 561 output
+
+## 2022-11-05 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m09s
+- Turns: 3
+- Tokens: 112996 input / 584 output
+
+## 2022-10-29 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112956 input / 588 output
+
+## 2022-10-22 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m11s
+- Turns: 3
+- Tokens: 113083 input / 664 output
+
+## 2022-10-15 -- `the_guardian_weekly`
+
+- Cost: $0.0161
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 113032 input / 598 output
+
+## 2022-10-08 -- `the_guardian_weekly`
+
+- Cost: $0.0168
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112910 input / 609 output
+
+## 2022-10-01 -- `the_guardian_weekly`
+
+- Cost: $0.0158
+- Duration: 0m10s
+- Turns: 3
+- Tokens: 112892 input / 537 output
+
+## 2022-09-24 -- `the_guardian_weekly`
+
+- Cost: $0.0165
+- Duration: 0m12s
+- Turns: 3
+- Tokens: 112965 input / 671 output
+
+## 2022-09-17 -- `the_guardian_weekly`
+
+- Cost: $0.0160
+- Duration: 0m26s
+- Turns: 3
+- Tokens: 112877 input / 590 output
+
+## 2022-09-10 -- `the_guardian_weekly`
+
+- Cost: $0.0448
+- Duration: 0m04s
+- Turns: 1
+- Tokens: 41435 input / 152 output
+
 ## 2019-11-16 -- `the_guardian_weekly`
 
 - Cost: $0.0202

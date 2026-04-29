@@ -1,5 +1,7 @@
 run:
+	set -a && . ./.env && set +a && \
 	claude -p "Scrape @scrape/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @scrape/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
+		--bare \
 		--append-system-prompt-file scrape/CLAUDE.md \
 		--model haiku \
 		--effort medium \
