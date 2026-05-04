@@ -56,5 +56,6 @@ jobs:
             exit 0
           fi
           BRANCH=$(git branch --show-current)
+          git push origin --delete "$BRANCH" 2>/dev/null || true
           git push -u origin "$BRANCH"
           gh pr create --title "Scrape: $(date -u +'%Y-%m-%d')" --body "Automated scrape run"
