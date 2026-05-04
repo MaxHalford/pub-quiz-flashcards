@@ -41,6 +41,12 @@ if [ -n "$CODE_CHANGED" ]; then
 - Code changes: $SUMMARY"
 fi
 
+# Skip if an entry for this date and source already exists
+if [ -f "$LOGBOOK" ] && grep -q "^## $DATE -- \`$SOURCE\`" "$LOGBOOK"; then
+  echo "Entry for $DATE -- $SOURCE already exists, skipping"
+  exit 0
+fi
+
 # Insert new entry after the "# Logbook" header (newest first)
 if [ -f "$LOGBOOK" ]; then
   REST=$(tail -n +2 "$LOGBOOK")
