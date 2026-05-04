@@ -1,5 +1,5 @@
 run:
-	set -a && . ./.env && set +a && \
+	if [ -f .env ]; then set -a && . ./.env && set +a; fi && \
 	claude -p "Scrape @scrape/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @scrape/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
 		--bare \
 		--append-system-prompt-file scrape/CLAUDE.md \
