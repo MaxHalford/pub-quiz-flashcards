@@ -14,6 +14,10 @@ uv run python scrape/<source>/scrape.py
 
 The script scrapes **one page at a time**. If there is nothing new to scrape, it exits without changes.
 
+### Stopping condition
+
+You can stop if the parsing script prints out that there is nothing new to scrape.
+
 ### Q/A the results
 
 After running the script, use `jq '.[-1]'` to extract and review only the last entry from the source's `questions.json`. Do not read the entire file. Verify that questions and answers are properly paired and make sense. If the output looks wrong, delete the bad entry from the JSON file, fix `scrape.py` to handle the page format correctly, and re-run.

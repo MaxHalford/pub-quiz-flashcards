@@ -2,7 +2,7 @@ run:
 	if [ -f .env ]; then set -a && . ./.env && set +a; fi && \
 	claude -p "Scrape @scrape/$(filter-out $@,$(MAKECMDGOALS))/SKILL.md @scrape/$(filter-out $@,$(MAKECMDGOALS))/scrape.py" \
 		--bare \
-		--append-system-prompt-file scrape/CLAUDE.md \
+		--append-system-prompt-file CLAUDE.md \
 		--model haiku \
 		--effort medium \
 		--tools "Bash,Read,Edit,Write,Grep,Glob" \

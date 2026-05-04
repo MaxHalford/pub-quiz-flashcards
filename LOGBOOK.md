@@ -1,5 +1,12 @@
 # Logbook
 
+## 2026-05-02 -- `the_guardian_weekly`
+
+- Cost: $0.0218
+- Duration: 0m13s
+- Turns: 5
+- Tokens: 42819 input / 1444 output
+
 ## 2026-04-25 -- `the_guardian_weekly`
 
 - Cost: $0.0159
