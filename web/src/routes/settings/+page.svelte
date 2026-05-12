@@ -37,7 +37,7 @@
   }
 </script>
 
-<main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 py-10">
+<main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 pt-safe-10 pb-safe-10">
   <header class="flex items-center justify-between">
     <a class="text-sm text-(--color-muted) hover:text-(--color-ink)" href="{base}/">← Back</a>
     <h1 class="font-serif text-lg">Settings</h1>

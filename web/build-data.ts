@@ -7,9 +7,12 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCRAPE_DIR = join(__dirname, '..', 'scrape');
 const STATIC_DIR = join(__dirname, 'static');
+const ANNOTATIONS_FILE = join(SCRAPE_DIR, 'wikipedia_annotations.json');
 
 type Pair = { question: string; answer: string };
 type Entry = { pairs: Pair[]; source_date: string; source_url: string };
+type EntitySpan = { start: number; end: number; title: string; url: string };
+type Annotation = { q_entities?: EntitySpan[]; a_entities?: EntitySpan[] };
 type Card = {
   id: string;
   q: string;
@@ -17,6 +20,8 @@ type Card = {
   source: string;
   source_date: string;
   source_url: string;
+  q_entities?: EntitySpan[];
+  a_entities?: EntitySpan[];
 };
 
 function shortId(sourceUrl: string, question: string): string {
@@ -27,7 +32,13 @@ function contentHash(payload: string): string {
   return createHash('sha256').update(payload).digest('hex').slice(0, 10);
 }
 
-async function loadSource(name: string): Promise<Card[]> {
+async function loadAnnotations(): Promise<Record<string, Annotation>> {
+  if (!existsSync(ANNOTATIONS_FILE)) return {};
+  const raw = await readFile(ANNOTATIONS_FILE, 'utf8');
+  return JSON.parse(raw) as Record<string, Annotation>;
+}
+
+async function loadSource(name: string, annotations: Record<string, Annotation>): Promise<Card[]> {
   const path = join(SCRAPE_DIR, name, 'questions.json');
   if (!existsSync(path)) return [];
   const raw = await readFile(path, 'utf8');
@@ -39,20 +50,27 @@ async function loadSource(name: string): Promise<Card[]> {
       const id = shortId(entry.source_url, pair.question);
       if (seen.has(id)) continue;
       seen.add(id);
-      cards.push({
+      const ann = annotations[id];
+      const card: Card = {
         id,
         q: pair.question,
         a: pair.answer,
         source: name,
         source_date: entry.source_date,
         source_url: entry.source_url
-      });
+      };
+      if (ann?.q_entities?.length) card.q_entities = ann.q_entities;
+      if (ann?.a_entities?.length) card.a_entities = ann.a_entities;
+      cards.push(card);
     }
   }
   return cards;
 }
 
 async function main() {
+  const annotations = await loadAnnotations();
+  const annotatedCount = Object.keys(annotations).length;
+
   const sourceDirs = (await readdir(SCRAPE_DIR, { withFileTypes: true }))
     .filter((d) => d.isDirectory() && !d.name.startsWith('.') && !d.name.startsWith('_'))
     .map((d) => d.name)
@@ -60,7 +78,7 @@ async function main() {
 
   const all: Card[] = [];
   for (const name of sourceDirs) {
-    const cards = await loadSource(name);
+    const cards = await loadSource(name, annotations);
     all.push(...cards);
     console.log(`  ${name}: ${cards.length} cards`);
   }
@@ -82,7 +100,9 @@ async function main() {
     JSON.stringify({ hash, count: cards.length, generatedAt }, null, 2) + '\n'
   );
 
-  console.log(`Wrote cards.${hash}.json (${cards.length} cards, ${(payload.length / 1024).toFixed(0)} KB)`);
+  console.log(
+    `Wrote cards.${hash}.json (${cards.length} cards, ${(payload.length / 1024).toFixed(0)} KB, ${annotatedCount} annotated)`
+  );
 }
 
 main().catch((e) => {

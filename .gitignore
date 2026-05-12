@@ -5,3 +5,4 @@
 *.pyc
 logs/
 .env
+scrape/_enwiki_titles.gz

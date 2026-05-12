@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Mark generated data as such so GitHub collapses the diff by default
+# and the file isn't counted toward language statistics.
+scrape/wikipedia_annotations.json linguist-generated=true
+scrape/*/questions.json linguist-generated=true

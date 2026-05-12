@@ -20,17 +20,44 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            uv.lock
+            pyproject.toml
+
+      - name: Install Python dependencies
+        run: uv sync
+
+      - name: Compute cache key
+        id: cachekey
+        run: echo "week=$(date -u +%Y-W%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Wikipedia titles dump
+        # Cache keyed by ISO week. Most publishes hit; once a week the dump
+        # is refreshed so new article titles eventually become matchable.
+        uses: actions/cache@v4
+        with:
+          path: scrape/_enwiki_titles.gz
+          key: enwiki-titles-${{ steps.cachekey.outputs.week }}
+          restore-keys: |
+            enwiki-titles-
+
+      - name: Build entity annotations
+        run: uv run python scrape/build_entities.py
+
       - uses: actions/setup-node@v6
         with:
           node-version: "20"
           cache: "npm"
           cache-dependency-path: web/package-lock.json
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         working-directory: web
         run: npm ci
 
-      - name: Build
+      - name: Build site
         working-directory: web
         run: npm run build
 

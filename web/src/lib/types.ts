@@ -1,5 +1,12 @@
 import type { State } from 'ts-fsrs';
 
+export type EntitySpan = {
+  start: number;
+  end: number;
+  title: string;
+  url: string;
+};
+
 export type Card = {
   id: string;
   q: string;
@@ -7,6 +14,8 @@ export type Card = {
   source: string;
   source_date: string;
   source_url: string;
+  q_entities?: EntitySpan[];
+  a_entities?: EntitySpan[];
 };
 
 export type StoredCard = {
@@ -21,11 +30,14 @@ export type StoredCard = {
   last_review?: number;
 };
 
+export type SessionEntity = { title: string; url: string };
+
 export type DailyState = {
   date: string;
   reviewed: number;
   extras: number;
   queue: string[];
+  entities: SessionEntity[];
 };
 
 export type AppState = {

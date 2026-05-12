@@ -15,5 +15,8 @@ run:
 	@cat .claude_stderr.log
 	@bash log_usage.sh $(filter-out $@,$(MAKECMDGOALS))
 
+entities:
+	uv run python scrape/build_entities.py
+
 %:
 	@:

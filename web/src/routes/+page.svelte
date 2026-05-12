@@ -5,10 +5,9 @@
   import { loadState, saveState, ensureToday, todayKey } from '$lib/storage';
   import { planSession, applyRating } from '$lib/scheduler';
   import { streakDays } from '$lib/streak';
-  import { fly } from 'svelte/transition';
   import Streak from '$lib/components/Streak.svelte';
   import Heatmap from '$lib/components/Heatmap.svelte';
-  import { swipe } from '$lib/actions/swipe';
+  import RichText from '$lib/components/RichText.svelte';
   import type { Card, AppState } from '$lib/types';
 
   let cardIndex = $state<Map<string, Card>>(new Map());
@@ -63,6 +62,16 @@
     appState.daily.reviewed += 1;
     const today = todayKey();
     appState.history[today] = (appState.history[today] ?? 0) + 1;
+    const seenTitles = new Set(appState.daily.entities.map((e) => e.title));
+    for (const span of [
+      ...(currentCard.q_entities ?? []),
+      ...(currentCard.a_entities ?? [])
+    ]) {
+      if (!seenTitles.has(span.title)) {
+        seenTitles.add(span.title);
+        appState.daily.entities.push({ title: span.title, url: span.url });
+      }
+    }
     appState.daily.queue.shift();
     revealed = false;
     saveState(appState);
@@ -81,7 +90,7 @@
   }
 </script>
 
-<main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 py-6">
+<main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 pt-safe-6 pb-safe-6">
   <nav class="flex items-center justify-between">
     <Streak count={streak} />
     <a
@@ -113,6 +122,21 @@
         <Heatmap history={appState.history} />
       </div>
 
+      {#if appState.daily.entities.length > 0}
+        <div class="mt-10 text-left">
+          <p class="text-xs tracking-wider text-(--color-muted) uppercase">Mentioned today</p>
+          <p class="mt-3 text-sm leading-relaxed">
+            {#each appState.daily.entities as e, i (e.title)}<a
+                href={e.url}
+                target="_blank"
+                rel="noopener"
+                class="decoration-(--color-accent)/50 decoration-1 underline underline-offset-[0.2em] hover:decoration-(--color-accent) hover:decoration-2"
+                >{e.title}</a
+              >{#if i < appState.daily.entities.length - 1}<span class="text-(--color-muted)/60"> · </span>{/if}{/each}
+          </p>
+        </div>
+      {/if}
+
       <button
         class="mt-10 rounded-full bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-95"
         onclick={keepGoing}
@@ -136,37 +160,36 @@
       </span>
     </header>
 
-    <section
-      class="grid min-h-0 flex-1 grid-rows-2 overflow-hidden select-none"
-      use:swipe={{ onLeft: () => rate(false), onRight: () => rate(true), enabled: () => revealed }}
-    >
+    <section class="grid min-h-0 flex-1 grid-rows-2 overflow-hidden">
       <div class="flex flex-col justify-end pb-6">
         <a
-          class="text-xs text-(--color-muted) underline-offset-4 hover:underline"
+          class="self-start text-xs text-(--color-muted) underline-offset-4 hover:underline"
           href={currentCard.source_url}
           target="_blank"
           rel="noopener"
         >
           {sourceLabel(currentCard.source)}, {currentCard.source_date}
         </a>
-        <p class="mt-3 font-serif text-2xl leading-snug">{currentCard.q}</p>
+        <p class="mt-3 font-serif text-2xl leading-snug">
+          <RichText text={currentCard.q} spans={currentCard.q_entities} linkable={revealed} />
+        </p>
       </div>
       <div class="border-t border-(--color-muted)/20 pt-6">
-        {#if revealed}
-          <p
-            in:fly={{ y: 8, duration: 200 }}
-            class="font-serif text-2xl leading-snug text-(--color-accent)"
-          >
-            {currentCard.a}
-          </p>
-        {/if}
+        <p
+          class="font-serif text-2xl leading-snug text-(--color-accent) transition duration-200"
+          class:opacity-0={!revealed}
+          class:translate-y-2={!revealed}
+          aria-hidden={!revealed}
+        >
+          <RichText text={currentCard.a} spans={currentCard.a_entities} />
+        </p>
       </div>
     </section>
 
     <footer class="mt-auto pt-8">
       {#if !revealed}
         <button
-          class="w-full rounded-2xl bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
+          class="w-full rounded-2xl border border-transparent bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
           onclick={() => (revealed = true)}
         >
           Show answer
@@ -180,7 +203,7 @@
             Don't know
           </button>
           <button
-            class="rounded-2xl bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
+            class="rounded-2xl border border-transparent bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
             onclick={() => rate(true)}
           >
             Know

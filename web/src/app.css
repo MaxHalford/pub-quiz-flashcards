@@ -42,3 +42,18 @@ a {
     --color-ink: #efe7d9;
   }
 }
+
+@layer utilities {
+  .pt-safe-6 {
+    padding-top: calc(1.5rem + env(safe-area-inset-top));
+  }
+  .pb-safe-6 {
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+  .pt-safe-10 {
+    padding-top: calc(2.5rem + env(safe-area-inset-top));
+  }
+  .pb-safe-10 {
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+  }
+}

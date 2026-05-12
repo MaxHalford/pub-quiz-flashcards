@@ -9,4 +9,6 @@ dependencies = [
     "requests>=2.33.1",
     "ruff>=0.12",
     "ty>=0.0.1a7",
+    "pyahocorasick>=2.1",
+    "wordfreq>=3.1",
 ]
