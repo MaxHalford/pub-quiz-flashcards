@@ -23,6 +23,8 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/source-serif-4": "^5.2.9",
     "ts-fsrs": "^4.6.0"
   }
 }

@@ -1,39 +1,194 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
+  import { loadCards, sourceLabel } from '$lib/cards';
+  import { loadState, saveState, ensureToday, todayKey } from '$lib/storage';
+  import { planSession, applyRating } from '$lib/scheduler';
+  import { streakDays } from '$lib/streak';
+  import { fly } from 'svelte/transition';
+  import Streak from '$lib/components/Streak.svelte';
+  import Heatmap from '$lib/components/Heatmap.svelte';
+  import { swipe } from '$lib/actions/swipe';
+  import type { Card, AppState } from '$lib/types';
 
-  let count = $state<number | null>(null);
-  let generatedAt = $state<string | null>(null);
+  let cardIndex = $state<Map<string, Card>>(new Map());
+  let appState = $state<AppState | null>(null);
+  let revealed = $state(false);
   let error = $state<string | null>(null);
+  let loading = $state(true);
+
+  const dailyGoalCap = $derived(
+    appState ? appState.settings.dailyGoal * (1 + appState.daily.extras) : 10
+  );
+  const currentCard = $derived(
+    appState && appState.daily.queue.length > 0
+      ? (cardIndex.get(appState.daily.queue[0]) ?? null)
+      : null
+  );
+  const sessionDone = $derived(
+    appState !== null && currentCard === null && cardIndex.size > 0
+  );
+  const streak = $derived(appState ? streakDays(appState.history) : 0);
 
   onMount(async () => {
     try {
-      const manifestRes = await fetch(`${base}/cards-manifest.json`, { cache: 'no-cache' });
-      if (!manifestRes.ok) throw new Error(`manifest ${manifestRes.status}`);
-      const manifest = await manifestRes.json();
-      generatedAt = manifest.generatedAt;
-      const cardsRes = await fetch(`${base}/cards.${manifest.hash}.json`);
-      if (!cardsRes.ok) throw new Error(`cards ${cardsRes.status}`);
-      const cards = await cardsRes.json();
-      count = cards.length;
+      const { cards } = await loadCards();
+      cardIndex = new Map(cards.map((c) => [c.id, c]));
+      const state = ensureToday(loadState());
+      state.daily.queue = state.daily.queue.filter((id) => cardIndex.has(id));
+      if (state.daily.queue.length === 0 && state.daily.reviewed < dailyGoalCapFor(state)) {
+        state.daily.queue = planSession(cards, state, capRemaining(state)).map((c) => c.id);
+      }
+      appState = state;
+      saveState(appState);
     } catch (e) {
       error = e instanceof Error ? e.message : String(e);
+    } finally {
+      loading = false;
     }
   });
+
+  function dailyGoalCapFor(s: AppState): number {
+    return s.settings.dailyGoal * (1 + s.daily.extras);
+  }
+
+  function capRemaining(s: AppState): number {
+    return Math.max(0, dailyGoalCapFor(s) - s.daily.reviewed);
+  }
+
+  function rate(knew: boolean) {
+    if (!appState || !currentCard) return;
+    const updated = applyRating(appState.cards[currentCard.id], knew);
+    appState.cards[currentCard.id] = updated;
+    appState.daily.reviewed += 1;
+    const today = todayKey();
+    appState.history[today] = (appState.history[today] ?? 0) + 1;
+    appState.daily.queue.shift();
+    revealed = false;
+    saveState(appState);
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      navigator.vibrate(8);
+    }
+  }
+
+  function keepGoing() {
+    if (!appState) return;
+    appState.daily.extras += 1;
+    revealed = false;
+    const cards = [...cardIndex.values()];
+    appState.daily.queue = planSession(cards, appState, capRemaining(appState)).map((c) => c.id);
+    saveState(appState);
+  }
 </script>
 
-<main class="mx-auto flex min-h-[100dvh] max-w-md flex-col items-center justify-center px-6 py-12 text-center">
-  <h1 class="font-serif text-4xl tracking-tight">Pub Quiz Flashcards</h1>
-  <p class="mt-4 text-sm text-(--color-muted)">
-    {#if error}
-      <span class="text-(--color-accent)">Failed to load: {error}</span>
-    {:else if count === null}
-      Loading…
-    {:else}
-      Loaded {count.toLocaleString()} cards.
-    {/if}
-  </p>
-  {#if generatedAt}
-    <p class="mt-1 text-xs text-(--color-muted)/70">Built {generatedAt}</p>
+<main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 py-6">
+  <nav class="flex items-center justify-between">
+    <Streak count={streak} />
+    <a
+      href="{base}/settings"
+      class="rounded-full p-2 text-(--color-muted) transition hover:text-(--color-ink)"
+      aria-label="Settings"
+    >
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
+      </svg>
+    </a>
+  </nav>
+
+  {#if loading}
+    <p class="m-auto text-sm text-(--color-muted)">Loading…</p>
+  {:else if error}
+    <p class="m-auto text-center text-sm text-(--color-accent)">Failed to load: {error}</p>
+  {:else if !appState}
+    <p class="m-auto text-sm text-(--color-muted)">No state.</p>
+  {:else if sessionDone}
+    <div class="m-auto w-full text-center">
+      <p class="font-serif text-4xl tracking-tight">That's all for today.</p>
+      <p class="mt-3 text-sm text-(--color-muted)">
+        {appState.daily.reviewed} answered. See you tomorrow.
+      </p>
+
+      <div class="mt-10 flex justify-center">
+        <Heatmap history={appState.history} />
+      </div>
+
+      <button
+        class="mt-10 rounded-full bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-95"
+        onclick={keepGoing}
+      >
+        Keep going (+{appState.settings.dailyGoal})
+      </button>
+    </div>
+  {:else if currentCard}
+    {@const progressInBatch = appState.daily.reviewed - appState.daily.extras * appState.settings.dailyGoal}
+    <header class="mt-4 flex items-center justify-between text-xs text-(--color-muted)">
+      <span>Question {appState.daily.reviewed + 1} of {dailyGoalCap}</span>
+      <span class="flex items-center gap-1.5">
+        {#each Array.from({ length: appState.settings.dailyGoal }) as _, i (i)}
+          <span
+            class="block h-2 w-2 rounded-full"
+            class:bg-current={i < progressInBatch}
+            class:opacity-25={i >= progressInBatch}
+            style:background-color={i < progressInBatch ? 'var(--color-ink)' : 'var(--color-muted)'}
+          ></span>
+        {/each}
+      </span>
+    </header>
+
+    <section
+      class="grid min-h-0 flex-1 grid-rows-2 overflow-hidden select-none"
+      use:swipe={{ onLeft: () => rate(false), onRight: () => rate(true), enabled: () => revealed }}
+    >
+      <div class="flex flex-col justify-end pb-6">
+        <a
+          class="text-xs text-(--color-muted) underline-offset-4 hover:underline"
+          href={currentCard.source_url}
+          target="_blank"
+          rel="noopener"
+        >
+          {sourceLabel(currentCard.source)}, {currentCard.source_date}
+        </a>
+        <p class="mt-3 font-serif text-2xl leading-snug">{currentCard.q}</p>
+      </div>
+      <div class="border-t border-(--color-muted)/20 pt-6">
+        {#if revealed}
+          <p
+            in:fly={{ y: 8, duration: 200 }}
+            class="font-serif text-2xl leading-snug text-(--color-accent)"
+          >
+            {currentCard.a}
+          </p>
+        {/if}
+      </div>
+    </section>
+
+    <footer class="mt-auto pt-8">
+      {#if !revealed}
+        <button
+          class="w-full rounded-2xl bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
+          onclick={() => (revealed = true)}
+        >
+          Show answer
+        </button>
+      {:else}
+        <div class="grid grid-cols-2 gap-3">
+          <button
+            class="rounded-2xl border border-(--color-muted)/30 px-6 py-4 text-base font-medium transition active:scale-[0.98]"
+            onclick={() => rate(false)}
+          >
+            Don't know
+          </button>
+          <button
+            class="rounded-2xl bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
+            onclick={() => rate(true)}
+          >
+            Know
+          </button>
+        </div>
+      {/if}
+    </footer>
+  {:else}
+    <p class="m-auto text-sm text-(--color-muted)">No cards available.</p>
   {/if}
 </main>
