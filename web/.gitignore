@@ -1,0 +1,8 @@
+node_modules
+.svelte-kit
+build
+.vite
+static/cards.*.json
+static/cards-manifest.json
+*.log
+.DS_Store
