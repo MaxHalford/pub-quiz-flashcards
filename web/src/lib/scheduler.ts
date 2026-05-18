@@ -49,13 +49,15 @@ export function planSession(
   allCards: Card[],
   state: AppState,
   size: number,
-  now: number = Date.now()
+  now: number = Date.now(),
+  exclude: ReadonlySet<string> = new Set()
 ): Card[] {
   if (size <= 0) return [];
 
   const due: { card: Card; due: number }[] = [];
   const unseen: Card[] = [];
   for (const c of allCards) {
+    if (exclude.has(c.id)) continue;
     const s = state.cards[c.id];
     if (!s) {
       unseen.push(c);

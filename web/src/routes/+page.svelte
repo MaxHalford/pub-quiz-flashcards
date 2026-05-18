@@ -36,7 +36,10 @@
       const state = ensureToday(loadState());
       state.daily.queue = state.daily.queue.filter((id) => cardIndex.has(id));
       if (state.daily.queue.length === 0 && state.daily.reviewed < dailyGoalCapFor(state)) {
-        state.daily.queue = planSession(cards, state, capRemaining(state)).map((c) => c.id);
+        const seen = new Set(state.daily.results.map((r) => r.id));
+        state.daily.queue = planSession(cards, state, capRemaining(state), Date.now(), seen).map(
+          (c) => c.id
+        );
       }
       appState = state;
       saveState(appState);
@@ -60,6 +63,7 @@
     const updated = applyRating(appState.cards[currentCard.id], knew);
     appState.cards[currentCard.id] = updated;
     appState.daily.reviewed += 1;
+    appState.daily.results.push({ id: currentCard.id, knew });
     const today = todayKey();
     appState.history[today] = (appState.history[today] ?? 0) + 1;
     const seenTitles = new Set(appState.daily.entities.map((e) => e.title));
@@ -85,7 +89,14 @@
     appState.daily.extras += 1;
     revealed = false;
     const cards = [...cardIndex.values()];
-    appState.daily.queue = planSession(cards, appState, capRemaining(appState)).map((c) => c.id);
+    const seen = new Set(appState.daily.results.map((r) => r.id));
+    appState.daily.queue = planSession(
+      cards,
+      appState,
+      capRemaining(appState),
+      Date.now(),
+      seen
+    ).map((c) => c.id);
     saveState(appState);
   }
 </script>
@@ -112,77 +123,89 @@
   {:else if !appState}
     <p class="m-auto text-sm text-(--color-muted)">No state.</p>
   {:else if sessionDone}
-    <div class="m-auto w-full text-center">
+    <div class="w-full pt-16 text-center">
       <p class="font-serif text-4xl tracking-tight">That's all for today.</p>
       <p class="mt-3 text-sm text-(--color-muted)">
         {appState.daily.reviewed} answered. See you tomorrow.
       </p>
 
-      <div class="mt-10 flex justify-center">
+      <div class="mt-12 flex justify-center">
         <Heatmap history={appState.history} />
       </div>
 
-      {#if appState.daily.entities.length > 0}
-        <div class="mt-10 text-left">
-          <p class="text-xs tracking-wider text-(--color-muted) uppercase">Mentioned today</p>
-          <p class="mt-3 text-sm leading-relaxed">
-            {#each appState.daily.entities as e, i (e.title)}<a
-                href={e.url}
-                target="_blank"
-                rel="noopener"
-                class="decoration-(--color-accent)/50 decoration-1 underline underline-offset-[0.2em] hover:decoration-(--color-accent) hover:decoration-2"
-                >{e.title}</a
-              >{#if i < appState.daily.entities.length - 1}<span class="text-(--color-muted)/60"> · </span>{/if}{/each}
-          </p>
-        </div>
-      {/if}
-
       <button
-        class="mt-10 rounded-full bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-95"
+        class="mt-12 rounded-full bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-95"
         onclick={keepGoing}
       >
         Keep going (+{appState.settings.dailyGoal})
       </button>
+
+      {#if appState.daily.entities.length > 0}
+        <div class="mt-12 text-left">
+          <p class="text-xs tracking-wider text-(--color-muted) uppercase">Mentioned today</p>
+          <ul class="mt-4 space-y-2 text-lg leading-snug">
+            {#each appState.daily.entities as e (e.title)}
+              <li>
+                <a
+                  href={e.url}
+                  target="_blank"
+                  rel="noopener"
+                  class="decoration-(--color-accent)/50 decoration-1 underline underline-offset-[0.2em] hover:decoration-(--color-accent) hover:decoration-2"
+                  >{e.title}</a
+                >
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/if}
     </div>
   {:else if currentCard}
-    {@const progressInBatch = appState.daily.reviewed - appState.daily.extras * appState.settings.dailyGoal}
+    {@const batchStart = appState.daily.extras * appState.settings.dailyGoal}
+    {@const batchResults = appState.daily.results.slice(batchStart)}
     <header class="mt-4 flex items-center justify-between text-xs text-(--color-muted)">
       <span>Question {appState.daily.reviewed + 1} of {dailyGoalCap}</span>
       <span class="flex items-center gap-1.5">
         {#each Array.from({ length: appState.settings.dailyGoal }) as _, i (i)}
+          {@const r = batchResults[i]}
           <span
-            class="block h-2 w-2 rounded-full"
-            class:bg-current={i < progressInBatch}
-            class:opacity-25={i >= progressInBatch}
-            style:background-color={i < progressInBatch ? 'var(--color-ink)' : 'var(--color-muted)'}
+            class="block h-2 w-2 rounded-full border border-(--color-muted)/40"
+            style:background-color={r === undefined
+              ? 'transparent'
+              : r.knew
+                ? 'var(--color-ink)'
+                : 'color-mix(in srgb, var(--color-muted) 30%, transparent)'}
+            style:border-color={r === undefined ? undefined : 'transparent'}
           ></span>
         {/each}
       </span>
     </header>
 
-    <section class="grid min-h-0 flex-1 grid-rows-2 overflow-hidden">
-      <div class="flex flex-col justify-end pb-6">
-        <a
-          class="self-start text-xs text-(--color-muted) underline-offset-4 hover:underline"
-          href={currentCard.source_url}
-          target="_blank"
-          rel="noopener"
-        >
-          {sourceLabel(currentCard.source)}, {currentCard.source_date}
-        </a>
-        <p class="mt-3 font-serif text-2xl leading-snug">
-          <RichText text={currentCard.q} spans={currentCard.q_entities} linkable={revealed} />
-        </p>
-      </div>
-      <div class="border-t border-(--color-muted)/20 pt-6">
-        <p
-          class="font-serif text-2xl leading-snug text-(--color-accent) transition duration-200"
-          class:opacity-0={!revealed}
-          class:translate-y-2={!revealed}
-          aria-hidden={!revealed}
-        >
-          <RichText text={currentCard.a} spans={currentCard.a_entities} />
-        </p>
+    <section class="flex min-h-0 flex-1 flex-col overflow-hidden pt-8">
+      <p class="pb-6 font-serif text-2xl leading-snug">
+        <RichText text={currentCard.q} spans={currentCard.q_entities} linkable={revealed} />
+      </p>
+      <div class="min-h-0 flex-1 overflow-hidden border-t border-(--color-muted)/20 pt-6">
+        {#key currentCard.id}
+          <div
+            class="transition duration-200"
+            class:opacity-0={!revealed}
+            class:translate-y-2={!revealed}
+            aria-hidden={!revealed}
+          >
+            <p class="font-serif text-2xl leading-snug text-(--color-accent)">
+              <RichText text={currentCard.a} spans={currentCard.a_entities} />
+            </p>
+            <a
+              class="mt-4 inline-block text-xs text-(--color-muted) underline-offset-4 hover:underline"
+              href={currentCard.source_url}
+              target="_blank"
+              rel="noopener"
+              tabindex={revealed ? 0 : -1}
+            >
+              {sourceLabel(currentCard.source)}, {currentCard.source_date}
+            </a>
+          </div>
+        {/key}
       </div>
     </section>
 

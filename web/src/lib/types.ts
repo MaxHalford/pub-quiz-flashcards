@@ -32,12 +32,15 @@ export type StoredCard = {
 
 export type SessionEntity = { title: string; url: string };
 
+export type DailyResult = { id: string; knew: boolean };
+
 export type DailyState = {
   date: string;
   reviewed: number;
   extras: number;
   queue: string[];
   entities: SessionEntity[];
+  results: DailyResult[];
 };
 
 export type AppState = {
