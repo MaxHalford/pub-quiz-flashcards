@@ -119,75 +119,78 @@
   <title>Host a quiz · Pub quiz</title>
 </svelte:head>
 
-<main class="min-h-[100dvh] px-8 py-8">
-  {#if !isDesktop}
-    <div class="mx-auto max-w-md pt-20 text-center">
-      <h1 class="font-serif text-3xl">Hosting needs a laptop</h1>
-      <p class="mt-4 text-sm text-(--color-muted)">
-        Quiz sessions are hosted on a larger screen. Open this page on a desktop
-        or laptop browser.
-      </p>
-      <a href="{base}/" class="mt-8 inline-block text-sm underline">← Back to flashcards</a>
-    </div>
-  {:else if loading}
-    <p class="mt-20 text-center text-sm text-(--color-muted)">Loading…</p>
-  {:else if loadErr}
-    <p class="mt-20 text-center text-sm text-(--color-accent)">Failed: {loadErr}</p>
-  {:else if !controller}
-    <div class="mx-auto max-w-2xl">
-      <header class="mb-10 flex items-center justify-between">
-        <a href="{base}/settings" class="text-sm text-(--color-muted) hover:text-(--color-ink)">← Settings</a>
-        <h1 class="font-serif text-2xl">Host a quiz</h1>
-        <span class="w-16"></span>
+<main class="min-h-[100dvh]">
+  {#if !isPlaying}
+    <div class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 pt-safe-10 pb-safe-10">
+      <header class="flex items-center justify-between">
+        <a class="text-sm text-(--color-muted) hover:text-(--color-ink)" href="{base}/settings">← Back</a>
+        <h1 class="font-serif text-lg">Host a quiz</h1>
+        <span class="w-12"></span>
       </header>
 
-      <section class="space-y-6">
-        <div>
-          <h2 class="font-serif text-lg">Question sources</h2>
-          <p class="mt-1 text-sm text-(--color-muted)">
-            Pick at least one. Questions run continuously until you end the
-            session.
+      {#if !isDesktop}
+        <section class="mt-10 text-center">
+          <h2 class="font-serif text-xl">Needs a laptop</h2>
+          <p class="mt-2 text-sm text-(--color-muted)">
+            Quiz sessions are hosted on a larger screen. Open this page on a
+            desktop or laptop browser.
           </p>
-          <div class="mt-4 space-y-2">
-            {#each sources as src (src)}
-              {@const count = cards.filter((c) => c.source === src).length}
-              <label class="flex items-center gap-3 rounded-xl border border-(--color-muted)/20 px-4 py-3 text-sm">
-                <input
-                  type="checkbox"
-                  bind:checked={selectedSources[src]}
-                  class="h-4 w-4 accent-(--color-ink)"
-                />
-                <span class="flex-1">{sourceLabel(src)}</span>
-                <span class="text-xs text-(--color-muted)">{count} cards</span>
-              </label>
-            {/each}
+        </section>
+      {:else if loading}
+        <p class="mt-20 text-center text-sm text-(--color-muted)">Loading…</p>
+      {:else if loadErr}
+        <p class="mt-20 text-center text-sm text-(--color-accent)">Failed: {loadErr}</p>
+      {:else if !controller}
+        <section class="mt-10 space-y-6">
+          <div>
+            <h2 class="font-serif text-xl">Question sources</h2>
+            <p class="mt-1 text-sm text-(--color-muted)">
+              Pick at least one. Questions run continuously until you end the
+              session.
+            </p>
+            <div class="mt-4 space-y-2">
+              {#each sources as src (src)}
+                {@const count = cards.filter((c) => c.source === src).length}
+                <label class="flex items-center gap-3 rounded-xl border border-(--color-muted)/20 px-4 py-3 text-sm">
+                  <input
+                    type="checkbox"
+                    bind:checked={selectedSources[src]}
+                    class="h-4 w-4 accent-(--color-ink)"
+                  />
+                  <span class="flex-1">{sourceLabel(src)}</span>
+                  <span class="text-xs text-(--color-muted)">{count} cards</span>
+                </label>
+              {/each}
+            </div>
           </div>
-        </div>
 
-        <button
-          class="w-full rounded-2xl bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98] disabled:opacity-40"
-          disabled={!canStartSession}
-          onclick={startSession}
-        >
-          {canStartSession ? 'Start session' : 'Need at least 4 cards'}
-        </button>
-      </section>
+          <button
+            class="w-full rounded-2xl bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-[0.98] disabled:opacity-40"
+            disabled={!canStartSession}
+            onclick={startSession}
+          >
+            {canStartSession ? 'Start session' : 'Need at least 4 cards'}
+          </button>
+        </section>
+      {:else if controller.error}
+        <section class="mt-10 text-center">
+          <h2 class="font-serif text-xl text-(--color-accent)">Session failed</h2>
+          <p class="mt-2 text-sm text-(--color-muted)">{controller.error}</p>
+          <button class="mt-6 text-sm underline" onclick={() => endSession()}>Back</button>
+        </section>
+      {:else if controller.mode === 'connecting'}
+        <p class="mt-20 text-center text-sm text-(--color-muted)">
+          Connecting to the broker…
+        </p>
+      {/if}
     </div>
-  {:else if controller.error}
-    <div class="mx-auto max-w-md pt-20 text-center">
-      <h1 class="font-serif text-3xl text-(--color-accent)">Session failed</h1>
-      <p class="mt-4 text-sm text-(--color-muted)">{controller.error}</p>
-      <button class="mt-8 text-sm underline" onclick={() => endSession()}>← Back</button>
-    </div>
-  {:else if controller.mode === 'connecting'}
-    <p class="mt-20 text-center text-sm text-(--color-muted)">
-      Connecting to the broker…
-    </p>
-  {:else if isPlaying && controller.currentQuestion}
+  {/if}
+
+  {#if isPlaying && controller?.currentQuestion}
     {@const q = controller.currentQuestion}
     {@const paused = controller.mode === 'paused'}
     {@const revealing = controller.mode === 'reveal'}
-    <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_320px]">
+    <div class="mx-auto grid max-w-7xl gap-10 px-8 py-8 lg:grid-cols-[1fr_320px]">
       <!-- Main game area -->
       <div class="flex min-h-[calc(100dvh-4rem)] flex-col">
         <header class="flex items-center justify-between text-sm text-(--color-muted)">
