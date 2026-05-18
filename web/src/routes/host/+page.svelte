@@ -96,7 +96,15 @@
     else controller.pause();
   }
 
-  function endSession() {
+  function endSession(opts: { confirm?: boolean } = {}) {
+    if (opts.confirm) {
+      const n = connectedPlayers.length;
+      const msg =
+        n > 0
+          ? `End the session and disconnect ${n} player${n === 1 ? '' : 's'}?`
+          : 'End the session?';
+      if (!window.confirm(msg)) return;
+    }
     controller?.destroy();
     controller = null;
     qrDataUrl = null;
@@ -169,7 +177,7 @@
     <div class="mx-auto max-w-md pt-20 text-center">
       <h1 class="font-serif text-3xl text-(--color-accent)">Session failed</h1>
       <p class="mt-4 text-sm text-(--color-muted)">{controller.error}</p>
-      <button class="mt-8 text-sm underline" onclick={endSession}>← Back</button>
+      <button class="mt-8 text-sm underline" onclick={() => endSession()}>← Back</button>
     </div>
   {:else if controller.mode === 'connecting'}
     <p class="mt-20 text-center text-sm text-(--color-muted)">
@@ -198,7 +206,7 @@
             </button>
             <button
               class="rounded-full border border-(--color-muted)/30 px-3 py-1 text-xs hover:bg-(--color-paper-dim)"
-              onclick={endSession}
+              onclick={() => endSession({ confirm: true })}
             >
               End
             </button>
