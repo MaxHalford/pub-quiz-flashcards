@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { exportBackup, importBackup } from '$lib/backup';
   import { loadState } from '$lib/storage';
@@ -8,10 +9,14 @@
 
   let cardCount = $state(0);
   let deviceId = $state('');
+  let canHost = $state(false);
   $effect(() => {
     const s = loadState();
     cardCount = Object.keys(s.cards).length;
     deviceId = s.deviceId;
+  });
+  onMount(() => {
+    canHost = window.matchMedia('(min-width: 768px) and (pointer: fine)').matches;
   });
 
   function onExport() {
@@ -45,6 +50,22 @@
   </header>
 
   <section class="mt-10 space-y-6">
+    {#if canHost}
+      <div>
+        <h2 class="font-serif text-xl">Quiz game</h2>
+        <p class="mt-1 text-sm text-(--color-muted)">
+          Host a multiplayer quiz. Players join from their phones by scanning a
+          QR code.
+        </p>
+        <a
+          href="{base}/host"
+          class="mt-4 block rounded-2xl bg-(--color-ink) px-6 py-3 text-center text-sm font-medium text-(--color-paper) transition active:scale-[0.98]"
+        >
+          Host a game
+        </a>
+      </div>
+    {/if}
+
     <div>
       <h2 class="font-serif text-xl">Backup</h2>
       <p class="mt-1 text-sm text-(--color-muted)">
