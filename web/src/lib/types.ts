@@ -32,7 +32,9 @@ export type StoredCard = {
 
 export type SessionEntity = { title: string; url: string };
 
-export type DailyResult = { id: string; knew: boolean };
+export type CardRating = 'knew' | 'unknown' | 'skipped';
+
+export type DailyResult = { id: string; rating: CardRating };
 
 export type DailyState = {
   date: string;
@@ -44,9 +46,10 @@ export type DailyState = {
 };
 
 export type AppState = {
-  version: 2;
+  version: 3;
   deviceId: string;
   cards: Record<string, StoredCard>;
+  suspended: Record<string, true>;
   daily: DailyState;
   history: Record<string, number>;
   settings: { dailyGoal: number };

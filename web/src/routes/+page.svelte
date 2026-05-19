@@ -8,7 +8,7 @@
   import Streak from '$lib/components/Streak.svelte';
   import Heatmap from '$lib/components/Heatmap.svelte';
   import RichText from '$lib/components/RichText.svelte';
-  import type { Card, AppState } from '$lib/types';
+  import type { Card, AppState, CardRating } from '$lib/types';
 
   let cardIndex = $state<Map<string, Card>>(new Map());
   let appState = $state<AppState | null>(null);
@@ -58,24 +58,30 @@
     return Math.max(0, dailyGoalCapFor(s) - s.daily.reviewed);
   }
 
-  function rate(knew: boolean) {
+  function rate(rating: CardRating) {
     if (!appState || !currentCard) return;
-    const updated = applyRating(appState.cards[currentCard.id], knew);
-    appState.cards[currentCard.id] = updated;
-    appState.daily.reviewed += 1;
-    appState.daily.results.push({ id: currentCard.id, knew });
-    const today = todayKey();
-    appState.history[today] = (appState.history[today] ?? 0) + 1;
-    const seenTitles = new Set(appState.daily.entities.map((e) => e.title));
-    for (const span of [
-      ...(currentCard.q_entities ?? []),
-      ...(currentCard.a_entities ?? [])
-    ]) {
-      if (!seenTitles.has(span.title)) {
-        seenTitles.add(span.title);
-        appState.daily.entities.push({ title: span.title, url: span.url });
+    if (rating === 'skipped') {
+      appState.suspended[currentCard.id] = true;
+    } else {
+      appState.cards[currentCard.id] = applyRating(
+        appState.cards[currentCard.id],
+        rating === 'knew'
+      );
+      const today = todayKey();
+      appState.history[today] = (appState.history[today] ?? 0) + 1;
+      const seenTitles = new Set(appState.daily.entities.map((e) => e.title));
+      for (const span of [
+        ...(currentCard.q_entities ?? []),
+        ...(currentCard.a_entities ?? [])
+      ]) {
+        if (!seenTitles.has(span.title)) {
+          seenTitles.add(span.title);
+          appState.daily.entities.push({ title: span.title, url: span.url });
+        }
       }
     }
+    appState.daily.reviewed += 1;
+    appState.daily.results.push({ id: currentCard.id, rating });
     appState.daily.queue.shift();
     revealed = false;
     saveState(appState);
@@ -169,12 +175,12 @@
           {@const r = batchResults[i]}
           <span
             class="block h-2 w-2 rounded-full border border-(--color-muted)/40"
-            style:background-color={r === undefined
+            style:background-color={r === undefined || r.rating === 'skipped'
               ? 'transparent'
-              : r.knew
+              : r.rating === 'knew'
                 ? 'var(--color-ink)'
                 : 'color-mix(in srgb, var(--color-muted) 30%, transparent)'}
-            style:border-color={r === undefined ? undefined : 'transparent'}
+            style:border-color={r === undefined || r.rating === 'skipped' ? undefined : 'transparent'}
           ></span>
         {/each}
       </span>
@@ -220,18 +226,25 @@
       {:else}
         <div class="grid grid-cols-2 gap-3">
           <button
-            class="rounded-2xl border border-(--color-muted)/30 px-6 py-4 text-base font-medium transition active:scale-[0.98]"
-            onclick={() => rate(false)}
+            class="rounded-2xl border border-transparent px-6 py-4 text-base font-medium transition active:scale-[0.98]"
+            style:background-color="color-mix(in srgb, var(--color-muted) 30%, transparent)"
+            onclick={() => rate('unknown')}
           >
             Don't know
           </button>
           <button
             class="rounded-2xl border border-transparent bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
-            onclick={() => rate(true)}
+            onclick={() => rate('knew')}
           >
             Know
           </button>
         </div>
+        <button
+          class="mt-3 w-full rounded-2xl border border-(--color-muted)/30 px-6 py-4 text-base font-medium transition active:scale-[0.98]"
+          onclick={() => rate('skipped')}
+        >
+          Don't want to know
+        </button>
       {/if}
     </footer>
   {:else}

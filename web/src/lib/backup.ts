@@ -33,10 +33,16 @@ export function importBackup(text: string): ImportResult {
   if (!candidate || typeof candidate !== 'object') {
     return { ok: false, reason: 'missing state object' };
   }
-  if (candidate.version !== 2) {
+  if (candidate.version !== 3) {
     return { ok: false, reason: `unsupported schema version ${candidate.version}` };
   }
-  if (!candidate.cards || !candidate.daily || !candidate.history || !candidate.settings) {
+  if (
+    !candidate.cards ||
+    !candidate.suspended ||
+    !candidate.daily ||
+    !candidate.history ||
+    !candidate.settings
+  ) {
     return { ok: false, reason: 'state is missing required fields' };
   }
   saveState(candidate);

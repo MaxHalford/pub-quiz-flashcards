@@ -1,7 +1,7 @@
 import type { AppState, DailyState } from './types';
 
-const KEY = 'quiz:state:v2';
-const SCHEMA = 2;
+const KEY = 'quiz:state:v3';
+const SCHEMA = 3;
 
 export function todayKey(now: Date = new Date()): string {
   const y = now.getFullYear();
@@ -19,6 +19,7 @@ function emptyState(): AppState {
     version: SCHEMA,
     deviceId: crypto.randomUUID(),
     cards: {},
+    suspended: {},
     daily: freshDaily(),
     history: {},
     settings: { dailyGoal: 10 }
@@ -32,6 +33,7 @@ export function loadState(): AppState {
     if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as AppState;
     if (parsed.version !== SCHEMA) return emptyState();
+    parsed.suspended ??= {};
     parsed.daily.entities ??= [];
     parsed.daily.results ??= [];
     return parsed;
