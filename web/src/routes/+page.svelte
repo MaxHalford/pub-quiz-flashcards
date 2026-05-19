@@ -61,7 +61,7 @@
   function rate(rating: CardRating) {
     if (!appState || !currentCard) return;
     if (rating === 'skipped') {
-      appState.suspended[currentCard.id] = true;
+      appState.tombstoned[currentCard.id] = true;
     } else {
       appState.cards[currentCard.id] = applyRating(
         appState.cards[currentCard.id],

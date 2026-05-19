@@ -49,7 +49,7 @@ export type AppState = {
   version: 3;
   deviceId: string;
   cards: Record<string, StoredCard>;
-  suspended: Record<string, true>;
+  tombstoned: Record<string, true>;
   daily: DailyState;
   history: Record<string, number>;
   settings: { dailyGoal: number };

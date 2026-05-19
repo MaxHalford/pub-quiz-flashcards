@@ -38,7 +38,7 @@ export function importBackup(text: string): ImportResult {
   }
   if (
     !candidate.cards ||
-    !candidate.suspended ||
+    !candidate.tombstoned ||
     !candidate.daily ||
     !candidate.history ||
     !candidate.settings

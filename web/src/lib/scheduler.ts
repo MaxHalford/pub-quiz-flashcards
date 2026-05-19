@@ -58,7 +58,7 @@ export function planSession(
   const unseen: Card[] = [];
   for (const c of allCards) {
     if (exclude.has(c.id)) continue;
-    if (state.suspended[c.id]) continue;
+    if (state.tombstoned[c.id]) continue;
     const s = state.cards[c.id];
     if (!s) {
       unseen.push(c);

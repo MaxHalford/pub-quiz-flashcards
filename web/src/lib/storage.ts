@@ -19,7 +19,7 @@ function emptyState(): AppState {
     version: SCHEMA,
     deviceId: crypto.randomUUID(),
     cards: {},
-    suspended: {},
+    tombstoned: {},
     daily: freshDaily(),
     history: {},
     settings: { dailyGoal: 10 }
@@ -33,7 +33,7 @@ export function loadState(): AppState {
     if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as AppState;
     if (parsed.version !== SCHEMA) return emptyState();
-    parsed.suspended ??= {};
+    parsed.tombstoned ??= {};
     parsed.daily.entities ??= [];
     parsed.daily.results ??= [];
     return parsed;
