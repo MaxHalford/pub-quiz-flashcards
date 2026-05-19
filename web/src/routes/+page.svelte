@@ -36,10 +36,7 @@
       const state = ensureToday(loadState());
       state.daily.queue = state.daily.queue.filter((id) => cardIndex.has(id));
       if (state.daily.queue.length === 0 && state.daily.reviewed < dailyGoalCapFor(state)) {
-        const seen = new Set(state.daily.results.map((r) => r.id));
-        state.daily.queue = planSession(cards, state, capRemaining(state), Date.now(), seen).map(
-          (c) => c.id
-        );
+        state.daily.queue = replan(state);
       }
       appState = state;
       saveState(appState);
@@ -58,30 +55,34 @@
     return Math.max(0, dailyGoalCapFor(s) - s.daily.reviewed);
   }
 
+  function replan(s: AppState): string[] {
+    const cards = [...cardIndex.values()];
+    const seen = new Set(s.daily.results.map((r) => r.id));
+    return planSession(cards, s, capRemaining(s), Date.now(), seen).map((c) => c.id);
+  }
+
   function rate(rating: CardRating) {
     if (!appState || !currentCard) return;
+    const card = currentCard;
+    // Guard against a session that crosses local midnight: bind all subsequent
+    // mutations to the current day, not the day this session started on.
+    ensureToday(appState);
     if (rating === 'skipped') {
-      appState.tombstoned[currentCard.id] = true;
+      appState.tombstoned[card.id] = true;
     } else {
-      appState.cards[currentCard.id] = applyRating(
-        appState.cards[currentCard.id],
-        rating === 'knew'
-      );
-      const today = todayKey();
-      appState.history[today] = (appState.history[today] ?? 0) + 1;
+      appState.cards[card.id] = applyRating(appState.cards[card.id], rating === 'knew');
       const seenTitles = new Set(appState.daily.entities.map((e) => e.title));
-      for (const span of [
-        ...(currentCard.q_entities ?? []),
-        ...(currentCard.a_entities ?? [])
-      ]) {
+      for (const span of [...(card.q_entities ?? []), ...(card.a_entities ?? [])]) {
         if (!seenTitles.has(span.title)) {
           seenTitles.add(span.title);
           appState.daily.entities.push({ title: span.title, url: span.url });
         }
       }
     }
+    const today = todayKey();
+    appState.history[today] = (appState.history[today] ?? 0) + 1;
     appState.daily.reviewed += 1;
-    appState.daily.results.push({ id: currentCard.id, rating });
+    appState.daily.results.push({ id: card.id, rating });
     appState.daily.queue.shift();
     revealed = false;
     saveState(appState);
@@ -92,17 +93,10 @@
 
   function keepGoing() {
     if (!appState) return;
+    ensureToday(appState);
     appState.daily.extras += 1;
     revealed = false;
-    const cards = [...cardIndex.values()];
-    const seen = new Set(appState.daily.results.map((r) => r.id));
-    appState.daily.queue = planSession(
-      cards,
-      appState,
-      capRemaining(appState),
-      Date.now(),
-      seen
-    ).map((c) => c.id);
+    appState.daily.queue = replan(appState);
     saveState(appState);
   }
 </script>

@@ -34,6 +34,7 @@ export function loadState(): AppState {
     const parsed = JSON.parse(raw) as AppState;
     if (parsed.version !== SCHEMA) return emptyState();
     parsed.tombstoned ??= {};
+    parsed.daily ??= freshDaily();
     parsed.daily.entities ??= [];
     parsed.daily.results ??= [];
     return parsed;

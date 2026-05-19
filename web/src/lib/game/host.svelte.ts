@@ -39,7 +39,7 @@ export class HostController {
   private cards: Card[];
   private pool: GameQuestion[] = [];
   private poolCursor = 0;
-  private correctOrder: string[] = [];
+  private correctOrder: Player[] = [];
   private timer: ReturnType<typeof setTimeout> | null = null;
   private pausedRemainingMs = 0;
   private modeBeforePause: 'question' | 'reveal' = 'question';
@@ -63,7 +63,7 @@ export class HostController {
   private handleIncoming(conn: DataConnection) {
     let player: Player | null = null;
     conn.on('open', () => {
-      this.sendTo(conn, { type: 'hello', version: PROTOCOL_VERSION, yourId: conn.peer });
+      this.sendTo(conn, { type: 'hello', version: PROTOCOL_VERSION });
     });
     conn.on('data', (raw) => {
       const msg = raw as PlayerToHost;
@@ -74,24 +74,34 @@ export class HostController {
           setTimeout(() => conn.close(), 200);
           return;
         }
-        const taken = this.players.some(
-          (p) => p.connected && p.username.toLowerCase() === username.toLowerCase()
+        const existing = this.players.find(
+          (p) => p.username.toLowerCase() === username.toLowerCase()
         );
-        if (taken) {
+        if (existing?.connected) {
           this.sendTo(conn, { type: 'join-rejected', reason: 'Name taken' });
           setTimeout(() => conn.close(), 200);
           return;
         }
-        player = {
-          id: conn.peer,
-          username,
-          conn,
-          connected: true,
-          score: 0,
-          lastChoiceIndex: null,
-          pointsThisQuestion: 0
-        };
-        this.players = [...this.players, player];
+        if (existing) {
+          // Rejoin: keep score, id, and per-question state. Swap in the new
+          // connection; the old conn's close handler is guarded by
+          // `player.conn === conn` so it won't clobber connected=true.
+          existing.conn = conn;
+          existing.connected = true;
+          player = existing;
+          this.players = [...this.players];
+        } else {
+          player = {
+            id: conn.peer,
+            username,
+            conn,
+            connected: true,
+            score: 0,
+            lastChoiceIndex: null,
+            pointsThisQuestion: 0
+          };
+          this.players = [...this.players, player];
+        }
         this.broadcastRoster();
         this.sendSnapshot(conn);
       } else if (msg.type === 'answer') {
@@ -100,7 +110,7 @@ export class HostController {
         if (player.lastChoiceIndex !== null) return;
         player.lastChoiceIndex = msg.choiceIndex;
         if (msg.choiceIndex === this.currentQuestion.correctIndex) {
-          this.correctOrder.push(player.id);
+          this.correctOrder.push(player);
         }
         this.players = [...this.players];
         const allAnswered = this.players.every(
@@ -110,7 +120,7 @@ export class HostController {
       }
     });
     conn.on('close', () => {
-      if (player) {
+      if (player && player.conn === conn) {
         player.connected = false;
         this.players = [...this.players];
         this.broadcastRoster();
@@ -197,7 +207,10 @@ export class HostController {
 
   private nextQuestion() {
     if (this.poolCursor >= this.pool.length) this.refillPool();
-    if (this.pool.length === 0) return; // no cards
+    if (this.pool.length === 0) {
+      this.error = 'No cards available';
+      return;
+    }
     const q = this.pool[this.poolCursor++];
     this.questionIndex += 1;
     this.currentQuestion = q;
@@ -228,9 +241,7 @@ export class HostController {
     }
     if (this.mode !== 'question' || !this.currentQuestion) return;
     for (let i = 0; i < this.correctOrder.length; i++) {
-      const pid = this.correctOrder[i];
-      const p = this.players.find((p) => p.id === pid);
-      if (!p) continue;
+      const p = this.correctOrder[i];
       const pts = pointsForRank(i + 1);
       p.pointsThisQuestion = pts;
       p.score += pts;

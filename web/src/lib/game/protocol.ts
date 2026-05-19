@@ -26,7 +26,7 @@ export type ScoreEntry = {
 };
 
 export type HostToPlayer =
-  | { type: 'hello'; version: number; yourId: string }
+  | { type: 'hello'; version: number }
   | { type: 'roster'; players: PlayerInfo[] }
   | { type: 'join-rejected'; reason: string }
   | { type: 'question'; payload: QuestionPayload }
