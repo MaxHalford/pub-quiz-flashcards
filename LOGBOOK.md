@@ -1,5 +1,133 @@
 # Logbook
 
+## 2026-05-04 — à Collégien | 1 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 7
+- Duration: 1m18s
+- Cost: $0.1918
+- Turns: 8
+- Tokens: 308115 input / 2549 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-05 — à Collégien | 2 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 8
+- Duration: 0m46s
+- Cost: $0.2694
+- Turns: 7
+- Tokens: 361972 input / 2810 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-06 — à Collégien | spécial jeunes -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 7
+- Duration: 0m51s
+- Cost: $0.2149
+- Turns: 9
+- Tokens: 366912 input / 2683 output
+- Hiccups: 2 tool error(s)
+
+## 2026-05-07 — à Collégien | 4 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 9
+- Duration: 0m56s
+- Cost: $0.1867
+- Turns: 7
+- Tokens: 266845 input / 3530 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-08 — à Collégien | 5 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 8
+- Duration: 0m46s
+- Cost: $0.1882
+- Turns: 8
+- Tokens: 307699 input / 2813 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-11 — à Serquigny | 1 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 9
+- Duration: 0m53s
+- Cost: $0.2020
+- Turns: 8
+- Tokens: 312473 input / 3400 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-12 — à Serquigny | 2 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 6
+- Duration: 0m57s
+- Cost: $0.2685
+- Turns: 8
+- Tokens: 407800 input / 2570 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-13 — à Serquigny | spécial jeunes -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 8
+- Duration: 0m39s
+- Cost: $0.2492
+- Turns: 7
+- Tokens: 346111 input / 2343 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-14 — à Serquigny | 4 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 7
+- Duration: 0m52s
+- Cost: $0.4163
+- Turns: 7
+- Tokens: 341117 input / 3175 output
+- Hiccups: 1 tool error(s)
+
+## 2026-05-20 11:34Z -- `le_jeu_des_1000_euros`
+
+- Model: <synthetic>
+- Questions added: 0
+- Duration: 0m00s
+- Cost: $0.0000
+- Turns: 1
+- Tokens: 0 input / 0 output
+- Hiccups: session ended with error
+
+## 2026-05-15 — à Serquigny | 5 -- `le_jeu_des_1000_euros`
+
+- Model: claude-sonnet-4-6
+- Questions added: 8
+- Duration: 0m56s
+- Cost: $0.1961
+- Turns: 8
+- Tokens: 147747 input / 3199 output
+
+## 2026-05-18 — à Méré | 1 -- `le_jeu_des_1000_euros`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 9
+- Duration: 2m13s
+- Cost: $0.1655
+- Turns: 10
+- Tokens: 285137 input / 16813 output
+- Hiccups: 2 tool error(s)
+
+## 2026-05-19 — à Méré | 2 -- `le_jeu_des_1000_euros`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 9
+- Duration: 0m47s
+- Cost: $0.0876
+- Turns: 12
+- Tokens: 147602 input / 5231 output
+
 ## 2026-05-16 -- `the_guardian_weekly`
 
 - Cost: $0.0344

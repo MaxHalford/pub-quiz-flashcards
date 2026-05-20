@@ -9,8 +9,6 @@ const SCRAPE_DIR = join(__dirname, '..', 'scrape');
 const STATIC_DIR = join(__dirname, 'static');
 const ANNOTATIONS_FILE = join(SCRAPE_DIR, 'wikipedia_annotations.json');
 
-type Pair = { question: string; answer: string };
-type Entry = { pairs: Pair[]; source_date: string; source_url: string };
 type EntitySpan = { start: number; end: number; title: string; url: string };
 type Annotation = { q_entities?: EntitySpan[]; a_entities?: EntitySpan[] };
 type Card = {
@@ -20,6 +18,7 @@ type Card = {
   source: string;
   source_date: string;
   source_url: string;
+  tier?: string;
   q_entities?: EntitySpan[];
   a_entities?: EntitySpan[];
 };
@@ -38,47 +37,122 @@ async function loadAnnotations(): Promise<Record<string, Annotation>> {
   return JSON.parse(raw) as Record<string, Annotation>;
 }
 
-async function loadSource(name: string, annotations: Record<string, Annotation>): Promise<Card[]> {
-  const path = join(SCRAPE_DIR, name, 'questions.json');
-  if (!existsSync(path)) return [];
+function buildCard(args: {
+  source: string;
+  source_url: string;
+  source_date: string;
+  question: string;
+  answer: string;
+  tier?: string | null;
+  annotations: Record<string, Annotation>;
+}): Card {
+  const id = shortId(args.source_url, args.question);
+  const ann = args.annotations[id];
+  const card: Card = {
+    id,
+    q: args.question,
+    a: args.answer,
+    source: args.source,
+    source_date: args.source_date,
+    source_url: args.source_url
+  };
+  if (args.tier) card.tier = args.tier;
+  if (ann?.q_entities?.length) card.q_entities = ann.q_entities;
+  if (ann?.a_entities?.length) card.a_entities = ann.a_entities;
+  return card;
+}
+
+async function readEntries<T>(source: string): Promise<T[] | null> {
+  const path = join(SCRAPE_DIR, source, 'questions.json');
+  if (!existsSync(path)) return null;
   const raw = await readFile(path, 'utf8');
-  const entries: Entry[] = JSON.parse(raw);
+  return JSON.parse(raw) as T[];
+}
+
+// --- per-source loaders ----------------------------------------------------
+
+type GuardianEntry = {
+  source_date: string;
+  source_url: string;
+  pairs: Array<{ question: string; answer: string }>;
+};
+
+async function loadGuardian(annotations: Record<string, Annotation>): Promise<Card[]> {
+  const entries = await readEntries<GuardianEntry>('the_guardian_weekly');
+  if (!entries) return [];
   const cards: Card[] = [];
-  const seen = new Set<string>();
   for (const entry of entries) {
     for (const pair of entry.pairs) {
-      const id = shortId(entry.source_url, pair.question);
-      if (seen.has(id)) continue;
-      seen.add(id);
-      const ann = annotations[id];
-      const card: Card = {
-        id,
-        q: pair.question,
-        a: pair.answer,
-        source: name,
-        source_date: entry.source_date,
-        source_url: entry.source_url
-      };
-      if (ann?.q_entities?.length) card.q_entities = ann.q_entities;
-      if (ann?.a_entities?.length) card.a_entities = ann.a_entities;
-      cards.push(card);
+      cards.push(
+        buildCard({
+          source: 'the_guardian_weekly',
+          source_url: entry.source_url,
+          source_date: entry.source_date,
+          question: pair.question,
+          answer: pair.answer,
+          annotations
+        })
+      );
     }
   }
   return cards;
 }
 
+type Jeu1000EurosEntry = {
+  id: string;
+  date: string;
+  title: string;
+  url: string;
+  pairs: Array<{ question: string; answer: string | null; tier: string | null }>;
+};
+
+async function loadJeu1000Euros(annotations: Record<string, Annotation>): Promise<Card[]> {
+  const entries = await readEntries<Jeu1000EurosEntry>('le_jeu_des_1000_euros');
+  if (!entries) return [];
+  const cards: Card[] = [];
+  for (const entry of entries) {
+    for (const pair of entry.pairs) {
+      // Skip pairs whose answer was never stated in the transcript — they
+      // exist in the JSON for human review, not for the flashcard front-end.
+      if (pair.answer == null) continue;
+      cards.push(
+        buildCard({
+          source: 'le_jeu_des_1000_euros',
+          source_url: entry.url,
+          source_date: entry.date,
+          question: pair.question,
+          answer: pair.answer,
+          tier: pair.tier,
+          annotations
+        })
+      );
+    }
+  }
+  return cards;
+}
+
+const LOADERS: Record<string, (annotations: Record<string, Annotation>) => Promise<Card[]>> = {
+  the_guardian_weekly: loadGuardian,
+  le_jeu_des_1000_euros: loadJeu1000Euros
+};
+
+// --- main ------------------------------------------------------------------
+
 async function main() {
   const annotations = await loadAnnotations();
   const annotatedCount = Object.keys(annotations).length;
 
-  const sourceDirs = (await readdir(SCRAPE_DIR, { withFileTypes: true }))
+  // Warn about scrape dirs without a loader so a new source isn't silently dropped.
+  const onDisk = (await readdir(SCRAPE_DIR, { withFileTypes: true }))
     .filter((d) => d.isDirectory() && !d.name.startsWith('.') && !d.name.startsWith('_'))
-    .map((d) => d.name)
-    .sort();
+    .map((d) => d.name);
+  for (const name of onDisk) {
+    if (!(name in LOADERS)) console.warn(`  ${name}: no loader registered, skipping`);
+  }
 
   const all: Card[] = [];
-  for (const name of sourceDirs) {
-    const cards = await loadSource(name, annotations);
+  for (const [name, loader] of Object.entries(LOADERS)) {
+    const cards = await loader(annotations);
     all.push(...cards);
     console.log(`  ${name}: ${cards.length} cards`);
   }

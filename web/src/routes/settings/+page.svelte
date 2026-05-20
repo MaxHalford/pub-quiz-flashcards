@@ -1,44 +1,41 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
-  import { exportBackup, importBackup } from '$lib/backup';
-  import { loadState } from '$lib/storage';
-
-  let message = $state<{ kind: 'ok' | 'err'; text: string } | null>(null);
-  let fileInput: HTMLInputElement;
+  import { loadState, saveState } from '$lib/storage';
+  import { loadCards, sourceLabel } from '$lib/cards';
+  import SourceRow from '$lib/components/SourceRow.svelte';
 
   let cardCount = $state(0);
   let deviceId = $state('');
-  let canHost = $state(false);
+  let sourceCounts = $state<Array<{ source: string; count: number }>>([]);
+  let disabledSources = $state<Record<string, true>>({});
+
   $effect(() => {
     const s = loadState();
     cardCount = Object.keys(s.cards).length;
     deviceId = s.deviceId;
+    disabledSources = { ...(s.settings.disabledSources ?? {}) };
   });
-  onMount(() => {
-    canHost = window.matchMedia('(min-width: 768px) and (pointer: fine)').matches;
+  onMount(async () => {
+    const { cards } = await loadCards();
+    const counts = new Map<string, number>();
+    for (const c of cards) counts.set(c.source, (counts.get(c.source) ?? 0) + 1);
+    sourceCounts = [...counts.entries()]
+      .map(([source, count]) => ({ source, count }))
+      .sort((a, b) => sourceLabel(a.source).localeCompare(sourceLabel(b.source)));
   });
 
-  function onExport() {
-    try {
-      exportBackup();
-      message = { kind: 'ok', text: 'Backup downloaded.' };
-    } catch (e) {
-      message = { kind: 'err', text: e instanceof Error ? e.message : String(e) };
-    }
-  }
-
-  async function onImportFile(e: Event) {
-    const file = (e.target as HTMLInputElement).files?.[0];
-    if (!file) return;
-    const text = await file.text();
-    const result = importBackup(text);
-    if (result.ok) {
-      message = { kind: 'ok', text: 'Backup imported. Reloading…' };
-      setTimeout(() => location.reload(), 600);
-    } else {
-      message = { kind: 'err', text: `Import failed: ${result.reason}` };
-    }
+  function toggleSource(source: string, enabled: boolean) {
+    if (sourceCounts.length === 0) return;
+    const next = { ...disabledSources };
+    if (enabled) delete next[source];
+    else next[source] = true;
+    if (Object.keys(next).length >= sourceCounts.length) return;
+    disabledSources = next;
+    const s = loadState();
+    s.settings.disabledSources = next;
+    s.daily.queue = [];
+    saveState(s);
   }
 </script>
 
@@ -50,54 +47,27 @@
   </header>
 
   <section class="mt-10 space-y-6">
-    {#if canHost}
+    {#if sourceCounts.length > 0}
       <div>
-        <h2 class="font-serif text-xl">Quiz game</h2>
+        <h2 class="font-serif text-xl">Sources</h2>
         <p class="mt-1 text-sm text-(--color-muted)">
-          Host a multiplayer quiz. Players join from their phones by scanning a
-          QR code.
+          Choose which sources to draw flashcards from. Changes apply on your next session.
         </p>
-        <a
-          href="{base}/host"
-          class="mt-4 block rounded-2xl bg-(--color-ink) px-6 py-3 text-center text-sm font-medium text-(--color-paper) transition active:scale-[0.98]"
-        >
-          Host a game
-        </a>
+        <div class="mt-4 space-y-2">
+          {#each sourceCounts as { source, count } (source)}
+            {@const enabled = !disabledSources[source]}
+            {@const locked = enabled && sourceCounts.length - Object.keys(disabledSources).length === 1}
+            <SourceRow
+              {source}
+              {count}
+              checked={enabled}
+              disabled={locked}
+              onchange={(c) => toggleSource(source, c)}
+            />
+          {/each}
+        </div>
       </div>
     {/if}
-
-    <div>
-      <h2 class="font-serif text-xl">Backup</h2>
-      <p class="mt-1 text-sm text-(--color-muted)">
-        Your progress is saved only in this browser. Export occasionally and keep the file somewhere safe.
-      </p>
-      <div class="mt-4 flex flex-col gap-2">
-        <button
-          class="rounded-2xl bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-[0.98]"
-          onclick={onExport}
-        >
-          Export backup
-        </button>
-        <button
-          class="rounded-2xl border border-(--color-muted)/30 px-6 py-3 text-sm font-medium transition active:scale-[0.98]"
-          onclick={() => fileInput.click()}
-        >
-          Import backup
-        </button>
-        <input
-          bind:this={fileInput}
-          type="file"
-          accept="application/json,.json"
-          class="hidden"
-          onchange={onImportFile}
-        />
-      </div>
-      {#if message}
-        <p class="mt-3 text-sm" class:text-green-700={message.kind === 'ok'} class:text-(--color-accent)={message.kind === 'err'}>
-          {message.text}
-        </p>
-      {/if}
-    </div>
 
     <div class="border-t border-(--color-muted)/20 pt-6 text-xs text-(--color-muted)">
       <p>Cards reviewed: {cardCount}</p>

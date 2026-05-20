@@ -1,7 +1,7 @@
 [project]
-name = "the-guardian-quiz-anki"
+name = "pub-quiz-flashcards"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pub quiz flashcards"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
@@ -11,4 +11,5 @@ dependencies = [
     "ty>=0.0.1a7",
     "pyahocorasick>=2.1",
     "wordfreq>=3.1",
+    "mlx-whisper>=0.4",
 ]

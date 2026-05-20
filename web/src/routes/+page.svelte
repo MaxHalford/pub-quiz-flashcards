@@ -8,6 +8,7 @@
   import Streak from '$lib/components/Streak.svelte';
   import Heatmap from '$lib/components/Heatmap.svelte';
   import RichText from '$lib/components/RichText.svelte';
+  import Tooltip from '$lib/components/Tooltip.svelte';
   import type { Card, AppState, CardRating } from '$lib/types';
 
   let cardIndex = $state<Map<string, Card>>(new Map());
@@ -15,6 +16,7 @@
   let revealed = $state(false);
   let error = $state<string | null>(null);
   let loading = $state(true);
+  let canHost = $state(false);
 
   const dailyGoalCap = $derived(
     appState ? appState.settings.dailyGoal * (1 + appState.daily.extras) : 10
@@ -30,6 +32,7 @@
   const streak = $derived(appState ? streakDays(appState.history) : 0);
 
   onMount(async () => {
+    canHost = window.matchMedia('(min-width: 768px) and (pointer: fine)').matches;
     try {
       const { cards } = await loadCards();
       cardIndex = new Map(cards.map((c) => [c.id, c]));
@@ -64,9 +67,6 @@
   function rate(rating: CardRating) {
     if (!appState || !currentCard) return;
     const card = currentCard;
-    // Guard against a session that crosses local midnight: bind all subsequent
-    // mutations to the current day, not the day this session started on.
-    ensureToday(appState);
     if (rating === 'skipped') {
       appState.tombstoned[card.id] = true;
     } else {
@@ -93,7 +93,6 @@
 
   function keepGoing() {
     if (!appState) return;
-    ensureToday(appState);
     appState.daily.extras += 1;
     revealed = false;
     appState.daily.queue = replan(appState);
@@ -104,16 +103,35 @@
 <main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 pt-safe-6 pb-safe-6">
   <nav class="flex items-center justify-between">
     <Streak count={streak} />
-    <a
-      href="{base}/settings"
-      class="rounded-full p-2 text-(--color-muted) transition hover:text-(--color-ink)"
-      aria-label="Settings"
-    >
-      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
-      </svg>
-    </a>
+    <div class="flex items-center gap-1">
+      {#if canHost}
+        <a
+          href="{base}/host"
+          class="group relative rounded-full p-2 text-(--color-muted) transition hover:text-(--color-ink)"
+          aria-label="Host a quiz"
+        >
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="6" y1="11" x2="10" y2="11" />
+            <line x1="8" y1="9" x2="8" y2="13" />
+            <line x1="15" y1="12" x2="15.01" y2="12" />
+            <line x1="18" y1="10" x2="18.01" y2="10" />
+            <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258A4 4 0 0 0 17.32 5z" />
+          </svg>
+          <Tooltip text="Host a quiz" placement="bottom-center" />
+        </a>
+      {/if}
+      <a
+        href="{base}/settings"
+        class="group relative rounded-full p-2 text-(--color-muted) transition hover:text-(--color-ink)"
+        aria-label="Settings"
+      >
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
+        </svg>
+        <Tooltip text="Settings" placement="bottom-end" />
+      </a>
+    </div>
   </nav>
 
   {#if loading}
@@ -220,24 +238,27 @@
       {:else}
         <div class="grid grid-cols-2 gap-3">
           <button
-            class="rounded-2xl border border-transparent px-6 py-4 text-base font-medium transition active:scale-[0.98]"
+            class="group relative rounded-2xl border border-transparent px-6 py-4 text-base font-medium transition active:scale-[0.98]"
             style:background-color="color-mix(in srgb, var(--color-muted) 30%, transparent)"
             onclick={() => rate('unknown')}
           >
             Don't know
+            <Tooltip text="See this card again soon" placement="top-center" />
           </button>
           <button
-            class="rounded-2xl border border-transparent bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
+            class="group relative rounded-2xl border border-transparent bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
             onclick={() => rate('knew')}
           >
             Know
+            <Tooltip text="Push the next review further out" placement="top-center" />
           </button>
         </div>
         <button
-          class="mt-3 w-full rounded-2xl border border-(--color-muted)/30 px-6 py-4 text-base font-medium transition active:scale-[0.98]"
+          class="group relative mt-3 w-full rounded-2xl border border-(--color-muted)/30 px-6 py-4 text-base font-medium transition active:scale-[0.98]"
           onclick={() => rate('skipped')}
         >
           Don't want to know
+          <Tooltip text="Hide this card permanently" placement="top-center" />
         </button>
       {/if}
     </footer>

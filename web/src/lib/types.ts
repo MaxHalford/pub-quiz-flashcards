@@ -14,6 +14,7 @@ export type Card = {
   source: string;
   source_date: string;
   source_url: string;
+  tier?: string;
   q_entities?: EntitySpan[];
   a_entities?: EntitySpan[];
 };
@@ -52,5 +53,5 @@ export type AppState = {
   tombstoned: Record<string, true>;
   daily: DailyState;
   history: Record<string, number>;
-  settings: { dailyGoal: number };
+  settings: { dailyGoal: number; disabledSources?: Record<string, true> };
 };

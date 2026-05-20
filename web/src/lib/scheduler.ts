@@ -54,11 +54,13 @@ export function planSession(
 ): Card[] {
   if (size <= 0) return [];
 
+  const disabledSources = state.settings.disabledSources ?? {};
   const due: { card: Card; due: number }[] = [];
   const unseen: Card[] = [];
   for (const c of allCards) {
     if (exclude.has(c.id)) continue;
     if (state.tombstoned[c.id]) continue;
+    if (disabledSources[c.source]) continue;
     const s = state.cards[c.id];
     if (!s) {
       unseen.push(c);

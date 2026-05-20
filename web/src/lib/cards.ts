@@ -14,9 +14,19 @@ export async function loadCards(): Promise<{ cards: Card[]; manifest: Manifest }
 }
 
 const SOURCE_LABELS: Record<string, string> = {
-  the_guardian_weekly: 'The Guardian'
+  the_guardian_weekly: 'The Guardian',
+  le_jeu_des_1000_euros: 'Le jeu des 1000 euros'
+};
+
+const SOURCE_FLAGS: Record<string, string> = {
+  the_guardian_weekly: '🇬🇧',
+  le_jeu_des_1000_euros: '🇫🇷'
 };
 
 export function sourceLabel(source: string): string {
   return SOURCE_LABELS[source] ?? source;
+}
+
+export function sourceFlag(source: string): string {
+  return SOURCE_FLAGS[source] ?? '';
 }

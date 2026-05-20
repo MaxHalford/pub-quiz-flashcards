@@ -2,8 +2,9 @@
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
   import QRCode from 'qrcode';
-  import { loadCards, sourceLabel } from '$lib/cards';
+  import { loadCards } from '$lib/cards';
   import RichText from '$lib/components/RichText.svelte';
+  import SourceRow from '$lib/components/SourceRow.svelte';
   import {
     HostController,
     QUESTION_DURATION_MS
@@ -123,7 +124,7 @@
   {#if !isPlaying}
     <div class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 pt-safe-10 pb-safe-10">
       <header class="flex items-center justify-between">
-        <a class="text-sm text-(--color-muted) hover:text-(--color-ink)" href="{base}/settings">← Back</a>
+        <a class="text-sm text-(--color-muted) hover:text-(--color-ink)" href="{base}/">← Back</a>
         <h1 class="font-serif text-lg">Host a quiz</h1>
         <span class="w-12"></span>
       </header>
@@ -151,15 +152,12 @@
             <div class="mt-4 space-y-2">
               {#each sources as src (src)}
                 {@const count = cards.filter((c) => c.source === src).length}
-                <label class="flex items-center gap-3 rounded-xl border border-(--color-muted)/20 px-4 py-3 text-sm">
-                  <input
-                    type="checkbox"
-                    bind:checked={selectedSources[src]}
-                    class="h-4 w-4 accent-(--color-ink)"
-                  />
-                  <span class="flex-1">{sourceLabel(src)}</span>
-                  <span class="text-xs text-(--color-muted)">{count} cards</span>
-                </label>
+                <SourceRow
+                  source={src}
+                  {count}
+                  checked={selectedSources[src]}
+                  onchange={(c) => (selectedSources[src] = c)}
+                />
               {/each}
             </div>
           </div>
