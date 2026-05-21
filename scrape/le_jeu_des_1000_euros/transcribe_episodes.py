@@ -65,6 +65,7 @@ def run(
     questions_path: pathlib.Path,
     episode_id: str | None,
     only_next: bool,
+    skip: int,
 ) -> None:
     episodes = json.loads(episodes_path.read_text())
     if episode_id is not None:
@@ -88,6 +89,8 @@ def run(
     if only_next:
         # episodes.json is sorted by date ascending — last pending = newest.
         todo = todo[-1:]
+    elif skip:
+        todo = todo[skip:]
     if not todo:
         logger.info("Nothing to transcribe")
         return
@@ -122,6 +125,12 @@ if __name__ == "__main__":
         action="store_true",
         help="Transcribe only the newest untranscribed episode",
     )
+    parser.add_argument(
+        "--skip",
+        type=int,
+        default=0,
+        help="Skip the first N items of the TODO list (for parallel runs)",
+    )
     args = parser.parse_args()
 
     here = pathlib.Path(__file__).parent
@@ -142,4 +151,5 @@ if __name__ == "__main__":
         here / "questions.json",
         args.id,
         args.next,
+        args.skip,
     )

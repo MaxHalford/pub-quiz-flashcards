@@ -30163,6 +30163,1892 @@
     ]
   },
   {
+    "id": "e3d015a7-3a8a-11e4-a9df-005056a87c34",
+    "date": "2014-09-30",
+    "title": "Nuits-Saint-Georges (Côte-d'Or)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/nuits-saint-georges-cote-d-or-1202960",
+    "pairs": [
+      {
+        "question": "Dans quelle ville peut-on trouver le célèbre quartier du marché aux puces de Portobello ?",
+        "answer": "Londres",
+        "tier": "bleue"
+      },
+      {
+        "question": "Le port d'Erquy, dans les Côtes-d'Armor en Bretagne, est connu comme la capitale de la pêche à quoi ?",
+        "answer": "La coquille Saint-Jacques",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la différence entre le mot « balade » avec un seul L et « ballade » avec deux L ?",
+        "answer": "« Balade » avec un seul L désigne une promenade, tandis que « ballade » avec deux L désigne un poème ou une chanson.",
+        "tier": "bleue"
+      },
+      {
+        "question": "La tapenade, spécialité du sud de la France, est composée d'olives et d'un autre ingrédient appelé « tapeno » en provençal, d'où elle tire son nom. Quel est le nom français de cet ingrédient ?",
+        "answer": "Les câpres",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment s'appelait le célèbre point de passage entre Berlin-Est et Berlin-Ouest lorsque la ville était coupée en deux ?",
+        "answer": "Checkpoint Charlie",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que représente la statue de la fontaine des Quatre-Sans-Cul, dans le centre de Chambéry ?",
+        "answer": "Quatre éléphants (tronqués, réunis par la croupe)",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "3a97b7a2-3a8b-11e4-a9df-005056a87c34",
+    "date": "2014-10-01",
+    "title": "Nuits-saint-Georges (Côte-d'Or)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/nuits-saint-georges-cote-d-or-4518870",
+    "pairs": [
+      {
+        "question": "Comment s'appelle le fruit du hêtre ?",
+        "answer": "La faîne",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans le Monopoly, quels sont les quatre coins du plateau ?",
+        "answer": "La case départ, la prison (ou simple visite), le parc gratuit et aller en prison",
+        "tier": "bleue"
+      },
+      {
+        "question": "Que peut-on voir au musée Tussauds de Londres ?",
+        "answer": "Des statues en cire",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle plante comestible est aussi appelée dent-de-lion, laitue de chien ou encore florin d'or ?",
+        "answer": "Le pissenlit",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que produit la vache à hauteur d'environ 170 litres par jour ?",
+        "answer": "De la salive",
+        "tier": "blanche"
+      },
+      {
+        "question": "En tennis, quel est l'équivalent féminin de la Coupe Davis ?",
+        "answer": "La Fed Cup (Coupe de la Fédération)",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel est le titre de ce film : La Folie des grandeurs, Ridicule ou Les Trois Mousquetaires ?",
+        "answer": "La Folie des grandeurs",
+        "tier": null
+      },
+      {
+        "question": "Comment appelle-t-on en musique le début d'un opéra, une pièce orchestrale ?",
+        "answer": "L'ouverture",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "73923c1e-3a8c-11e4-a9df-005056a87c34",
+    "date": "2014-10-02",
+    "title": "Chazeuil (Côte-d'Or) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/chazeuil-cote-d-or-3336934",
+    "pairs": [
+      {
+        "question": "Quel est le point commun entre Dominique Bona, Florence Delay, Assia Djebar, Simone Veil et Danièle Sallenave ?",
+        "answer": "Elles siègent à l'Académie française.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qu'a-t-on appelé le Jeudi noir ?",
+        "answer": "Le jour du krach boursier de Wall Street, le 24 octobre 1929.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle ville se trouvent la rue Jean-Jaurès, le quartier de Recouvrance et la rue de Siam, évoquée dans une chanson de Miossec ?",
+        "answer": "Brest.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Que désignent les Québécois par le mot « ruine-babines » ?",
+        "answer": "L'harmonica.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on le processus naturel par lequel les plantes fabriquent des sucres ?",
+        "answer": "La photosynthèse.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel écrivain britannique, également auteur de courts romans et dramaturge, est évoqué dans une chanson d'Alain Souchon comme un auteur de nouvelles pour dames ?",
+        "answer": "Somerset Maugham.",
+        "tier": "rouge"
+      },
+      {
+        "question": "Le peintre mexicain Diego Rivera, né en 1886 et célèbre pour ses fresques murales, épousa son élève, de 20 ans sa cadette, qui réalisa notamment en 1940 son célèbre autoportrait au collier d'épines et au colibri. Quel est le nom de cette femme peintre mexicaine, à qui l'on doit 143 tableaux dont de nombreux portraits et autoportraits ?",
+        "answer": "Frida Kahlo.",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel artiste, né en 1902 à Laval et mort en 1983, peintre, décorateur, mosaïste et surtout sculpteur, a créé à Cossé-le-Vivien en Mayenne, avec sa jeune épouse, La Maison des Champs, une œuvre composée de sculptures en ciment armé rassemblées dans le jardin des Méditations, aujourd'hui devenu musée ?",
+        "answer": "Robert Tatin.",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "cf77f191-3a8c-11e4-a9df-005056a87c34",
+    "date": "2014-10-03",
+    "title": "Chazeuil (Côte-d'Or) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/chazeuil-cote-d-or-7238230",
+    "pairs": [
+      {
+        "question": "Comment appelle-t-on les habitants de la ville de Pau ?",
+        "answer": "Les Palois.",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quel fleuve se rapporte l'adjectif ligérien ?",
+        "answer": "La Loire.",
+        "tier": "bleue"
+      },
+      {
+        "question": "On parle souvent du cranberry, mot anglais désignant en botanique une plante voisine de l'airelle, aux petites baies rouges riches en antioxydants. Quel est son nom en français ?",
+        "answer": "La canneberge.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment écrit-on le nom du compositeur tchèque Antonín Dvořák ?",
+        "answer": "D-V-O-R-A-K (Dvořák).",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le point commun entre les phrases « C'est sec » et « La marine va à Papa, venir à Malte » ?",
+        "answer": "Ce sont des palindromes : on peut les lire dans les deux sens.",
+        "tier": "blanche"
+      },
+      {
+        "question": "On emploie parfois l'expression « tomber au fond de l'abîme ». Quelle est l'erreur dans cette phrase ?",
+        "answer": "L'abîme est par définition sans fond ; il ne peut donc pas avoir de fond.",
+        "tier": "rouge"
+      },
+      {
+        "question": "Question de repêchage : à qui doit-on cette « Leçon de guitare sommaire » ? Gilles Vigneault, Henri Salvador ou Bobby Lapointe ?",
+        "answer": "Bobby Lapointe.",
+        "tier": null
+      },
+      {
+        "question": "Comment le médecin allemand Ernst Gräfenberg s'est-il rendu célèbre dans les années 1950 ?",
+        "answer": "Il a identifié le point G (point Gräfenberg), l'un des points érogènes de la femme.",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "aa97f46a-3e2f-11e4-a9df-005056a87c34",
+    "date": "2014-10-06",
+    "title": "Boisset (Cantal) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/boisset-cantal-6537446",
+    "pairs": [
+      {
+        "question": "Quel est le nom de ce légume racine de couleur blanche ou ivoire, apparenté à la carotte, au goût fin, très répandu dans la cuisine du Moyen Âge et qui revient à la mode ?",
+        "answer": "Le panais",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quel édifice architectural Émile Zola faisait-il référence dans son roman « Le Ventre de Paris » ?",
+        "answer": "Les Halles (de Baltard)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Créé en 1934, ce studio parisien situé dans le 8e arrondissement a immortalisé en noir et blanc la plupart des personnalités du cinéma, du théâtre et de la littérature. Quel est son nom ?",
+        "answer": "Le studio Harcourt",
+        "tier": "bleue"
+      },
+      {
+        "question": "On dit du vignoble jurassien qu'il est le plus petit des grands vignobles français. Quelle est la capitale des vins du Jura ?",
+        "answer": "Arbois",
+        "tier": "blanche"
+      },
+      {
+        "question": "L'Aubrac, région naturelle du sud du Massif central fameuse pour ses vaches, est à cheval sur trois départements. Quels sont-ils ?",
+        "answer": "La Lozère, le Cantal et l'Aveyron",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle est la différence fondamentale entre de l'encre et du toner ?",
+        "answer": "L'encre est liquide, tandis que le toner est solide (un mélange de deux poudres)",
+        "tier": "rouge"
+      },
+      {
+        "question": "Question sonore : « J'habite seul avec maman / Dans un très vieil appartement / Rue Sarasate / J'ai pour me tenir compagnie / Une tortue, deux canaris / Et une chatte ». Quel est le titre de cette chanson de Charles Aznavour ?",
+        "answer": "Comme ils disent",
+        "tier": null
+      },
+      {
+        "question": "Qui a écrit les paroles de la chanson « La rue des Blancs-Manteaux », interprétée par Juliette Gréco en 1950, sur une musique de Joseph Kosma ?",
+        "answer": "Jean-Paul Sartre",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "a92b4aec-3e2f-11e4-a9df-005056a87c34",
+    "date": "2014-10-07",
+    "title": "Boisset (Cantal) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/boisset-cantal-9024962",
+    "pairs": [
+      {
+        "question": "En politique, d'où viennent les termes de gauche et de droite ?",
+        "answer": "Du placement des députés à l'Assemblée nationale, à gauche ou à droite du président, selon leurs sensibilités politiques.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la spécialité artisanale de la ville de Briare, dans le Loiret, dont la manufacture fut créée en 1834 ?",
+        "answer": "Les émaux (les émaux de Briare).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qui est le créateur du Jeu des 1000 euros ?",
+        "answer": "Henri Kubnik.",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quoi correspond le Panoramique des Dômes ?",
+        "answer": "C'est le train à crémaillère qui mène au sommet du puy de Dôme.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Qu'étudie un vexillologue ?",
+        "answer": "Les drapeaux et les pavillons.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans la mythologie grecque, comment appelle-t-on ces divinités, fils d'Ouranos et de Gaïa, qui ont précédé les dieux de l'Olympe ?",
+        "answer": "Les Titans.",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "a82feef3-3e2f-11e4-a9df-005056a87c34",
+    "date": "2014-10-08",
+    "title": "Laroquebrou (Cantal) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/laroquebrou-cantal-1514953",
+    "pairs": [
+      {
+        "question": "Qu'élève-t-on sur des bouchots ?",
+        "answer": "Des moules",
+        "tier": "bleue"
+      },
+      {
+        "question": "À l'origine, quelle était la fonction principale de la table de chevet (ou table de nuit) ?",
+        "answer": "Ranger le pot de chambre",
+        "tier": "bleue"
+      },
+      {
+        "question": "Avec environ 75 % de la production mondiale, quel pays arrive en tête pour la production de lin ?",
+        "answer": "La France",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment appelle-t-on une maladie rare qui reste pratiquement incurable car elle ne présente pas d'intérêt pour la recherche médicale ?",
+        "answer": "Une maladie orpheline",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel domaine artistique Victor Hugo voulait-il évoquer lorsqu'il disait : « Ainsi, durant les 6000 premières années du monde, cet art a été la grande écriture du genre humain » ?",
+        "answer": "L'architecture",
+        "tier": "blanche"
+      },
+      {
+        "question": "De quel croisement est issu le mulet ?",
+        "answer": "D'un âne et d'une jument",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "a5fd3bf4-3e2f-11e4-a9df-005056a87c34",
+    "date": "2014-10-09",
+    "title": "Laroquebrou (Cantal) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/laroquebrou-cantal-7876214",
+    "pairs": [
+      {
+        "question": "Écrites dans les années 1960, à quel écrivain français doit-on les pièces de théâtre Château en Suède, Les Violons parfois et La Robe mauve de Valentine ?",
+        "answer": "Françoise Sagan",
+        "tier": "bleue"
+      },
+      {
+        "question": "Né en 1930, quel pianiste de jazz, chef d'orchestre et arrangeur français, interprète du ragtime et du boogie-woogie, a composé la musique de films de Jacques Deray comme Borsalino et d'épisodes des Brigades du Tigre ?",
+        "answer": "Claude Bolling",
+        "tier": "bleue"
+      },
+      {
+        "question": "Le 2 décembre 1805, Napoléon Ier remporte la bataille d'Austerlitz. Dans quel pays actuel se trouve la ville d'Austerlitz ?",
+        "answer": "La République tchèque (en Moravie)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel roman de Georges Perec est écrit sans que la lettre E n'apparaisse une seule fois ?",
+        "answer": "La Disparition",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le rôle de la mélanine dans la peau ?",
+        "answer": "Protéger la peau des radiations solaires (UV) ; la mélanine est aussi le pigment responsable de la coloration de la peau.",
+        "tier": "blanche"
+      },
+      {
+        "question": "En Savoie, comment appelle-t-on les deux races de vaches dont le lait sert à produire le beaufort ?",
+        "answer": "La tarine et l'abondance",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "a43940ed-3e2f-11e4-a9df-005056a87c34",
+    "date": "2014-10-10",
+    "title": "Laroquebrou (Cantal) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/laroquebrou-cantal-9742503",
+    "pairs": [
+      {
+        "question": "Quel adjectif, désignant une aventure invraisemblable, est dérivé du nom d'un personnage créé par l'écrivain Alexis Ponson du Terrail, maître du roman-feuilleton au XIXe siècle ?",
+        "answer": "Rocambolesque (du nom du personnage Rocambole).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Lors de la cérémonie des Césars du 28 février 2014, pour quel film Guillaume Gallienne a-t-il été primé à cinq reprises ?",
+        "answer": "Les Garçons et Guillaume, à table !",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle plante vivace herbacée, surnommée herbe aux chats, est utilisée depuis la Grèce classique pour favoriser le sommeil et lutter contre l'anxiété ?",
+        "answer": "La valériane.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel réalisateur a signé en 1980 son premier long métrage, Diva, récompensé par quatre Césars, ainsi que La Lune dans le caniveau ?",
+        "answer": "Jean-Jacques Beineix.",
+        "tier": "blanche"
+      },
+      {
+        "question": "À quel objet est traditionnellement rattachée la ville italienne de Crémone ?",
+        "answer": "Le violon (notamment grâce au luthier Stradivari).",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel compositeur russe a incarné l'esprit de résistance de Leningrad en composant, dans la cité assiégée en décembre 1941, sa Septième Symphonie dite Leningrad ?",
+        "answer": "Dmitri Chostakovitch.",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "ba6b9208-3e30-11e4-a9df-005056a87c34",
+    "date": "2014-10-13",
+    "title": "Sainte-Florine (Haute-Loire)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/sainte-florine-haute-loire-7039859",
+    "pairs": [
+      {
+        "question": "Pendant la guerre d'Indochine, quel camp français s'est rendu célèbre pour sa résistance au Viet Minh ?",
+        "answer": "Diên Biên Phu",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel instrument de musique est composé d'une série de lames d'acier percutées placées au-dessus de tubes de résonance, dans lesquels une palette à rotation électrique provoque un vibrato ? Cet instrument, utilisé surtout dans le jazz, a eu pour maîtres Milt Jackson et Lionel Hampton.",
+        "answer": "Le vibraphone",
+        "tier": "bleue"
+      },
+      {
+        "question": "Citez deux expressions ou dictons qui incluent un jour de la semaine.",
+        "answer": "Par exemple : « la semaine des quatre jeudis » et « tel qui rit vendredi dimanche pleurera » (ou encore « un peintre du dimanche »).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le point commun entre Emma Bovary, Marie Curie, Violette Nozière et Anne Brontë, outre le fait que ce sont des femmes ?",
+        "answer": "Elles ont toutes été incarnées au cinéma par la même actrice, Isabelle Huppert.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans quelle série télévisée Jeanne Moreau a-t-elle interprété le rôle de la comtesse Mahaut d'Artois ?",
+        "answer": "Les Rois maudits",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans une fratrie, on désigne par le mot « cadet » celui qui est né entre l'aîné et le benjamin. Quel synonyme vieilli est aussi utilisé pour désigner un enfant né immédiatement après l'un de ses frères ou l'une de ses sœurs ?",
+        "answer": "Puîné",
+        "tier": "rouge"
+      },
+      {
+        "question": "Publié en 1953, l'essai « Le Degré zéro de l'écriture » — œuvre d'un brillant sémiologue et critique littéraire français, à qui l'on doit également « Mythologies », « Fragments d'un discours amoureux », « Journal de deuil » et « Le Plaisir du texte » — est l'œuvre de quel auteur ?",
+        "answer": "Roland Barthes",
+        "tier": "banco"
+      },
+      {
+        "question": "Quelle apostrophe célèbre, quoique politiquement incorrecte, précède dans « Les Nourritures terrestres » d'André Gide l'extrait : « foyer clos, porte refermée, possession jalouse du bonheur » ?",
+        "answer": "Familles, je vous hais !",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "b9393269-3e30-11e4-a9df-005056a87c34",
+    "date": "2014-10-14",
+    "title": "Sainte-Florine (Haute-Loire)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/sainte-florine-haute-loire-6674077",
+    "pairs": [
+      {
+        "question": "Le 31 août 1945, le magazine The New Yorker a publié un article du journaliste John Hersey de 31 000 mots qui remplissait à lui seul tout le magazine, événement inédit et jamais renouvelé depuis. Quel en était le sujet ?",
+        "answer": "Le bombardement atomique d'Hiroshima.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom de ce plateau français situé à cheval sur les départements du Vaucluse, de la Drôme et des Alpes-de-Haute-Provence, qui fut un site de lancement de missiles nucléaires de 1967 à 1999 ?",
+        "answer": "Le plateau d'Albion.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la spécialité artisanale de la ville de Gien ?",
+        "answer": "La faïence.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Pour quelle raison le prix Nobel de la paix n'a-t-il pas été attribué en 1948 ?",
+        "answer": "En hommage à Gandhi, assassiné le 30 janvier 1948 : le comité Nobel a jugé qu'aucun candidat vivant ne méritait de le recevoir.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Entre quelles terres se situe le détroit du Danemark ?",
+        "answer": "Entre le Groenland et l'Islande.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Qu'est-ce qu'une chènevière (en provençal « canebière », comme la célèbre artère marseillaise) ?",
+        "answer": "Une terre où l'on cultive le chanvre.",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "ceeb7026-3e30-11e4-a9df-005056a87c34",
+    "date": "2014-10-15",
+    "title": "Sainte-Florine (Haute-Loire)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/sainte-florine-haute-loire-3567482",
+    "pairs": [
+      {
+        "question": "L'acide ascorbique, un antioxydant qui porte le numéro E300, est plus connu sous quel autre nom ?",
+        "answer": "La vitamine C.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Devant quelles lettres doit-on mettre une cédille à la lettre C pour obtenir le son doux comme le S ?",
+        "answer": "Devant le A, le O et le U.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Où repose le chanteur et comédien Jacques Brel ?",
+        "answer": "Aux îles Marquises, en Polynésie française.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est l'os le plus long du corps humain ?",
+        "answer": "Le fémur.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on l'appareil, généralement constitué d'une résistance variable, qui permet de régler l'intensité du courant électrique passant dans un circuit ?",
+        "answer": "Un rhéostat.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel jeu de construction, breveté en 1902, a été inventé par le citoyen britannique Frank Hornby à la fin du XIXe siècle ?",
+        "answer": "Le Meccano.",
+        "tier": "rouge"
+      },
+      {
+        "question": "De quel réalisateur est le film « Le Dictateur » ?",
+        "answer": "Charlie Chaplin.",
+        "tier": "banco"
+      },
+      {
+        "question": "Sous quel nom d'origine occitane est connue la spécialité culinaire provençale, originaire de Nîmes et d'Alès, faite de morue et d'huile d'olive ?",
+        "answer": "La brandade (de morue).",
+        "tier": "banco"
+      },
+      {
+        "question": "Qu'y a-t-il de commun à tous les résultats de la table de multiplication par 9 ?",
+        "answer": "La somme de leurs chiffres est toujours égale à 9.",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "b7a2f202-3e30-11e4-a9df-005056a87c34",
+    "date": "2014-10-16",
+    "title": "Grazac (Haute-Loire) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/grazac-haute-loire-6115521",
+    "pairs": [
+      {
+        "question": "Trois chansons du répertoire de Jacques Brel n'existent qu'en version publique : Les Timides, Les Jardins du Casino et une troisième, très connue. Laquelle ?",
+        "answer": "Amsterdam",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quel compositeur français doit-on les œuvres Pavane, Requiem et Pelléas et Mélisande ?",
+        "answer": "Gabriel Fauré",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel mot désigne à la fois une mer du nord du Canada, un fromage et une échelle de mesure de la force du vent ?",
+        "answer": "Beaufort",
+        "tier": "bleue"
+      },
+      {
+        "question": "Pourquoi le maire de Bezonvaux n'a-t-il rien à craindre des électeurs à l'occasion des élections municipales ?",
+        "answer": "Parce que Bezonvaux est un village martyr de la Meuse, anéanti en 1916 pendant la Première Guerre mondiale et jamais reconstruit.",
+        "tier": "blanche"
+      },
+      {
+        "question": "De quelle fable de La Fontaine est extraite la citation : « Ils ne mouraient pas tous, mais tous étaient frappés » ?",
+        "answer": "Les Animaux malades de la peste",
+        "tier": "blanche"
+      },
+      {
+        "question": "À qui attribue-t-on la devise « À cœur vaillant, rien d'impossible » ?",
+        "answer": "Jacques Cœur",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "b624d14c-3e30-11e4-a9df-005056a87c34",
+    "date": "2014-10-17",
+    "title": "Grazac (Haute-Loire) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/grazac-haute-loire-5590324",
+    "pairs": [
+      {
+        "question": "À qui doit-on le poème qui débute ainsi : « Ce siècle avait deux ans, Rome remplaçait Sparte, déjà Napoléon perçait sous Bonaparte » ?",
+        "answer": "Victor Hugo",
+        "tier": "bleue"
+      },
+      {
+        "question": "Que vous arrive-t-il si vous êtes atteint de roncopathie ?",
+        "answer": "Vous ronflez (ronflement chronique).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Prédestiné à jouer les jeunes premiers tant par son nom que par son physique, cet acteur américain d'origine italienne fut le héros de films épiques du cinéma muet comme Le Cheik (1921) ou Arènes sanglantes (1922). Archétype du Latin lover, il entra dans la légende en étant emporté à 31 ans par une maladie foudroyante. Qui est-il ?",
+        "answer": "Rudolph Valentino",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle particularité, qui la rend unique en Europe, possède la plage des Grands Sables sur l'île de Groix, en Bretagne ?",
+        "answer": "Elle a une forme convexe.",
+        "tier": "blanche"
+      },
+      {
+        "question": "L'art japonais du pliage du papier s'appelle l'origami. Comment s'appelle l'art japonais du découpage du papier ?",
+        "answer": "Le kirigami",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle comédienne, révélée par la série Un gars, une fille, est l'héroïne de Ricky de François Ozon, est trompée dans Les Infidèles, et joue dans Possession et Jamais le premier soir ?",
+        "answer": "Alexandra Lamy",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "8ef0f18f-3e31-11e4-a9df-005056a87c34",
+    "date": "2014-10-20",
+    "title": "Saint-Uze (Drôme) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-uze-drome-5250171",
+    "pairs": [
+      {
+        "question": "De quelles espèces végétales font partie les franquettes, les parisiennes et les maillettes ?",
+        "answer": "Des variétés de noix.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Sur quel boulevard parisien se trouve, au numéro 132, l'appartement du célèbre commissaire Maigret imaginé par Georges Simenon ?",
+        "answer": "Le boulevard Richard-Lenoir.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Diderot et d'Alembert ont été à l'origine de quel ouvrage majeur du XVIIIe siècle ?",
+        "answer": "L'Encyclopédie.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom de ce fromage de chèvre du Berry, d'appellation d'origine protégée (AOP), en forme de pyramide tronquée ?",
+        "answer": "Le Valençay.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que signifie l'abréviation NDLR, souvent rencontrée dans les articles de presse ?",
+        "answer": "Note de la rédaction.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle est la différence entre la fonte et l'acier ?",
+        "answer": "Le taux de carbone : la fonte en contient plus de 1,8 %, l'acier moins de 1,8 %.",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "8dc33b33-3e31-11e4-a9df-005056a87c34",
+    "date": "2014-10-21",
+    "title": "Saint-Uze (Drôme) ",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-uze-drome-2551422",
+    "pairs": [
+      {
+        "question": "Les Souffrances du jeune Werther est un célèbre roman épistolaire de la fin du XVIIIe siècle. Qui en est l'auteur ?",
+        "answer": "Goethe",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quels sont les deux départements concernés par l'IGP (indication géographique protégée) Mogette de Vendée ?",
+        "answer": "La Vendée et la Loire-Atlantique",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel célèbre écrivain français est l'auteur notamment de L'Automne à Pékin, du Loup-garou et de L'Herbe rouge ?",
+        "answer": "Boris Vian",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel metteur en scène et cinéaste, mort à Paris en octobre 2013, a mis en scène en 1976 une mémorable tétralogie de Wagner dirigée par Pierre Boulez, et a réalisé au cinéma un film historique sur la guerre entre catholiques et protestants interprété par Isabelle Adjani, ainsi que Ceux qui m'aiment prendront le train ?",
+        "answer": "Patrice Chéreau",
+        "tier": "blanche"
+      },
+      {
+        "question": "Depuis le printemps 2013, Marseille compte un nouveau musée sur le site du Fort Saint-Jean : le Mucem. Que signifie exactement cette abréviation ?",
+        "answer": "Musée des Civilisations de l'Europe et de la Méditerranée",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que veut dire « singer » en matière de cuisine ?",
+        "answer": "Saupoudrer de farine (mettre de la farine en pluie) pour faire épaissir une sauce",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel chanteur, disparu il y a quelques mois, interprète la chanson « J'ai trouvé un journal dans le hall de l'aéroport » ? (Propositions : Daniel Balavoine, Pierre Vassiliou, Rissé Barrier)",
+        "answer": "Pierre Vassiliou",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel peintre, né en 1919 à Rodez, est connu pour ses Outrenoirs et a un musée qui lui est consacré dans sa ville natale ?",
+        "answer": "Pierre Soulages",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "8cb5a520-3e31-11e4-a9df-005056a87c34",
+    "date": "2014-10-22",
+    "title": "Saint-Uze (Drôme)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-uze-drome-1986438",
+    "pairs": [
+      {
+        "question": "Citez deux expressions courantes comportant le mot « mine ».",
+        "answer": "Avoir bonne mine et faire grise mine.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qu'est-ce qui a été construit dans la nuit du 12 au 13 août 1961 et détruit en 1989 ?",
+        "answer": "Le mur de Berlin.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment appelle-t-on un autoportrait réalisé avec un smartphone ?",
+        "answer": "Un selfie.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Le mot « spartiate » est un adjectif qui signifie sévère, austère. Mais que désigne le nom féminin « une spartiate » ?",
+        "answer": "Une sandale à lanières montantes.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle particularité présente la liste des prénoms féminins suivants : Dorothée, Régine, Mireille, Fabienne, Solange, Larissa et Simone ?",
+        "answer": "Leurs premières syllabes forment les sept notes de musique (do, ré, mi, fa, sol, la, si).",
+        "tier": "blanche"
+      },
+      {
+        "question": "Où trouve-t-on les cabanons, ces petites habitations sans eau courante ni branchement électrique caractéristiques d'un secteur de la côte méditerranéenne ?",
+        "answer": "Dans les Calanques, entre Marseille et Cassis.",
+        "tier": "rouge"
+      },
+      {
+        "question": "L'extrait sonore proposé est-il tiré de « Mad Men », de « Yves Saint Laurent » ou de « Le Diable s'habille en Prada » ?",
+        "answer": "Le Diable s'habille en Prada.",
+        "tier": "banco"
+      },
+      {
+        "question": "D'où provenait à l'origine la couleur sépia utilisée en dessin, sachant qu'elle était tirée d'un animal marin ?",
+        "answer": "De l'encre de seiche.",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "efe2ad82-4d3b-11e4-a9df-005056a87c34",
+    "date": "2014-10-23",
+    "title": "Grâne (Drôme)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/grane-drome-5631135",
+    "pairs": [
+      {
+        "question": "Dans la chanson Vesoul de Jacques Brel, à qui s'adresse l'exclamation célèbre « Chauffe Marcel », lancée par Brel lui-même ?",
+        "answer": "À l'accordéoniste Marcel Azola.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel sigle désigne une société coopérative de forme SARL ou SA, où les salariés sont les associés majoritaires ?",
+        "answer": "Une SCOP (société coopérative ouvrière de production).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel rôle a interprété l'acteur américain Guy Williams pendant 82 épisodes d'une série d'aventures des années 60 ?",
+        "answer": "Zorro.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans le roman Au bonheur des dames, de quel grand magasin parisien, qu'il qualifiait de « cathédrale du commerce moderne », Émile Zola s'est-il inspiré ?",
+        "answer": "Le Bon Marché.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sous quel nom commun est plus connue la badiane ?",
+        "answer": "L'anis étoilé.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le nom du bâtiment militaire léger conçu pour l'escorte, la protection des côtes et la lutte anti-sous-marine ?",
+        "answer": "Un aviso.",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel est le nom du parti politique nationaliste créé en Chine en 1912 par Sun Yat-sen, dirigé par Tchang Kaï-chek, et dont le programme reposait sur trois principes : indépendance, souveraineté et bien-être ?",
+        "answer": "Le Kuomintang.",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel chanoine belge, brillant mathématicien, astrophysicien et cosmologiste, né en 1894 et mort en 1966, a montré dès 1927, à partir des équations de la relativité générale, que l'univers est en expansion à partir d'un état singulier (« atome primitif ») plus tard appelé Big Bang ?",
+        "answer": "Georges Lemaître.",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "8c909c21-3e31-11e4-a9df-005056a87c34",
+    "date": "2014-10-24",
+    "title": "Grâne (Drôme)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/grane-drome-1038665",
+    "pairs": [
+      {
+        "question": "Comment s'appelle la civilisation précédant la Rome antique au centre de l'Italie, notamment en Toscane ?",
+        "answer": "Les Étrusques",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment se nomme l'étude scientifique des insectes ?",
+        "answer": "L'entomologie",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le titre du roman, paru en 1796, qui raconte les tribulations, les souffrances, les humiliations et l'abaissement d'une certaine Suzanne Simonin, qui subit un harcèlement physique et moral de la part de sa supérieure dans une communauté religieuse ?",
+        "answer": "La Religieuse, de Denis Diderot",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel fruit confit est nécessaire, entre autres, à la fabrication du calisson, spécialité d'Aix-en-Provence ?",
+        "answer": "Le melon",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on communément l'unité d'habitation de Marseille construite par Le Corbusier (Charles-Édouard Jeanneret) ?",
+        "answer": "La Cité radieuse (aussi appelée la Maison du Fada)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Depuis 2008, la France s'est dotée d'un mécanisme de contrôle constitutionnel a posteriori de la loi, permettant à tout justiciable, à l'occasion d'une instance, de faire appel au Conseil constitutionnel. Comment s'appelle ce mécanisme ?",
+        "answer": "La question prioritaire de constitutionnalité (QPC)",
+        "tier": "rouge"
+      },
+      {
+        "question": "De quelle année date la fin de l'ORTF et le début de Radio France : 1968, 1975 ou 1995 ?",
+        "answer": "1975 (le 6 janvier 1975)",
+        "tier": null
+      },
+      {
+        "question": "Comment s'appelait l'arme secrète des Byzantins, utilisée dès 675 environ, constituée d'un mélange de naphte, de soufre et de phosphore, qui s'enflammait au contact de l'eau et était employée lors des batailles navales ?",
+        "answer": "Le feu grégeois",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "ae499d35-3e32-11e4-a9df-005056a87c34",
+    "date": "2014-10-27",
+    "title": "Montesquieu-des-Albères (Pyrénées-Orientales)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/montesquieu-des-alberes-pyrenees-orientales-2085067",
+    "pairs": [
+      {
+        "question": "À Marseille, on l'appelle la « maison du Fada » : sous quel nom est-elle plus connue et quel est son concepteur ?",
+        "answer": "La Cité radieuse, conçue par Le Corbusier.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel était le nom de l'hydravion Laté 300 avec lequel Jean Mermoz et son équipage disparurent le 7 décembre 1936 ?",
+        "answer": "La Croix du Sud.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment s'appelle le divertissement musical entre les actes d'une œuvre théâtrale, ou une pièce instrumentale intimiste ?",
+        "answer": "Un intermezzo.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel nom porte cette avenue large et rectiligne, d'une longueur de plus de 4 km, qui traverse la ville de Saint-Pétersbourg ?",
+        "answer": "La perspective Nevski.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sous quel titre connaît-on en français l'air brésilien d'Antonio Carlos Jobim « Você Abusou », adapté par Pierre Delanoë et interprété par Michel Fugain ?",
+        "answer": "Fais comme l'oiseau.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on un film dont le scénario s'inspire de la vie d'un personnage célèbre ?",
+        "answer": "Un biopic.",
+        "tier": "rouge"
+      },
+      {
+        "question": "À quelle émission télévisée le premier concerto de Rachmaninov a-t-il servi de générique ?",
+        "answer": "Apostrophes (de Bernard Pivot).",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel était le nom de ce conseiller d'Auguste, entre 27 et 14 avant Jésus-Christ, qui protégeait les artistes et les littérateurs ?",
+        "answer": "Mécène.",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "a6155001-3e32-11e4-a9df-005056a87c34",
+    "date": "2014-10-28",
+    "title": "Montesquieu-des-Albères (Pyrénées-Orientales)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/montesquieu-des-alberes-pyrenees-orientales-1247086",
+    "pairs": [
+      {
+        "question": "Comment nomme-t-on cette erreur de langage qui consiste à confondre le sens des mots ou à employer des mots forgés ou déformés, comme « des chuchotages », « des cheveux tendus » ou « enduire en erreur » ?",
+        "answer": "Un barbarisme",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle infusion, issue de la culture amérindienne et largement consommée en Amérique du Sud, est la boisson nationale de l'Argentine, traditionnellement bue à l'aide d'une paille en métal ?",
+        "answer": "Le maté",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment nomme-t-on la conception du bien et du mal envisagés comme deux forces égales et antagonistes ?",
+        "answer": "Le manichéisme",
+        "tier": "bleue"
+      },
+      {
+        "question": "L'éclade, préparation culinaire de moules cuites avec des aiguilles de pin, est la spécialité de quel département français ?",
+        "answer": "La Charente-Maritime",
+        "tier": "blanche"
+      },
+      {
+        "question": "Située dans le massif du Mont-Blanc et culminant à 3842 mètres, quelle est la plus haute des aiguilles de Chamonix ?",
+        "answer": "L'aiguille du Midi",
+        "tier": "blanche"
+      },
+      {
+        "question": "À quel compositeur français, né en 1851, doit-on la Symphonie sur un chant montagnard français, dite Symphonie cévenole ?",
+        "answer": "Vincent d'Indy",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel film a remporté la Palme d'or au Festival de Cannes en 2014 ?",
+        "answer": "Winter Sleep, de Nuri Bilge Ceylan",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel son est produit par la lettre grecque que l'on écrit comme un P majuscule français ?",
+        "answer": "Le son « R » (la lettre rhô)",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "3294994a-585d-11e4-a9df-005056a87c34",
+    "date": "2014-10-29",
+    "title": "Canohès (Pyrénées-Orientales) spécial jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/canohes-pyrenees-orientales-special-jeunes-8516777",
+    "pairs": [
+      {
+        "question": "Né en 1914 et disparu en 1983, cet acteur fut considéré dans les années 1960-1970 comme l'un des comiques les plus populaires de France. On a pu le voir notamment dans Antoine et Antoinette, Bibi Fricotin, Le Blé en herbe et La Traversée de Paris. De qui s'agit-il ?",
+        "answer": "Louis de Funès",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quelle famille animale le lama appartient-il ?",
+        "answer": "Les camélidés",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qu'appelle-t-on le neuvième art ?",
+        "answer": "La bande dessinée",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel genre cinématographique, généralement à grand spectacle, met en scène des héros antiques ou des thèmes bibliques ?",
+        "answer": "Le péplum",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sur l'écran à affichage digital d'un réveil, quels sont, sur 24 heures, les horaires qui ne sont affichés que par des chiffres identiques ?",
+        "answer": "00h00, 11h11 et 22h22",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle ville de Grande-Bretagne fut la première à avoir deux équipes de football concurrentes, donnant ainsi son nom à un certain type de rencontre sportive ?",
+        "answer": "Derby",
+        "tier": "rouge"
+      },
+      {
+        "question": "Comment appelle-t-on le marché bisannuel des transferts et signatures de contrats dans le football professionnel ?",
+        "answer": "Le mercato",
+        "tier": "banco"
+      },
+      {
+        "question": "Un melon pèse 500 grammes plus la moitié de son poids total. Combien pèse le melon ?",
+        "answer": "1 kilo",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "583d2d3e-585e-11e4-a9df-005056a87c34",
+    "date": "2014-10-30",
+    "title": "Canohès (Pyrénées-Orientales)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/canohes-pyrenees-orientales-8057124",
+    "pairs": [
+      {
+        "question": "Quel est le nom du minerai présent en grande quantité et fortement exploité en Nouvelle-Calédonie ?",
+        "answer": "Le nickel",
+        "tier": "bleue"
+      },
+      {
+        "question": "Lorsqu'on dit que Diderot est natif de la cité Lingonne, de quelle ville s'agit-il ?",
+        "answer": "Langres (en Haute-Marne)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Passionné par l'œuvre de Mozart, un écrivain et éditeur autrichien a établi un catalogue complet de ses œuvres. Quel est le nom de ce personnage ?",
+        "answer": "Ludwig von Köchel",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom de la reine d'Égypte de 1503 à 1482 avant notre ère, épouse de Thoutmôsis II ?",
+        "answer": "Hatchepsout",
+        "tier": "blanche"
+      },
+      {
+        "question": "Certains animaux, comme les chats, les chiens, les cerfs ou les grands dauphins, sont pourvus d'un tapetum lucidum. À quoi leur sert-il ?",
+        "answer": "C'est un tapis luisant (ou tapis clair) situé derrière la rétine, qui réfléchit la lumière et leur permet de voir dans la pénombre.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans quelle ville allemande, située dans le land de Rhénanie-Palatinat, la Moselle rejoint-elle le Rhin ?",
+        "answer": "Coblence (Koblenz)",
+        "tier": "rouge"
+      },
+      {
+        "question": "L'extrait diffusé est tiré d'un opéra-bouffe de Jacques Offenbach : s'agit-il de La Vie parisienne, de La Périchole ou d'Orphée aux enfers ?",
+        "answer": "La Vie parisienne",
+        "tier": null
+      },
+      {
+        "question": "Quelle célèbre personnalité américaine (1810-1891), spécialisée dans l'exhibition de phénomènes, a créé un grand cirque itinérant en 1871 ?",
+        "answer": "P. T. Barnum",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "3b1957e4-592c-11e4-a9df-005056a87c34",
+    "date": "2014-11-03",
+    "title": "Olonzac (Hérault)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/olonzac-herault-1205013",
+    "pairs": [
+      {
+        "question": "Sous quel nom plus connu est appelé l'amphithéâtre Flavien ?",
+        "answer": "Le Colisée",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle gare arriva le fameux train filmé par les frères Lumière, l'un des premiers films en 1896 ?",
+        "answer": "La gare de La Ciotat",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle boisson alcoolisée de Bretagne, fabriquée avec du miel fermenté dans de l'eau, est familièrement appelée chouchen ?",
+        "answer": "L'hydromel",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom d'une substance d'origine végétale présente dans les pépins et les zestes des fruits, particulièrement utile à la gélification des confitures et des gelées ?",
+        "answer": "La pectine",
+        "tier": "blanche"
+      },
+      {
+        "question": "Le Dactylopius coccus est un insecte qui vit sur un célèbre cactus poussant au Mexique et en Amérique centrale. Sous quel autre nom le connaît-on ?",
+        "answer": "La cochenille",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment, en architecture de fortification, appelle-t-on le talus extérieur d'un fossé d'un ouvrage fortifié ?",
+        "answer": "La contrescarpe",
+        "tier": "rouge"
+      },
+      {
+        "question": "En quelle année a été inauguré le musée du Quai Branly à Paris ?",
+        "answer": "2006",
+        "tier": null
+      },
+      {
+        "question": "Quel est le nom de cet écrivain italien du XXe siècle (1907-1990), auteur notamment du Mépris, du Conformiste et de L'Ennui, qui a fustigé dans son œuvre la société capitaliste et conformiste ?",
+        "answer": "Alberto Moravia",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel est le nom de cet écrivain et scénariste de bande dessinée, né dans les Ardennes, considéré comme le spécialiste des elfes, des lutins et des fées, auteur de La Grande Encyclopédie des fées, des lutins et des elfes, ainsi que de L'Elféméride et du Grimoire du petit peuple ?",
+        "answer": "Pierre Dubois",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "a366775a-592d-11e4-a9df-005056a87c34",
+    "date": "2014-11-04",
+    "title": "Olonzac (Hérault)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/olonzac-herault-8688330",
+    "pairs": [
+      {
+        "question": "Où sont installées précisément les célèbres colonnes de Daniel Buren ?",
+        "answer": "Dans la cour d'honneur du Palais Royal, à Paris.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel rocker américain, mort en 2013, est l'un des fondateurs du groupe Velvet Underground ?",
+        "answer": "Lou Reed.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Ancienne animatrice de FIP, Simone Hérault est devenue depuis plus de 30 ans une voix emblématique en France. Où l'entend-on ?",
+        "answer": "À la SNCF (dans les gares).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans le film Monte là-dessus de Sam Taylor (1923), on voit un homme suspendu à l'aiguille d'une horloge au-dessus du vide, dans une rue de Los Angeles. Comment s'appelle l'acteur, reconnaissable à son petit chapeau et ses lunettes rondes, qui joue ce rôle ?",
+        "answer": "Harold Lloyd.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est ce célèbre café parisien du 6e arrondissement, situé à Saint-Germain-des-Prés et fréquenté jadis par les surréalistes, qui a donné son nom à un prix littéraire remis le même jour que le Goncourt ?",
+        "answer": "Les Deux Magots.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on un cheval mâle qui a été châtré ?",
+        "answer": "Un hongre.",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "80565495-592f-11e4-a9df-005056a87c34",
+    "date": "2014-11-05",
+    "title": "Olonzac (Hérault) Spécial Jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/olonzac-herault-special-jeunes-9963886",
+    "pairs": [
+      {
+        "question": "Quelle sainte, fêtée le 25 novembre, peut-on coiffer quand on est célibataire à 25 ans ?",
+        "answer": "Sainte Catherine",
+        "tier": "bleue"
+      },
+      {
+        "question": "Que veut dire l'abréviation CQFD, utilisée notamment en mathématiques ?",
+        "answer": "Ce qu'il fallait démontrer",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom de la technique qui permet de fabriquer et d'utiliser les explosifs nécessaires à un feu d'artifice ?",
+        "answer": "La pyrotechnie",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle invention doit-on au médecin allemand Samuel Hahnemann, vers 1796 ?",
+        "answer": "L'homéopathie",
+        "tier": "blanche"
+      },
+      {
+        "question": "On parle d'astronautes en Europe, de cosmonautes pour les Russes et de spationautes en France. Comment appelle-t-on les personnes qui vont dans l'espace en Chine ?",
+        "answer": "Des taïkonautes",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment épelle-t-on le nom masculin « maccabée », qui désigne un cadavre ?",
+        "answer": "M-A-C-C-H-A-B-É-E",
+        "tier": "rouge"
+      },
+      {
+        "question": "Dans le célèbre roman de Jules Verne « Le Tour du monde en quatre-vingts jours », quel est le nom du serviteur du héros Phileas Fogg ?",
+        "answer": "Jean Passepartout",
+        "tier": "banco"
+      },
+      {
+        "question": "Dans le Système international d'unités, quelle est l'unité d'intensité du courant électrique ?",
+        "answer": "L'ampère",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "21ba963e-5933-11e4-a9df-005056a87c34",
+    "date": "2014-11-06",
+    "title": "Saint-Pons-de-Thomières (Hérault)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-pons-de-thomieres-herault-6029455",
+    "pairs": [
+      {
+        "question": "Sous quel nom est plus connu Siddhartha Gautama, qui vécut au VIe siècle avant notre ère ?",
+        "answer": "Bouddha",
+        "tier": "bleue"
+      },
+      {
+        "question": "Le docteur Zamenhof a publié en 1887 une brochure rédigée en russe, créant ainsi un outil universel toujours utilisé par quelques centaines de milliers de personnes dans le monde. De quoi s'agit-il ?",
+        "answer": "L'espéranto",
+        "tier": "bleue"
+      },
+      {
+        "question": "Élu le plus jeune membre de l'Académie française en 2008, quel est le nom de cet écrivain français, par ailleurs médecin, historien, diplomate et globe-trotter, qui a reçu le prix Goncourt en 2001 pour Rouge Brésil ?",
+        "answer": "Jean-Christophe Rufin",
+        "tier": "bleue"
+      },
+      {
+        "question": "Il est à l'origine de la loi légalisant la contraception en 1967 en France. Quel est le nom de cet homme politique ?",
+        "answer": "Lucien Neuwirth",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment se nomme l'invention de Peter Higgs ?",
+        "answer": "Le boson de Higgs",
+        "tier": "blanche"
+      },
+      {
+        "question": "À quel compositeur doit-on la Symphonie des Mille, sa huitième symphonie composée en 1906-1907 ?",
+        "answer": "Gustav Mahler",
+        "tier": "rouge"
+      },
+      {
+        "question": "Le célèbre indicatif de l'Eurovision est tiré d'une œuvre de Jean-Philippe Rameau, de Vincent d'Indy ou de Marc-Antoine Charpentier. De qui s'agit-il ?",
+        "answer": "Marc-Antoine Charpentier (Te Deum)",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel athlète américain, mort en 1980, a remporté quatre médailles d'or aux Jeux olympiques de Berlin en 1936, sur 100 mètres, 200 mètres, saut en longueur et relais 4x100 mètres ?",
+        "answer": "Jesse Owens",
+        "tier": "banco"
+      },
+      {
+        "question": "Que représente le signal de Botrange ?",
+        "answer": "Le point culminant de la Belgique (694 mètres, dans les Ardennes belges)",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "4da203a2-5934-11e4-a9df-005056a87c34",
+    "date": "2014-11-07",
+    "title": "Saint-Pons-de-Thomières (Hérault)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-pons-de-thomieres-herault-9672593",
+    "pairs": [
+      {
+        "question": "Qui est l'auteur de cette citation : « Le portier est le seul employé que l'on met à la porte le jour où on l'engage » ?",
+        "answer": "Raymond Devos",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel nom a-t-on donné à l'épisode sanglant survenu en Allemagne dans la nuit du 29 au 30 juin 1934, lors duquel les nazis ont perpétré des assassinats au sein même de leur mouvement, contre la section d'assaut ?",
+        "answer": "La nuit des longs couteaux",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la capitale de la Slovaquie ?",
+        "answer": "Bratislava",
+        "tier": "bleue"
+      },
+      {
+        "question": "Fille d'un comte russe et épouse d'un comte français, cette femme écrivain du XIXe siècle a laissé des romans mettant en scène des enfants, parmi lesquels « Un bon petit diable ». De qui s'agit-il ?",
+        "answer": "La comtesse de Ségur (Sophie Rostopchine)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment s'appelle le signe typographique en forme de huit un peu tordu qui signifie « et », notamment le « et » commercial ?",
+        "answer": "L'esperluette",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle personnalité politique du gouvernement du Front populaire, sous-secrétaire d'État aux sports et à l'organisation des loisirs, a fait instaurer les billets de congés payés SNCF à tarifs réduits en 1936 ?",
+        "answer": "Léo Lagrange",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel est le nom de cet homme politique français né à Cayenne en 1897 et mort à Paris en 1991, député de Guyane, sénateur du Lot, président du Conseil général du Lot, membre du Conseil constitutionnel, et tout premier président du Sénat de la Ve République, de 1958 à 1968 ?",
+        "answer": "Gaston Monnerville",
+        "tier": "banco"
+      },
+      {
+        "question": "Qu'est-ce que la dendrochronologie ?",
+        "answer": "L'étude de l'âge des arbres par l'observation de leurs anneaux de croissance",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "262d612a-59f3-11e4-a9df-005056a87c34",
+    "date": "2014-11-10",
+    "title": "Brassac (Tarn)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/brassac-tarn-9221807",
+    "pairs": [
+      {
+        "question": "Qu'est-ce que la sériciculture ?",
+        "answer": "L'élevage des vers à soie.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans la Grèce antique, comment appelait-on une prophétie annoncée par une divinité, ou le lieu où la divinité donnait sa réponse ?",
+        "answer": "Un oracle.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment nommait-on les pêcheurs qui, du XVIe au XXe siècle, partaient chaque année des côtes européennes pour pêcher la morue au large du Canada ?",
+        "answer": "Les Terre-Neuvas (ou Terre-Neuviers).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le tout dernier film du réalisateur Alain Resnais, sorti quelques semaines après sa disparition en mars 2014 ?",
+        "answer": "Aimer, boire et chanter.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle est la capitale de la République de Géorgie ?",
+        "answer": "Tbilissi.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le nom de ce poète, dramaturge et romancier français, mort en 1938, qui a passé la majeure partie de sa vie dans le Béarn et au Pays Basque, et dont Georges Brassens a mis en musique le poème La prière ?",
+        "answer": "Francis Jammes.",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel est le nom de cette femme de lettres et féministe britannique, disparue en 1941, incarnée au cinéma par Nicole Kidman dans le film The Hours en 2001, auteur de Mrs Dalloway, de La Promenade au phare, d'Orlando et des Vagues ?",
+        "answer": "Virginia Woolf.",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "001d5ba7-3e36-11e4-a9df-005056a87c34",
+    "date": "2014-11-11",
+    "title": "Brassac (Tarn)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/brassac-tarn-3547508",
+    "pairs": [
+      {
+        "question": "En 1815, quelle île française fut la dernière à accueillir l'empereur Napoléon Ier avant son départ pour l'île de Sainte-Hélène ?",
+        "answer": "L'île d'Aix",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment appelle-t-on la figure de style qui consiste à développer une idée générale dont la vérité est admise par les gens auxquels on s'adresse ? (expression composée d'un article, d'un nom et d'un adjectif)",
+        "answer": "Un lieu commun",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom du premier opéra rock créé par les Who en 1969, racontant l'histoire d'un petit garçon aveugle, sourd et muet devenant champion de flipper ?",
+        "answer": "Tommy",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qui sont les deux fondateurs du magazine L'Express, dont le premier numéro est sorti en kiosque le 16 mai 1953 ?",
+        "answer": "Jean-Jacques Servan-Schreiber et Françoise Giroud",
+        "tier": "blanche"
+      },
+      {
+        "question": "À quel auteur doit-on la célèbre réplique « La valeur n'attend point le nombre des années » ?",
+        "answer": "Corneille (dans Le Cid)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel historien et anthropologue, spécialiste du Moyen Âge, né à Toulon en 1924 et décédé le 1er avril 2014, a écrit La civilisation de l'Occident médiéval (1964) et animait Les Lundis de l'Histoire sur France Culture ?",
+        "answer": "Jacques Le Goff",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel scénariste français, né dans l'Hérault, ayant travaillé avec Luis Buñuel et récemment récompensé d'un Oscar pour l'ensemble de son œuvre, est l'auteur d'un texte exprimant sa passion pour Laurel et Hardy ? (choix : Jean-Claude Carrière, Pierre Dubois ou Jean-Pierre Chabrol)",
+        "answer": "Jean-Claude Carrière",
+        "tier": null
+      },
+      {
+        "question": "Sachant que le quatrième top de France Inter retentit à l'heure pile, à quelle heure précise (à la seconde près) retentit le premier des quatre tops indiquant 13 heures ?",
+        "answer": "12 h 59 min 57 s",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel poète français, précurseur du surréalisme, prénommé Pierre, auteur des recueils Plupart du temps et Main d'œuvre et créateur de la revue Nord-Sud, fut l'un des amants de Coco Chanel avant de se retirer près de l'abbaye de Solesmes ?",
+        "answer": "Pierre Reverdy",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "04a61199-3e36-11e4-a9df-005056a87c34",
+    "date": "2014-11-12",
+    "title": "Brassac (Tarn) Spécial Jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/brassac-tarn-special-jeunes-9443288",
+    "pairs": [
+      {
+        "question": "Devinette : qu'ont en commun Adam, la douche, l'arrosoir et le pain ?",
+        "answer": "La pomme (pomme d'Adam, pomme de douche, pomme d'arrosoir, pomme de pain).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle pièce de Molière le personnage d'Harpagon apparaît-il ?",
+        "answer": "L'Avare.",
+        "tier": "bleue"
+      }
+    ]
+  },
+  {
+    "id": "0961772e-3e36-11e4-a9df-005056a87c34",
+    "date": "2014-11-13",
+    "title": "Saint-Sulpice-la-Pointe (Tarn)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-sulpice-la-pointe-tarn-8405600",
+    "pairs": [
+      {
+        "question": "Quel étang du sud de la France, à l'ouest de Marseille, est relié à la Méditerranée par le canal de Caronte ?",
+        "answer": "L'étang de Berre",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle ville Gilbert Bécaud a-t-il un guide prénommé Nathalie, dans sa chanson de 1964 ?",
+        "answer": "Moscou",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel grand homme fut panthéonisé en décembre 1964, soit 20 ans après son décès tragique, lors d'un discours célèbre d'André Malraux ?",
+        "answer": "Jean Moulin",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle loi, qui réglemente notamment l'affichage sur les murs et garantit la liberté de la presse, a été votée le 21 juillet 1881 ?",
+        "answer": "La loi sur la liberté de la presse",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le plus grand lac naturel français d'origine glaciaire entièrement situé en France (en excluant le lac Léman, partagé avec la Suisse) ?",
+        "answer": "Le lac du Bourget",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel trio talentueux, composé d'un architecte, d'un jardinier et d'un peintre, a construit le château de Vaux-le-Vicomte pour Nicolas Fouquet, avant d'être appelé par Louis XIV pour Versailles ?",
+        "answer": "Le Vau (architecte), Le Nôtre (jardinier) et Le Brun (peintre)",
+        "tier": "rouge"
+      },
+      {
+        "question": "En quelle année est sorti le tube des Rolling Stones « (I Can't Get No) Satisfaction » : 1955, 1965 ou 1975 ?",
+        "answer": "1965",
+        "tier": null
+      },
+      {
+        "question": "Où se situe le volcan Olympus Mons, le plus haut relief du système solaire ?",
+        "answer": "Sur Mars",
+        "tier": "banco"
+      },
+      {
+        "question": "La seule tortue terrestre de France faisant l'objet d'une mesure de protection, présente en particulier dans le Var et appelée tortue des Maures, porte également quel autre nom ?",
+        "answer": "La tortue d'Hermann",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "0dfbe393-3e36-11e4-a9df-005056a87c34",
+    "date": "2014-11-14",
+    "title": "Saint-Sulpice-la-Pointe (Tarn)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/saint-sulpice-la-pointe-tarn-7255550",
+    "pairs": [
+      {
+        "question": "« Betty et Madame Bovary ont vécu l'enfer durant la cérémonie » : à qui vous fait penser cette phrase composée de titres de films ?",
+        "answer": "Claude Chabrol",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quels adjectifs sont à nord et sud ce que occidental et oriental sont à l'ouest et à l'est ?",
+        "answer": "Septentrional et méridional",
+        "tier": "bleue"
+      },
+      {
+        "question": "De quel pays Tegucigalpa est-elle la capitale ?",
+        "answer": "Le Honduras",
+        "tier": "bleue"
+      },
+      {
+        "question": "On mélange de la confiture de fraises, du chocolat râpé, de la banane écrasée, de la moutarde très forte et de la saucisse de Toulouse crue mais tiède : quel est ce plat fictif, spécialité des années 70 ?",
+        "answer": "Le gloubi-boulga de Casimir (L'Île aux enfants)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment s'écrit le mot « moucharabieh », cette sorte de grillage qui permet de voir sans être vu dans l'architecture arabe traditionnelle ?",
+        "answer": "M-O-U-C-H-A-R-A-B-I-E-H (l'orthographe « moucharabié » est aussi acceptée)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment s'appelle le festival de musique qui se déroule chaque année au mois de mai à Coutances, dans la Manche ?",
+        "answer": "Jazz sous les pommiers",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "9c100402-c733-11e4-bab6-005056a87c30",
+    "date": "2015-03-24",
+    "title": "Lormes (Nièvre)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/lormes-nievre-6130775",
+    "pairs": [
+      {
+        "question": "Comment appelle-t-on l'obstruction partielle ou totale de l'intestin grêle ou du côlon ?",
+        "answer": "Une occlusion intestinale",
+        "tier": "bleue"
+      },
+      {
+        "question": "Où se trouve le siège de l'Académie de France à Rome depuis Napoléon ?",
+        "answer": "À la Villa Médicis",
+        "tier": "bleue"
+      },
+      {
+        "question": "Sous quel autre nom connaît-on mieux Claude Moine ?",
+        "answer": "Eddy Mitchell",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment appelait-on le militaire chargé du service postal dans une unité militaire ou sur un navire de guerre ?",
+        "answer": "Le vaguemestre",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est ce condiment aigre-doux, composé de fruits et de légumes pimentés et épicés, confit dans du vinaigre sucré, que l'on trouve souvent dans la cuisine indienne et anglo-saxonne ?",
+        "answer": "Le chutney",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le nom donné au versant d'une montagne exposé toujours à l'ombre ou très peu au soleil ?",
+        "answer": "L'ubac",
+        "tier": "rouge"
+      },
+      {
+        "question": "Ce promontoire de granit, haut de 600 mètres, se trouve dans la province de La Corogne, en Galice (Espagne), et plonge dans l'Atlantique. Son nom ressemble à celui d'un département français. Lequel ?",
+        "answer": "Le cap Finisterre (Finistère)",
+        "tier": "banco"
+      },
+      {
+        "question": "En 1908, au salon Femina, l'ingénieur français Édouard Belin a présenté un appareil révolutionnaire, ancêtre du télécopieur, capable de transmettre à distance images, textes et photographies par liaison téléphonique ou par radio. Comment se nomme cet appareil ?",
+        "answer": "Le bélinographe",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "30ed6015-c735-11e4-bab6-005056a87c30",
+    "date": "2015-03-25",
+    "title": "Lormes (Nièvre)adultes et spécial jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/lormes-nievre-adultes-et-special-jeunes-9149053",
+    "pairs": [
+      {
+        "question": "Comment s'appelle une personne qui marche sur un fil avec un balancier ?",
+        "answer": "Un funambule",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la forme de notre pays, la France ?",
+        "answer": "Un hexagone",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment obtenir 12 en utilisant trois fois le chiffre 1 dans une addition ?",
+        "answer": "11 + 1",
+        "tier": "bleue"
+      },
+      {
+        "question": "Retenues entre elles par la gravité, quel est le nom donné à l'ensemble des étoiles ainsi que des gaz et des poussières interstellaires ?",
+        "answer": "Une galaxie",
+        "tier": "blanche"
+      },
+      {
+        "question": "Un tableau de Claude Monet est à l'origine du nom d'un mouvement pictural. Quel est ce mouvement ?",
+        "answer": "L'impressionnisme",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel cinéaste, plus connu pour ses films comiques, a réalisé en 1967 son tout dernier film, et seul film en couleur, intitulé La Comtesse de Hong Kong, interprété notamment par Marlon Brando et Sophia Loren ?",
+        "answer": "Charlie Chaplin",
+        "tier": "rouge"
+      },
+      {
+        "question": "Dans le titre de l'une des aventures de Tintin parue en 1968, quel numéro porte le vol pour Sydney ?",
+        "answer": "714 (Vol 714 pour Sydney)",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "e325f1f5-c735-11e4-bab6-005056a87c30",
+    "date": "2015-03-26",
+    "title": "Montsauche-les-Settons (Nièvre)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/montsauche-les-settons-nievre-6241482",
+    "pairs": [
+      {
+        "question": "Quel roi a invité Léonard de Vinci à séjourner au Clos Lucé à Amboise, en Indre-et-Loire, en 1516 ?",
+        "answer": "François Ier",
+        "tier": "bleue"
+      },
+      {
+        "question": "De quelle fleur le safran, qui est une épice, est-il extrait ?",
+        "answer": "Le crocus",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la différence de sens entre « deuxième » et « second » ?",
+        "answer": "« Second » s'emploie en général quand il n'y a pas de troisième.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment désigne-t-on les fientes d'oiseaux marins utilisées comme engrais ?",
+        "answer": "Le guano",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment se nomme la particularité visuelle de certains animaux, tels le loup ou le chat, qui leur permet d'avoir une excellente vision nocturne ?",
+        "answer": "La nyctalopie",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sur les coteaux de quel fleuve, au Portugal, est récolté le raisin qui donne le vin de Porto ?",
+        "answer": "Le Douro",
+        "tier": "rouge"
+      },
+      {
+        "question": "À qui attribue-t-on l'invention de la vis sans fin ?",
+        "answer": "Archimède",
+        "tier": "banco"
+      },
+      {
+        "question": "Comment s'appelle, en japonais, ce massage thérapeutique qui rééquilibre la circulation énergétique du corps en appliquant une pression des doigts sur des points situés le long des méridiens ?",
+        "answer": "Le shiatsu",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "d8a0c3bf-c736-11e4-bab6-005056a87c30",
+    "date": "2015-03-27",
+    "title": "Montsauche-les-Settons (Nièvre)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/montsauche-les-settons-nievre-4776071",
+    "pairs": [
+      {
+        "question": "Quel est le nom de l'architecte de la Philharmonie de Paris, nouvelle salle de spectacle consacrée à la musique symphonique située dans le quartier de la Villette et inaugurée le 14 janvier 2015 ?",
+        "answer": "Jean Nouvel",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle ville des Bouches-du-Rhône célèbre-t-on le culte de sainte Sara, sainte Marie Jacobé et sainte Marie Salomé ?",
+        "answer": "Les Saintes-Maries-de-la-Mer",
+        "tier": "bleue"
+      },
+      {
+        "question": "Épelez le mot « hermaphrodite ».",
+        "answer": "H-E-R-M-A-P-H-R-O-D-I-T-E",
+        "tier": "bleue"
+      },
+      {
+        "question": "Chez l'être humain, quelle dépression de la rétine, partie centrale dont la dégénérescence progressive est à l'origine de la DMLA, est aussi appelée tache jaune ?",
+        "answer": "La macula",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel événement mondial va se passer le 30 juin 2015 juste avant minuit ?",
+        "answer": "L'ajout d'une seconde intercalaire (pour compenser le ralentissement de la rotation de la Terre)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle œuvre du XIXe siècle, écrite pour la cour de l'empereur Napoléon III, commence ainsi : « Pour parler sans ambiguïté, ce dîner à Sainte-Adresse, près du Havre, malgré les effluves embaumés de la mer, malgré les vins de très bons crus, les cuissots de veau et les cuisseaux de chevreuil prodigués par l'amphitryon, fut un vrai guêpier… » ?",
+        "answer": "La dictée de Prosper Mérimée",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel est, des cinq Grands Lacs nord-américains, le seul à ne pas être frontalier avec le Canada et à être situé entièrement aux États-Unis ?",
+        "answer": "Le lac Michigan",
+        "tier": "banco"
+      },
+      {
+        "question": "Comment se nomme ce petit bateau de Méditerranée, léger et étroit, à la voile trapézoïdale (et non triangulaire), de 8 à 15 mètres de long et muni d'un ou deux mâts, que l'on voit aussi naviguer sur le Nil ou en mer Rouge ?",
+        "answer": "La felouque",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "7ec3a059-c737-11e4-bab6-005056a87c30",
+    "date": "2015-03-30",
+    "title": "Villequiers (Cher)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/villequiers-cher-8647882",
+    "pairs": [
+      {
+        "question": "Au sein d'une articulation, comment s'appelle le déplacement de deux extrémités osseuses l'une par rapport à l'autre ?",
+        "answer": "Une luxation",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le symbole des médecins qui vient de l'un des attributs du dieu Hermès dans la mythologie grecque ?",
+        "answer": "Le caducée",
+        "tier": "bleue"
+      },
+      {
+        "question": "Sous la IIIe et la IVe République, comment appelait-on le chef du gouvernement ?",
+        "answer": "Le président du Conseil",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel terme désignait le privilège accordé à un agriculteur ou à un particulier lui donnant le droit de distiller sa propre récolte pour sa consommation personnelle, privilège non transmissible depuis 1959 ?",
+        "answer": "Bouilleur de cru",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans quel pays se trouve la ville de Samarcande ?",
+        "answer": "L'Ouzbékistan",
+        "tier": "blanche"
+      },
+      {
+        "question": "Au bowling, on dit qu'on fait un strike lorsqu'on abat toutes les quilles au premier lancer. Quel autre terme anglais utilise-t-on lorsqu'on abat les dix quilles en deux lancers consécutifs ?",
+        "answer": "Un spare",
+        "tier": "rouge"
+      },
+      {
+        "question": "Maurice Genevoix, écrivain français né à Decize dans la Nièvre en 1890 et élu à l'Académie française en 1946, a obtenu le prix Goncourt en 1925 pour un ouvrage évoquant la Sologne et la vie d'un braconnier. Quel est ce titre ?",
+        "answer": "Raboliot",
+        "tier": "banco"
+      },
+      {
+        "question": "Quelle est la date précise de la proclamation de l'indépendance des États-Unis ?",
+        "answer": "Le 4 juillet 1776",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "ca82cafb-c739-11e4-bab6-005056a87c30",
+    "date": "2015-03-31",
+    "title": "Villequiers (Cher)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/villequiers-cher-1111623",
+    "pairs": [
+      {
+        "question": "Comment écrit-on le mot « hiéroglyphe » ?",
+        "answer": "H-I-É-R-O-G-L-Y-P-H-E",
+        "tier": "bleue"
+      },
+      {
+        "question": "D'origine arménienne, quel est ce compositeur soviétique du XXe siècle, né en 1903, dont le nom est indissociable de la Danse du sabre ?",
+        "answer": "Aram Khatchatourian",
+        "tier": "bleue"
+      },
+      {
+        "question": "« Le jour n'est pas plus pur que le fond de mon cœur. » Cette réplique d'Hippolyte est tirée de quelle pièce et de quel auteur ?",
+        "answer": "Phèdre, de Racine",
+        "tier": "bleue"
+      },
+      {
+        "question": "Sous quel autre nom connaît-on le pigeon ramier ?",
+        "answer": "La palombe",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel dramaturge grec, auteur d'Œdipe roi (représenté entre 430 et 420 avant notre ère), met en scène la découverte par Œdipe de ses propres crimes de parricide et d'inceste ?",
+        "answer": "Sophocle",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle est la particularité du roman La Disparition de Georges Perec, publié en 1969 ?",
+        "answer": "Il est écrit sans la lettre E (c'est un lipogramme)",
+        "tier": "rouge"
+      },
+      {
+        "question": "Criollo, Forastero, Trinitario et Nacional sont les quatre grandes familles de variétés de quel arbre ?",
+        "answer": "Le cacaoyer",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "cb06c166-c73c-11e4-bab6-005056a87c30",
+    "date": "2015-04-01",
+    "title": "Boulleret (Cher) adultes et spécial jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/boulleret-cher-adultes-et-special-jeunes-8862382",
+    "pairs": [
+      {
+        "question": "Au poker, comment appelle-t-on la réunion de cinq cartes de même couleur ?",
+        "answer": "Un flush",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qu'est-ce qu'un ferrovipathe ?",
+        "answer": "Un passionné de trains et du monde ferroviaire",
+        "tier": "bleue"
+      },
+      {
+        "question": "On frappe les cordes du piano, mais que fait-on aux cordes du clavecin ?",
+        "answer": "On les pince",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quels sont les deux prénoms les plus connus de Mozart ?",
+        "answer": "Wolfgang Amadeus",
+        "tier": "blanche"
+      },
+      {
+        "question": "En mathématiques, comment s'appelle l'opération qui résulte d'une relation entre des grandeurs dépendantes l'une de l'autre ?",
+        "answer": "Une équation",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que signifie l'adjectif « incommensurable » ?",
+        "answer": "Que l'on ne peut pas mesurer",
+        "tier": "rouge"
+      },
+      {
+        "question": "La ville de Lugdunum a été fondée en 43 avant notre ère par Lucius Munatius Plancus. Quel est son nom actuel ?",
+        "answer": "Lyon",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel est le nom de famille du bourgeois gentilhomme dans la comédie-ballet de Molière créée en 1670 ?",
+        "answer": "Monsieur Jourdain",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "d12716f4-c73b-11e4-bab6-005056a87c30",
+    "date": "2015-04-02",
+    "title": "Boulleret (Cher)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/boulleret-cher-5001260",
+    "pairs": [
+      {
+        "question": "Quel monument a été inauguré en 1889 à l'occasion de l'Exposition universelle de Paris ?",
+        "answer": "La tour Eiffel",
+        "tier": "bleue"
+      },
+      {
+        "question": "Pour quelle raison les propriétaires français se sont-ils mis à détruire les menots de leurs portes et fenêtres en 1798 ?",
+        "answer": "Pour échapper à l'impôt sur les portes et fenêtres",
+        "tier": "bleue"
+      },
+      {
+        "question": "De quoi souffre une personne atteinte d'anosmie ?",
+        "answer": "D'une perte de l'odorat",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans le film d'Henri-Georges Clouzot, à quel numéro de l'avenue Junot l'assassin habite-t-il ?",
+        "answer": "Au 21",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sous quel autre nom est connu le sulfure de plomb ?",
+        "answer": "La galène",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans quel film tiré d'un roman de Stephen King Tom Hanks joue-t-il le rôle d'un surveillant de prison ?",
+        "answer": "La Ligne verte",
+        "tier": "rouge"
+      },
+      {
+        "question": "En quelle année est entré en vigueur le décret sur l'interdiction de fumer dans les lieux publics en France : 1982, 1997 ou 2007 ?",
+        "answer": "2007",
+        "tier": null
+      },
+      {
+        "question": "Le suc orange de cette plante, sorte de latex jaune, vient à bout, dit-on, des verrues, ce qui lui vaut le surnom d'herbe à verrues. Quelle est cette plante ?",
+        "answer": "La chélidoine",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "a331ece7-bcdd-4b61-a79a-1d6b4a66e02d",
+    "date": "2019-04-30",
+    "title": "Porte-de-Savoie | 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/porte-de-savoie-2-2957270",
+    "pairs": [
+      {
+        "question": "Comment s'écrit l'adjectif « aigu » au féminin ?",
+        "answer": "Aiguë (avec un tréma sur le e final).",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel journal français met toujours en exergue, en haut de sa dernière page, la phrase : « La liberté de la presse ne s'use que quand on ne s'en sert pas » ?",
+        "answer": "Le Canard enchaîné.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la matière qui constitue nos ongles et les cornes des rhinocéros ?",
+        "answer": "La kératine.",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le nom de cet architecte, né en 1867 et mort en 1942, représentant emblématique de l'Art nouveau en France, à qui l'on doit notamment les édicules de nombreuses stations du métro parisien ?",
+        "answer": "Hector Guimard.",
+        "tier": "blanche"
+      },
+      {
+        "question": "Richard Wagner a composé entre 1849 et 1876 sa fameuse tétralogie « L'Anneau du Nibelung ». Pouvez-vous citer trois des quatre opéras qui la composent ?",
+        "answer": "L'Or du Rhin, La Walkyrie, Siegfried et Le Crépuscule des dieux (trois parmi ces quatre).",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on ce type de toiture en dents de scie, couvrant le plus souvent un atelier, caractéristique du XIXe et du début du XXe siècle, dont le nom est d'origine anglaise ?",
+        "answer": "Un shed.",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel était le surnom donné localement, en Lorraine, au minerai de fer, en raison de sa faible teneur en fer ?",
+        "answer": "La minette.",
+        "tier": "banco"
+      },
+      {
+        "question": "Qui a écrit la pièce russe « Les Trois Sœurs » ?",
+        "answer": "Anton Tchekhov.",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
     "id": "2dbaffbc-ee87-4410-83d9-7cbf22aa0efa",
     "date": "2026-05-04",
     "title": "à Collégien | 1",
