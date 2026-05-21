@@ -29478,6 +29478,691 @@
     ]
   },
   {
+    "id": "4baef910-2917-11e4-907f-782bcb6744eb",
+    "date": "2014-09-09",
+    "title": "Champagné-Saint-Hilaire (Vienne) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/champagne-saint-hilaire-vienne-2",
+    "pairs": [
+      {
+        "question": "Quelle est la différence technique entre une « Michelin » et un autorail (termes souvent employés à tort comme synonymes en chemin de fer) ?",
+        "answer": "La Michelin est un autorail qui roule sur des roues équipées de pneumatiques (mis au point par Michelin), tandis qu'un autorail classique roule sur des roues en acier ordinaires",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment appelle-t-on un train qui s'incline dans les courbes pour compenser la force centrifuge et préserver le confort des voyageurs à grande vitesse ?",
+        "answer": "Un train pendulaire",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quel événement historique correspond le décès de Lazare Ponticelli, le 12 mars 2008, à l'âge de 110 ans ?",
+        "answer": "Il était le dernier « poilu » français survivant de la Première Guerre mondiale (dernier ancien combattant français de 14-18)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quels cadeaux célèbres Méhémet Ali, vice-roi d'Égypte, a-t-il offerts au roi Charles X en 1830 ?",
+        "answer": "Une girafe (la fameuse Zarafa) et l'obélisque de Louxor (aujourd'hui érigé place de la Concorde, à Paris)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel bluesman américain, de son vrai nom McKinley Morganfield, chanteur et guitariste, figure majeure du Chicago Blues des années 1950-1970, mort en 1983, a inspiré Chuck Berry, les Rolling Stones et Led Zeppelin, et chanté « I Just Want to Make Love to You » ou « Baby Please Don't Go » ?",
+        "answer": "Muddy Waters",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel philosophe, agriculteur et essayiste français d'origine algérienne, né en 1938, l'un des pionniers de l'agriculture biologique en France, installé en Ardèche, défend une « sobriété heureuse » et un modèle agricole respectueux de la terre et des humains ?",
+        "answer": "Pierre Rabhi",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel duc, partisan d'une monarchie constitutionnelle et fondateur de l'École des arts et métiers, aurait répondu à Louis XVI, qui s'écriait à l'annonce de la prise de la Bastille : « Mais c'est une révolte ! » par la phrase : « Non, Sire, c'est une révolution. » ?",
+        "answer": "Le duc de La Rochefoucauld-Liancourt",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "5217b3a6-2917-11e4-907f-782bcb6744eb",
+    "date": "2014-09-10",
+    "title": "Lavoux (Vienne) — spécial jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/lavoux-vienne",
+    "pairs": [
+      {
+        "question": "Quelle voyelle est absente du mot « gouaille » ?",
+        "answer": "Le « y » (toutes les autres voyelles — a, e, i, o, u — y figurent)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Pourquoi les habitants de Mende et de Florac ne craignent-ils jamais une inondation en cas de débordement de « la Lozère » ?",
+        "answer": "Parce que la Lozère n'est pas un cours d'eau : c'est le nom d'un massif montagneux des Cévennes (le mont Lozère)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quand dit-on d'une eau qu'elle est « saumâtre » ?",
+        "answer": "Lorsqu'il s'agit d'un mélange d'eau douce et d'eau salée, dont la teneur en sel est intermédiaire entre celle de l'eau douce et celle de l'eau de mer (typique des estuaires)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le titre de la toute première émission de télé-réalité diffusée en France, d'avril à juillet 2001, adaptée du programme néerlandais « Big Brother » ?",
+        "answer": "« Loft Story » (sur M6)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Au Moyen Âge, comment appelait-on la cérémonie au cours de laquelle un jeune noble était reçu chevalier ?",
+        "answer": "L'adoubement",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sous quel autre nom — locution anglaise désormais courante — connaît-on en France la « boxe américaine », sport pieds-poings dont l'une des variantes est aussi appelée kickboxing ?",
+        "answer": "Le full-contact",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "5788c157-2917-11e4-907f-782bcb6744eb",
+    "date": "2014-09-11",
+    "title": "Lavoux (Vienne) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/lavoux-vienne-2",
+    "pairs": [
+      {
+        "question": "De quel instrument de musique la française Marielle Nordmann est-elle une virtuose reconnue ?",
+        "answer": "La harpe",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qu'est-ce qui caractérise principalement une « bière trappiste » ?",
+        "answer": "Elle est brassée au sein (ou sous le contrôle direct) d'une abbaye trappiste, par les moines ou sous leur supervision, et les bénéfices doivent être consacrés à la communauté ou à des œuvres caritatives",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la plus ancienne des gares françaises, inaugurée à la fin d'août 1837 lorsque partit de là le premier train à destination de Saint-Germain-en-Laye ?",
+        "answer": "La gare Saint-Lazare, à Paris",
+        "tier": "bleue"
+      },
+      {
+        "question": "L'Himalaya compte quatorze sommets principaux dépassant 8 000 mètres d'altitude. Pouvez-vous en citer trois ?",
+        "answer": "Par exemple : l'Everest, le K2 et l'Annapurna (ou encore le Kangchenjunga, le Lhotse, le Makalu, le Dhaulagiri, etc.)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que signifie la vieille expression française « dès potron-jacquet » (ou « dès potron-minet ») ?",
+        "answer": "Dès la pointe du jour, dès les toutes premières lueurs du matin",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel mot d'origine espagnole désigne l'« ivoire végétal », bois très dur de couleur blanc crème, issu d'un palmier d'Amazonie et utilisé par exemple en tabletterie ou pour la confection de boutons ?",
+        "answer": "Le corozo (ou tagua)",
+        "tier": "rouge"
+      },
+      {
+        "question": "En droit, quel est l'autre nom donné à la vente aux enchères d'un bien en indivision, notamment à la suite d'une succession ou d'un jugement ?",
+        "answer": "Une licitation",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "5ae3b1b2-2917-11e4-907f-782bcb6744eb",
+    "date": "2014-09-12",
+    "title": "Nancy (Meurthe-et-Moselle) — en direct du « Livre sur la place »",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/nancy-meurthe-et-moselle",
+    "pairs": [
+      {
+        "question": "Quel grand incendie, survenu le 9 février 1942, plongea Manhattan dans un brouillard de fumée irrespirable lorsqu'un célèbre navire prit feu dans le port de New York ?",
+        "answer": "L'incendie de l'« USS Lafayette », ex-paquebot français « Normandie », réquisitionné par les États-Unis fin 1941",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel musée, dédié à l'œuvre d'un peintre originaire de la ville, est installé à Albi ?",
+        "answer": "Le musée Toulouse-Lautrec (Henri de Toulouse-Lautrec étant né et mort à Albi)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle discipline le prix Pritzker, créé en 1979 et considéré comme l'équivalent du prix Nobel dans son domaine, vient-il récompenser chaque année ?",
+        "answer": "L'architecture",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment s'appelle le fleuve qui s'écoule du lac de Tibériade à la mer Morte, et qui a donné son nom à un pays voisin ?",
+        "answer": "Le Jourdain",
+        "tier": "blanche"
+      },
+      {
+        "question": "Dans la pièce de William Shakespeare, quels sont les patronymes respectifs de Roméo et de Juliette ?",
+        "answer": "Roméo Montaigu et Juliette Capulet",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on, en physique, des atomes d'un même élément chimique qui ne diffèrent entre eux que par leur nombre de neutrons (comme le carbone 12 et le carbone 14) ?",
+        "answer": "Des isotopes",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel écrivain britannique d'origine polonaise est l'auteur de la nouvelle « Au cœur des ténèbres » (« Heart of Darkness »), dont le film « Apocalypse Now » de Francis Ford Coppola est une adaptation libre ?",
+        "answer": "Joseph Conrad",
+        "tier": "banco"
+      },
+      {
+        "question": "Comment appelle-t-on, en physique, l'état métastable d'un corps qui demeure liquide à une température inférieure à sa température de solidification (par exemple, l'eau pure refroidie sous 0 °C) ?",
+        "answer": "La surfusion",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "366ce466-292c-11e4-907f-782bcb6744eb",
+    "date": "2014-09-15",
+    "title": "Oyonnax (Ain)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/oyonnax-ain",
+    "pairs": [
+      {
+        "question": "Quel mot désigne à la fois un petit ustensile présent sur la table aux repas et le creux situé en arrière des clavicules ?",
+        "answer": "Une salière",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans le film de Claude Sautet « Vincent, François, Paul… et les autres » (1974), quels acteurs interprètent respectivement Vincent, François et Paul ?",
+        "answer": "Vincent : Yves Montand ; François : Michel Piccoli ; Paul : Serge Reggiani",
+        "tier": "bleue"
+      },
+      {
+        "question": "Selon la médecine grecque et égyptienne antique, à quel organe du corps féminin attribuait-on les manifestations dites « hystériques » — organe qui a d'ailleurs donné son nom à l'hystérie ?",
+        "answer": "L'utérus (du grec « ustéra », utérus)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel édit, signé par Louis XIV le 18 octobre 1685, mit fin à l'existence légale du protestantisme en France en révoquant l'édit de Nantes ?",
+        "answer": "L'édit de Fontainebleau",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel athlète français, né en 1921 et mort le 27 juin 2013, fut champion olympique du marathon aux Jeux de Melbourne en 1956 ?",
+        "answer": "Alain Mimoun",
+        "tier": "blanche"
+      },
+      {
+        "question": "Le champagne est élaboré à partir de trois cépages principaux. Pouvez-vous en citer deux ?",
+        "answer": "Le chardonnay, le pinot noir et le pinot meunier",
+        "tier": "rouge"
+      },
+      {
+        "question": "Que désigne, en français soutenu et un peu désuet, le nom féminin « yeuse », issu de l'ancien provençal « euse » ?",
+        "answer": "Le chêne vert (Quercus ilex)",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel est le nom de la langue parlée par les Incas, qui dominèrent l'Amérique du Sud avant la conquête espagnole, et toujours langue officielle au Pérou depuis 1975 ?",
+        "answer": "Le quechua",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "3d21c7b8-292c-11e4-907f-782bcb6744eb",
+    "date": "2014-09-16",
+    "title": "Oyonnax (Ain) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/oyonnax-ain-2",
+    "pairs": [
+      {
+        "question": "Quelle est la différence de sens entre les deux homophones « satyre » (avec un y) et « satire » (avec un i) ?",
+        "answer": "Le « satyre » (y) est une créature mythologique mi-homme mi-bouc et, par extension, un homme à mœurs dépravées ; la « satire » (i) est une œuvre — littéraire ou artistique — qui critique en s'en moquant",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle île italienne, située entre la Tunisie et Malte, est souvent présentée comme « la porte de l'Europe » pour de nombreux migrants en provenance d'Afrique ?",
+        "answer": "Lampedusa",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle ville française se tient traditionnellement, chaque hiver, la fête du Citron, sorte de carnaval entièrement décoré avec des agrumes ?",
+        "answer": "À Menton (Alpes-Maritimes)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle peintre impressionniste française, amie de Mallarmé et de Renoir, épousa Eugène Manet (frère d'Édouard Manet) et est notamment l'auteure de « Le Berceau » ?",
+        "answer": "Berthe Morisot",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le titre du troisième et dernier film de la trilogie de Cédric Klapisch, après « L'Auberge espagnole » (2002) et « Les Poupées russes » (2005) ?",
+        "answer": "« Casse-tête chinois » (2013)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Anciennement nommée Chuquisaca, comment s'appelle aujourd'hui la capitale constitutionnelle de la Bolivie (distincte de La Paz, qui est le siège du gouvernement) ?",
+        "answer": "Sucre",
+        "tier": "rouge"
+      },
+      {
+        "question": "En quelle année eut lieu la grande crue de la Seine à Paris, parfois qualifiée de « crue du siècle » ?",
+        "answer": "En 1910 (janvier 1910)",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel est, à 1 139 mètres d'altitude, le plus haut col routier du massif des Vosges, situé entre Gérardmer (Vosges) et Munster (Haut-Rhin) ?",
+        "answer": "Le col de la Schlucht",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "44791769-292c-11e4-907f-782bcb6744eb",
+    "date": "2014-09-17",
+    "title": "Oyonnax (Ain) — 3, spécial jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/oyonnax-ain-3",
+    "pairs": [
+      {
+        "question": "Quelle grande ville a pour nom complet d'origine espagnole « El Pueblo de Nuestra Señora la Reina de los Ángeles del Río Porciúncula » (« Le village de Notre-Dame la Reine des Anges du fleuve Porciúncula ») ?",
+        "answer": "Los Angeles (Californie, États-Unis)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel mot désigne à la fois un maillot de bain deux-pièces et un atoll américain de l'océan Pacifique, dans les îles Marshall ?",
+        "answer": "Bikini",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle expression chiffrée emploie-t-on familièrement pour dire que l'on a atteint exactement son objectif ?",
+        "answer": "« Taper (ou « mettre ») dans le mille »",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel instrument de musique fonctionne au moyen de cartons perforés que l'on déroule sous une soufflerie ?",
+        "answer": "L'orgue de Barbarie",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle arme à feu portative, utilisée aux XVIᵉ et XVIIᵉ siècles, pouvait être à rouet, à mèche ou à silex, et dont trois célèbres fantassins imaginés par Alexandre Dumas étaient armés ?",
+        "answer": "Le mousquet (d'où les « mousquetaires »)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Sur les crayons à papier figurent les lettres H et B (parfois combinées en HB). Que signifient-elles, et que désignent-elles ?",
+        "answer": "H pour « hard » (mine dure et claire) et B pour « black » (mine tendre, qui marque davantage et plus noir) ; ces lettres indiquent la dureté et la noirceur de la mine — HB correspondant à une mine moyenne",
+        "tier": "rouge"
+      },
+      {
+        "question": "Combien vaut la moitié du tiers du quart du cinquième de 120 ?",
+        "answer": "1 (120 / 5 / 4 / 3 / 2 = 1)",
+        "tier": "banco"
+      },
+      {
+        "question": "Quelle variété de raisin de table blanc, réputée pour ses vertus thérapeutiques et autrefois objet de « cures de raisin » (un uvarium lui ayant été dédié en 1933), fait la renommée de Moissac, dans le Tarn-et-Garonne ?",
+        "answer": "Le chasselas (de Moissac)",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "49c4acf2-292c-11e4-907f-782bcb6744eb",
+    "date": "2014-09-18",
+    "title": "Vonnas (Ain)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/vonnas-ain",
+    "pairs": [
+      {
+        "question": "Comment appelle-t-on l'opération qui consiste à inciser l'écorce des pins pour en faire couler la résine, pratique autrefois très courante notamment dans les Landes ?",
+        "answer": "Le gemmage",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel bandonéoniste et compositeur argentin, mort en 1992 à Buenos Aires, est considéré comme le musicien le plus important de la seconde moitié du XXᵉ siècle pour le tango ?",
+        "answer": "Astor Piazzolla",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle boisson alcoolisée verte, surnommée la « fée verte » et accusée de rendre fou, fut interdite à la fabrication, à la circulation et à la vente par un décret du 7 mars 1915 (à la suite d'un premier décret de 1815), avant d'être réautorisée plus tard sous une forme modifiée ?",
+        "answer": "L'absinthe",
+        "tier": "bleue"
+      },
+      {
+        "question": "Que signifie l'expression latine « Dura lex, sed lex » ?",
+        "answer": "« La loi est dure, mais c'est la loi »",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que dit-on du cri de la souris ?",
+        "answer": "On dit qu'elle « chicote »",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle est la principale différence entre un jambon « serrano » et un jambon « ibérico » espagnols ?",
+        "answer": "Le jambon ibérico est issu du porc ibérique noir (« pata negra »), souvent élevé en semi-liberté et nourri de glands, tandis que le jambon serrano provient de porcs blancs élevés de façon plus industrielle",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel est le principal point commun entre la fonte et l'acier ?",
+        "answer": "Ce sont tous deux des alliages de fer et de carbone, qui ne diffèrent essentiellement que par la proportion de carbone (plus élevée dans la fonte)",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel photographe français d'origine hongroise, également peintre, dessinateur, sculpteur et écrivain, célèbre pour ses photographies nocturnes en noir et blanc de Paris (« Paris de nuit »), proche des surréalistes et auteur d'un livre sur les graffiti et d'un autre sur Henry Miller, est connu sous un pseudonyme rappelant sa ville natale ?",
+        "answer": "Brassaï (de son vrai nom Gyula Halász)",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "339f48e3-292c-11e4-907f-782bcb6744eb",
+    "date": "2014-09-19",
+    "title": "Vonnas (Ain) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/vonnas-ain-2",
+    "pairs": [
+      {
+        "question": "Quel producteur et éditeur de musique français, mort en 2005, célèbre pour ses fêtes mondaines à Saint-Tropez, fut le premier à introduire en France, dans les années 1950, les microsillons 45 tours et 33 tours ?",
+        "answer": "Eddie Barclay",
+        "tier": "bleue"
+      },
+      {
+        "question": "Citez trois expressions de la langue française contenant le mot « miel ».",
+        "answer": "Par exemple : « une lune de miel », « en faire son miel » et « doux comme du miel » (ou « tout sucre tout miel », ou « on attrape plus de mouches avec du miel qu'avec du vinaigre »)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel diplomate français du XVIᵉ siècle, ambassadeur de France au Portugal, est généralement considéré comme celui qui a introduit le tabac en France — et dont le nom est passé en science avec la nicotine ?",
+        "answer": "Jean Nicot",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quand il ne s'agit pas de religion, qu'est-ce qu'un « jésus » ?",
+        "answer": "Un gros saucisson sec (notamment le « jésus » de Lyon ou de Morteau)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle ville italienne, en Lombardie, vit naître au XVIᵉ siècle les grands maîtres luthiers Andrea Amati, Andrea Guarneri puis Antonio Stradivari, et demeure encore aujourd'hui la capitale traditionnelle de la lutherie ?",
+        "answer": "Crémone (Cremona)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle est la différence entre « scotch whisky » (écrit « whisky ») et le « whiskey » (avec un « e ») ?",
+        "answer": "Le « scotch whisky » est, par définition, le whisky produit en Écosse, tandis que l'orthographe « whiskey » (avec un « e ») désigne les whiskies irlandais (et, le plus souvent, américains)",
+        "tier": "rouge"
+      },
+      {
+        "question": "À quoi correspond, en astronomie, la distance d'environ 9 460 730 472 580 kilomètres (soit près de 10 000 milliards de kilomètres) ?",
+        "answer": "Une année-lumière (la distance parcourue par la lumière dans le vide en un an)",
+        "tier": "banco"
+      },
+      {
+        "question": "Comment a-t-on appelé la mémorable bataille de chars qui opposa, du 5 juillet au 23 août 1943, l'armée allemande aux forces soviétiques, considérée comme la plus grande bataille de blindés de l'histoire et conclue par un échec stratégique pour le IIIᵉ Reich ?",
+        "answer": "La bataille de Koursk",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "5d89f722-326f-11e4-907f-782bcb6744eb",
+    "date": "2014-09-22",
+    "title": "Tournus (Saône-et-Loire)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/tournus-saone-et-loire",
+    "pairs": [
+      {
+        "question": "Quel nom porte la série des six voiliers — issus du breton signifiant « petite tête noire » — à bord desquels le navigateur Éric Tabarly a couru ses grandes courses au large ?",
+        "answer": "Les « Pen Duick »",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel romancier américain, mort en 1940, est l'auteur de « Gatsby le Magnifique », « Tendre est la nuit » et « Le Dernier Nabab » ?",
+        "answer": "Francis Scott Fitzgerald",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quel philosophe des Lumières, auteur de « L'Esprit des lois » (1748), doit-on cette phrase : « J'aime les paysans, ils ne sont pas assez savants pour raisonner de travers. » ?",
+        "answer": "Montesquieu",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle commune française, située dans la Somme, possède le nom le plus court : une seule lettre ?",
+        "answer": "Y (qui se prononce « i »)",
+        "tier": "blanche"
+      },
+      {
+        "question": "De quelle ville française, dans la Meuse, est traditionnellement originaire la madeleine, créée à l'époque du roi Stanislas ?",
+        "answer": "Commercy",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quelle différence géographique existe-t-il entre la Galice et la Galicie ?",
+        "answer": "La Galice est une communauté autonome du nord-ouest de l'Espagne, dont la capitale est Saint-Jacques-de-Compostelle ; la Galicie est une région historique d'Europe centrale, au nord des Carpates, partagée aujourd'hui entre la Pologne et l'Ukraine",
+        "tier": "rouge"
+      },
+      {
+        "question": "Jusqu'à la conquête espagnole du XVIᵉ siècle, l'Empire inca s'étendait sur une grande partie de l'Amérique du Sud. Quelle ville, située aujourd'hui au Pérou et classée au patrimoine mondial de l'UNESCO, en était la capitale ?",
+        "answer": "Cuzco (ou Cusco)",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
+    "id": "d9c0db5e-326f-11e4-907f-782bcb6744eb",
+    "date": "2014-09-23",
+    "title": "Tournus (Saône-et-Loire) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/tournus-saone-et-loire-2",
+    "pairs": [
+      {
+        "question": "Quel animal le roi François Iᵉʳ avait-il choisi pour emblème ?",
+        "answer": "La salamandre",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel cinéaste américain, réalisateur de plus de cent films, est l'auteur de westerns et de drames sociaux exaltant les humbles, parmi lesquels « La Chevauchée fantastique », « Les Raisins de la colère », « Le Soleil brille pour tout le monde », « Mogambo » ou « L'Homme qui tua Liberty Valance » ?",
+        "answer": "John Ford",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle reine de France, célèbre cavalière, est traditionnellement créditée d'avoir « inventé » la monte en amazone, qui permettait aux femmes de conserver leur robe en montant à cheval les deux jambes du même côté ?",
+        "answer": "Catherine de Médicis",
+        "tier": "bleue"
+      },
+      {
+        "question": "Pourquoi le département de la Côte-d'Or, en Bourgogne, porte-t-il ce nom ?",
+        "answer": "À cause de la couleur dorée que prennent à l'automne les feuilles des vignobles de la « Côte » (Côte de Nuits et Côte de Beaune)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel est le titre de la série télévisée imaginée par Roland Topor, diffusée sur Antenne 2 à partir de 1983, qui parodiait le journal télévisé avec des marionnettes, dont un chat (Groucha) et une autruche (Lola) ?",
+        "answer": "« Téléchat »",
+        "tier": "blanche"
+      },
+      {
+        "question": "Outre la pipe — emblème de la ville — quelle est l'autre activité artisanale traditionnelle, mise en valeur dans le musée de Saint-Claude (Jura) ?",
+        "answer": "La taille du diamant (et plus largement la diamanterie/lapidairerie)",
+        "tier": "rouge"
+      }
+    ]
+  },
+  {
+    "id": "58b034a0-3270-11e4-907f-782bcb6744eb",
+    "date": "2014-09-24",
+    "title": "Tournus (Saône-et-Loire) — 3, spécial jeunes",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/tournus-saone-et-loire-3",
+    "pairs": [
+      {
+        "question": "Comment appelle-t-on les habitants d'Istanbul ?",
+        "answer": "Les Stambouliotes",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment appelle-t-on les habitants de Saint-Étienne (Loire) ?",
+        "answer": "Les Stéphanois",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel mollusque (coquillage) porte le même nom qu'un ustensile de cuisine tranchant ?",
+        "answer": "Le couteau",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le patronyme (nom de famille) le plus porté en France ?",
+        "answer": "Martin",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel placement financier, cher aux Français, fut créé le 22 mai 1818 (la Caisse d'épargne de Paris ayant été fondée en 1818 par Benjamin Delessert) ?",
+        "answer": "Le livret A (créé en France au sein de la Caisse d'épargne, fondée par l'industriel et banquier Benjamin Delessert)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on en français cette génération que les anglophones désignent par les expressions « digital natives » ou « net generation » ?",
+        "answer": "La génération Y",
+        "tier": "rouge"
+      },
+      {
+        "question": "Comment appelle-t-on la masse transparente et gélatineuse, mais rigide, qui forme l'essentiel du corps d'une méduse — terme qui désigne aussi un accessoire protégeant du soleil ou de la pluie ?",
+        "answer": "L'ombrelle",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel est le titre du roman d'Agatha Christie, paru en 1934, dans lequel tous les suspects se révèlent finalement coupables du meurtre ?",
+        "answer": "« Le Crime de l'Orient-Express »",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "6195350b-327f-11e4-907f-782bcb6744eb",
+    "date": "2014-09-25",
+    "title": "Couches (Saône-et-Loire)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/couches-saone-et-loire",
+    "pairs": [
+      {
+        "question": "Quel célèbre journal pour enfants fut fondé en 1969 par le Parti communiste français, et se distingua par les gadgets glissés dans chaque numéro ?",
+        "answer": "« Pif Gadget »",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel était le nom de l'hydravion à bord duquel Jean Mermoz disparut en mer, le 7 décembre 1936, avec son équipage ?",
+        "answer": "La Croix du Sud (un Latécoère 300)",
+        "tier": "bleue"
+      },
+      {
+        "question": "À quel roman, et à quel auteur, appartient ce passage : « Les collines, sous l'avion, creusaient déjà leur sillage d'ombre dans l'or du soir. […] le pilote Fabien, qui ramenait de l'extrême sud, vers Buenos Aires, le courrier de Patagonie. » ?",
+        "answer": "« Vol de nuit », d'Antoine de Saint-Exupéry",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel est le titre de la longue pièce de Paul Claudel, parue en 1929, drame mystique en quatre journées contant l'amour impossible entre Doña Prouhèze et Don Rodrigue, à l'époque des conquistadors ?",
+        "answer": "« Le Soulier de satin »",
+        "tier": "blanche"
+      },
+      {
+        "question": "Comment appelle-t-on le moule en bois (ou en plastique) que l'on glisse à l'intérieur d'une chaussure pour en maintenir la forme entre deux utilisations ?",
+        "answer": "Un embauchoir",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que signifient les trois lettres « PAM » que l'on trouve gravées sur la majorité des plaques d'égout en France ?",
+        "answer": "Pont-à-Mousson (en Meurthe-et-Moselle), ville d'implantation de l'entreprise fabriquant ces plaques et de nombreux équipements de canalisations",
+        "tier": "rouge"
+      },
+      {
+        "question": "Qui est l'auteur du tableau célèbre « Les Ménines » (1656), représentant l'infante Marguerite-Thérèse entourée de ses demoiselles d'honneur à la cour du roi Philippe IV d'Espagne ?",
+        "answer": "Diego Velázquez (toile conservée au musée du Prado, à Madrid)",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel ornithologue d'origine française, parti étudier la faune des États-Unis, publia à partir de 1827 (et jusqu'en 1838-1839) son monumental ouvrage illustré « Les Oiseaux d'Amérique » et est considéré comme le premier grand ornithologue du Nouveau Monde ?",
+        "answer": "Jean-Jacques Audubon",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "ea68a0a8-3280-11e4-907f-782bcb6744eb",
+    "date": "2014-09-26",
+    "title": "Couches (Saône-et-Loire) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/couches-saone-et-loire-2",
+    "pairs": [
+      {
+        "question": "Quel quotidien, fondé par Jean Jaurès, a paru pour la première fois le 18 avril 1904 ?",
+        "answer": "« L'Humanité »",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans le monde végétal, qu'appelle-t-on l'« héliotropisme » ?",
+        "answer": "La capacité de certaines plantes (comme les jeunes tournesols) à orienter leurs fleurs ou leurs feuilles au cours de la journée pour suivre la course du soleil",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment orthographie-t-on, dans l'expression « des roses marron » (couleur), le mot « marron » ? L'accorde-t-on en nombre ?",
+        "answer": "« Marron » reste invariable : on écrit « des roses marron » (sans « s »), car les noms employés comme adjectifs de couleur sont invariables — à l'exception notable de « rose », « mauve », « fauve », « écarlate » et « pourpre »",
+        "tier": "bleue"
+      },
+      {
+        "question": "Sous quel nom courant désigne-t-on cette grande tortue marine des mers chaudes, savamment appelée « Dermochelys coriacea » (anciennement « Sphargis coriacea »), dépourvue d'écailles dures et recouverte d'une peau coriace ?",
+        "answer": "La tortue luth (la plus grande tortue marine au monde)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel peintre français, né en 1864 et mort en 1927, proche de Pierre Bonnard et de Maurice Denis, fonda avec eux le groupe des Nabis et est notamment l'auteur du fameux « Talisman » ?",
+        "answer": "Paul Sérusier",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel film à grand spectacle réalisé par Ridley Scott et sorti en 1992 (à l'occasion d'un anniversaire historique) a réuni à l'écran Gérard Depardieu et Sigourney Weaver ?",
+        "answer": "« 1492 : Christophe Colomb »",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel fleuve africain a la particularité, unique au monde pour un cours d'eau qualifié de fleuve, de voir son delta disparaître dans les sables du désert — en l'occurrence ceux du Kalahari, au Botswana ?",
+        "answer": "L'Okavango",
+        "tier": "banco"
+      },
+      {
+        "question": "Dans la religion musulmane, comment appelle-t-on à la fois le pèlerinage à La Mecque et la personne qui l'a accompli ?",
+        "answer": "Le hadj (parfois transcrit « hajj ») ; la personne qui l'a accompli est appelée « hadji »",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
+    "id": "97403fd8-3a8a-11e4-a9df-005056a87c34",
+    "date": "2014-09-29",
+    "title": "Nuits-Saint-Georges (Côte-d'Or)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/nuits-saint-georges-cote-d-or",
+    "pairs": [
+      {
+        "question": "Dans le film « Camille Claudel » (1988), réalisé par Bruno Nuytten, quelle actrice incarne la sculptrice Camille Claudel aux côtés de Gérard Depardieu dans le rôle d'Auguste Rodin ?",
+        "answer": "Isabelle Adjani",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment orthographie-t-on le mot « rhizome », désignant la tige souterraine de certaines plantes ?",
+        "answer": "R-H-I-Z-O-M-E (« rhizome »)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel vent chaud et sec, dû au réchauffement de l'air en redescendant après le passage d'un relief, souffle notamment dans les vallées suisses et autrichiennes ainsi qu'au nord des crêtes alpines ?",
+        "answer": "Le fœhn (ou föhn)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Qui fut le tout premier président de la IIIᵉ République française, élu en février 1871, après la chute du Second Empire à Sedan ?",
+        "answer": "Adolphe Thiers",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel journaliste, ancien coureur cycliste professionnel, créa en 1975 l'émission de sport « Stade 2 » sur Antenne 2 et la présenta jusqu'en 1985 ?",
+        "answer": "Robert Chapatte",
+        "tier": "blanche"
+      },
+      {
+        "question": "Pourquoi le festival rock-écolo de Charleville-Mézières, dans les Ardennes, porte-t-il le nom de « Cabaret Vert » ?",
+        "answer": "En référence au sonnet « Au Cabaret-Vert » d'Arthur Rimbaud (écrit en 1870), poète originaire de Charleville",
+        "tier": "rouge"
+      },
+      {
+        "question": "Quel élément chimique de la famille des cristallogènes, métal gris-blanc, découvert par l'Allemand Clemens Winkler en 1886, fut utilisé dans les premiers transistors et diodes ?",
+        "answer": "Le germanium",
+        "tier": "banco"
+      },
+      {
+        "question": "Quel chimiste français, à la fin du XVIIIᵉ siècle, est considéré comme l'« inventeur » de l'eau de Javel (hypochlorite de sodium en solution aqueuse) ?",
+        "answer": "Claude Louis Berthollet",
+        "tier": "super-banco"
+      }
+    ]
+  },
+  {
     "id": "2dbaffbc-ee87-4410-83d9-7cbf22aa0efa",
     "date": "2026-05-04",
     "title": "à Collégien | 1",
