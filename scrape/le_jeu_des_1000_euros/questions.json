@@ -29397,6 +29397,44 @@
     ]
   },
   {
+    "id": "7e666a30-2915-11e4-907f-782bcb6744eb",
+    "date": "2014-09-05",
+    "title": "La Ferté-Beauharnais (Loir-et-Cher) — 2",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/la-ferte-beauharnais-loir-et-cher-2",
+    "pairs": [
+      {
+        "question": "Quel alliage métallique, à forte proportion de cuivre, est obtenu en combinant principalement du cuivre et de l'étain ?",
+        "answer": "Le bronze",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quel personnage, présent à la fois dans une pièce de Molière et dans la série « Le Petit Nicolas » de Sempé et Goscinny (où il est le copain qui mange tout le temps), constitue un point commun entre les deux œuvres ?",
+        "answer": "Alceste (le misanthrope de Molière et le camarade de classe gourmand du Petit Nicolas)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Comment qualifie-t-on la Lune lorsqu'elle se trouve entre le premier quartier et la pleine Lune, ou entre la pleine Lune et le dernier quartier, c'est-à-dire éclairée aux trois quarts environ ?",
+        "answer": "Une Lune gibbeuse (« bossue »)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel photographe et correspondant de guerre américain d'origine hongroise s'est rendu célèbre par ses photographies prises sur la plage d'Omaha Beach lors du débarquement allié du 6 juin 1944 ?",
+        "answer": "Robert Capa",
+        "tier": "blanche"
+      },
+      {
+        "question": "Que cherche-t-on quand on pratique le « cavage » ?",
+        "answer": "Des truffes (la recherche des truffes, souvent à l'aide d'un chien ou d'un cochon)",
+        "tier": "rouge"
+      },
+      {
+        "question": "De quel roman de John Dos Passos, paru en 1925 et dressant un tableau d'un quartier essentiel de New York, Tim Hauser s'est-il inspiré pour nommer en 1969 le groupe vocal de jazz qu'il a créé ?",
+        "answer": "« Manhattan Transfer »",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
     "id": "2dbaffbc-ee87-4410-83d9-7cbf22aa0efa",
     "date": "2026-05-04",
     "title": "à Collégien | 1",
