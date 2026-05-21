@@ -29435,6 +29435,49 @@
     ]
   },
   {
+    "id": "46c81382-2917-11e4-907f-782bcb6744eb",
+    "date": "2014-09-08",
+    "title": "Champagné-Saint-Hilaire (Vienne)",
+    "url": "https://www.radiofrance.fr/franceinter/podcasts/le-jeu-des-1000/champagne-saint-hilaire-vienne",
+    "pairs": [
+      {
+        "question": "Quelle société de pensée, fondée au début du mois de juin 1789 par plusieurs députés bretons et tirant son nom d'un couvent de la rue Saint-Honoré à Paris, prit ensuite le nom de « Société des amis de la Constitution » et compta jusqu'à 200 députés de l'Assemblée constituante, dont Robespierre ?",
+        "answer": "Le club des Jacobins",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quand le mot « camarguaises » ne désigne pas les habitantes de la Camargue, que désigne-t-il ?",
+        "answer": "Des bottes (en cuir), portées notamment par les gardians",
+        "tier": "bleue"
+      },
+      {
+        "question": "Quelle est la différence entre un « sigle » et un « acronyme » ? Donnez un exemple de chaque.",
+        "answer": "Un sigle est une abréviation que l'on épelle lettre par lettre (ex. : SNCF, FBI, CGT) ; un acronyme est une abréviation qui se prononce comme un mot ordinaire (ex. : OTAN, OVNI, Benelux)",
+        "tier": "bleue"
+      },
+      {
+        "question": "Dans quelle ville d'Espagne (où Salvador Dalí est né et mort, et où il est enterré) se trouve son théâtre-musée, qu'il considérait lui-même comme « un gigantesque objet surréaliste » ?",
+        "answer": "Figueres (Figueras, en Catalogne)",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel hebdomadaire allemand d'investigation, fondé en 1947, dont le nom signifie « Le Miroir », est considéré comme l'un des plus influents en Allemagne et en Europe ?",
+        "answer": "Der Spiegel",
+        "tier": "blanche"
+      },
+      {
+        "question": "Quel parc situé sur les hauteurs de Barcelone, classé au patrimoine mondial de l'UNESCO, renferme des constructions d'Antoni Gaudí couvertes de mosaïques de céramique colorées (« trencadís ») et une célèbre fontaine en forme de salamandre ?",
+        "answer": "Le parc Güell",
+        "tier": "rouge"
+      },
+      {
+        "question": "Comment appelle-t-on, en linguistique, la modification phonétique consistant à supprimer un ou plusieurs phonèmes à la fin d'un mot (comme dans « moto » pour motocyclette, « télé » pour télévision, « cinéma » pour cinématographe) ?",
+        "answer": "Une apocope",
+        "tier": "banco"
+      }
+    ]
+  },
+  {
     "id": "2dbaffbc-ee87-4410-83d9-7cbf22aa0efa",
     "date": "2026-05-04",
     "title": "à Collégien | 1",
