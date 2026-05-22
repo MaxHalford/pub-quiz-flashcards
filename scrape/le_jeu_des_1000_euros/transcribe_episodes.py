@@ -107,10 +107,14 @@ def run(
             ep["date"],
             ep["title"],
         )
-        with tempfile.NamedTemporaryFile(suffix=".mp3") as tmp:
-            tmp_path = pathlib.Path(tmp.name)
-            download(session, ep["audio_url"], tmp_path)
-            result = transcribe(tmp_path)
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".mp3") as tmp:
+                tmp_path = pathlib.Path(tmp.name)
+                download(session, ep["audio_url"], tmp_path)
+                result = transcribe(tmp_path)
+        except requests.HTTPError as e:
+            logger.warning("Skipping %s: %s", ep["id"], e)
+            continue
         out = transcripts_dir / f"{ep['id']}.json"
         out.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
         logger.info("Wrote %s (%d segments)", out, len(result["segments"]))
