@@ -322,8 +322,9 @@ def collect_cards():
             continue
         entries = json.loads(qfile.read_text())
         for entry in entries:
+            url = entry.get("source_url") or entry["url"]
             for pair in entry["pairs"]:
-                cid = short_id(entry["source_url"], pair["question"])
+                cid = short_id(url, pair["question"])
                 yield cid, pair["question"], pair["answer"]
 
 
