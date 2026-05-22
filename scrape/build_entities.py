@@ -354,8 +354,8 @@ def main() -> None:
 
     annotations: dict[str, dict] = {}
     for i, (cid, q, a) in enumerate(cards, start=1):
-        q_spans = find_spans(q, automaton, overrides)
-        a_spans = find_spans(a, automaton, overrides)
+        q_spans = find_spans(q, automaton, overrides) if q else []
+        a_spans = find_spans(a, automaton, overrides) if a else []
         if q_spans or a_spans:
             entry: dict[str, list[dict]] = {}
             if q_spans:
