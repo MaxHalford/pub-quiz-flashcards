@@ -9,14 +9,18 @@
   import Heatmap from '$lib/components/Heatmap.svelte';
   import RichText from '$lib/components/RichText.svelte';
   import Tooltip from '$lib/components/Tooltip.svelte';
+  import Onboarding from '$lib/components/Onboarding.svelte';
   import type { Card, AppState, CardRating } from '$lib/types';
 
   let cardIndex = $state<Map<string, Card>>(new Map());
+  let sourceCounts = $state<Array<{ source: string; count: number }>>([]);
   let appState = $state<AppState | null>(null);
   let revealed = $state(false);
   let error = $state<string | null>(null);
   let loading = $state(true);
   let canHost = $state(false);
+
+  const needsOnboarding = $derived(appState !== null && !appState.settings.onboarded);
 
   const dailyGoalCap = $derived(
     appState ? appState.settings.dailyGoal * (1 + appState.daily.extras) : 10
@@ -36,9 +40,18 @@
     try {
       const { cards } = await loadCards();
       cardIndex = new Map(cards.map((c) => [c.id, c]));
+      const counts = new Map<string, number>();
+      for (const c of cards) counts.set(c.source, (counts.get(c.source) ?? 0) + 1);
+      sourceCounts = [...counts.entries()]
+        .map(([source, count]) => ({ source, count }))
+        .sort((a, b) => sourceLabel(a.source).localeCompare(sourceLabel(b.source)));
       const state = ensureToday(loadState());
       state.daily.queue = state.daily.queue.filter((id) => cardIndex.has(id));
-      if (state.daily.queue.length === 0 && state.daily.reviewed < dailyGoalCapFor(state)) {
+      if (
+        state.settings.onboarded &&
+        state.daily.queue.length === 0 &&
+        state.daily.reviewed < dailyGoalCapFor(state)
+      ) {
         state.daily.queue = replan(state);
       }
       appState = state;
@@ -98,8 +111,19 @@
     appState.daily.queue = replan(appState);
     saveState(appState);
   }
+
+  function completeOnboarding(disabledSources: Record<string, true>) {
+    if (!appState) return;
+    appState.settings.disabledSources = disabledSources;
+    appState.settings.onboarded = true;
+    appState.daily.queue = replan(appState);
+    saveState(appState);
+  }
 </script>
 
+{#if needsOnboarding && appState}
+  <Onboarding {sourceCounts} onConfirm={completeOnboarding} />
+{:else}
 <main class="mx-auto flex min-h-[100dvh] max-w-md flex-col px-6 pt-safe-6 pb-safe-6">
   <nav class="flex items-center justify-between">
     <Streak count={streak} />
@@ -266,3 +290,4 @@
     <p class="m-auto text-sm text-(--color-muted)">No cards available.</p>
   {/if}
 </main>
+{/if}

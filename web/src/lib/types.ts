@@ -53,5 +53,9 @@ export type AppState = {
   tombstoned: Record<string, true>;
   daily: DailyState;
   history: Record<string, number>;
-  settings: { dailyGoal: number; disabledSources?: Record<string, true> };
+  settings: {
+    dailyGoal: number;
+    disabledSources?: Record<string, true>;
+    onboarded?: boolean;
+  };
 };
