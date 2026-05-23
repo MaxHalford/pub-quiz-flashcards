@@ -5,8 +5,19 @@ Aho-Corasick automaton over the titles, and tags every card's question
 and answer with the spans that match a Wikipedia article. No online
 lookups at annotation time — fully offline once the dump is cached.
 
-Output (committed):
-    scrape/wikipedia_annotations.json   card_id -> {q_entities, a_entities}
+Output (committed) at scrape/wikipedia_annotations.json:
+
+    {
+      "titles": ["Pastern", "Fetlock", ...],   # sorted unique titles
+      "cards": {
+        "abc123def456": {
+          "q": [[start, end, title_idx], ...],
+          "a": [[start, end, title_idx], ...]
+        }
+      }
+    }
+
+URLs are derived at read time from the title (https://en.wikipedia.org/wiki/...).
 
 Manual disambiguation lives in scrape/wikipedia_overrides.json:
     {
@@ -280,35 +291,39 @@ def _boundary_after(text: str, pos: int) -> bool:
     return WORD_CHAR.match(text[pos]) is None
 
 
-def find_spans(text: str, automaton, overrides: dict) -> list[dict]:
-    """Non-overlapping, word-bounded, longest-match-wins entity spans."""
-    candidates: list[dict] = []
-    for end_idx, surface in automaton.iter(text):
-        start = end_idx - len(surface) + 1
+_SENTINEL: object = object()
+
+
+def find_spans(text: str, automaton, overrides: dict) -> list[tuple[int, int, str]]:
+    """Non-overlapping, word-bounded, longest-match-wins entity spans.
+
+    Returns (start, end, title) tuples. URLs are reconstructed from the title
+    by the consumer via `title_to_url`. Matching is case-insensitive: the
+    automaton holds lowercase surfaces, and we scan the lowercased text. The
+    canonical (capitalised) title comes from the automaton's value payload.
+    """
+    candidates: list[tuple[int, int, str]] = []
+    haystack = text.lower()
+    for end_idx, canonical in automaton.iter(haystack):
+        start = end_idx - len(canonical) + 1
         end = end_idx + 1
         if not _boundary_before(text, start):
             continue
         if not _boundary_after(text, end):
             continue
-        if surface in overrides:
-            override = overrides[surface]
-            if override is None:
-                continue
-            title = override["title"]
-            url = override["url"]
-        else:
-            title = surface
-            url = title_to_url(surface)
-        candidates.append({"start": start, "end": end, "title": title, "url": url})
+        override = overrides.get(canonical.lower(), _SENTINEL)
+        if override is None:
+            continue
+        title = override["title"] if override is not _SENTINEL else canonical
+        candidates.append((start, end, title))
 
-    # Longest match wins, ties broken by earliest start.
-    candidates.sort(key=lambda c: (-(c["end"] - c["start"]), c["start"]))
-    kept: list[dict] = []
+    candidates.sort(key=lambda c: (-(c[1] - c[0]), c[0]))
+    kept: list[tuple[int, int, str]] = []
     for c in candidates:
-        if any(not (c["end"] <= k["start"] or c["start"] >= k["end"]) for k in kept):
+        if any(not (c[1] <= k[0] or c[0] >= k[1]) for k in kept):
             continue
         kept.append(c)
-    kept.sort(key=lambda c: c["start"])
+    kept.sort(key=lambda c: c[0])
     return kept
 
 
@@ -331,16 +346,19 @@ def collect_cards():
 def main() -> None:
     ensure_dump()
 
-    overrides = (
+    raw_overrides = (
         json.loads(OVERRIDES_FILE.read_text()) if OVERRIDES_FILE.exists() else {}
     )
+    overrides = {k.lower(): v for k, v in raw_overrides.items()}
 
     print("Building automaton…", flush=True)
     t0 = time.time()
     automaton = ahocorasick.Automaton()
     count = 0
     for surface in iter_titles():
-        automaton.add_word(surface, surface)
+        # Lowercase key for case-insensitive matching; value keeps the
+        # canonical (capitalised) form used to build the Wikipedia URL.
+        automaton.add_word(surface.lower(), surface)
         count += 1
         if count % 500_000 == 0:
             print(f"  {count:,} surfaces loaded", flush=True)
@@ -352,25 +370,47 @@ def main() -> None:
     print(f"Annotating {len(cards)} cards…", flush=True)
     t0 = time.time()
 
-    annotations: dict[str, dict] = {}
+    # First pass: collect raw spans per card and the set of titles used.
+    raw: dict[str, dict[str, list[tuple[int, int, str]]]] = {}
+    titles_seen: set[str] = set()
     for i, (cid, q, a) in enumerate(cards, start=1):
         q_spans = find_spans(q, automaton, overrides) if q else []
         a_spans = find_spans(a, automaton, overrides) if a else []
         if q_spans or a_spans:
-            entry: dict[str, list[dict]] = {}
+            entry: dict[str, list[tuple[int, int, str]]] = {}
             if q_spans:
-                entry["q_entities"] = q_spans
+                entry["q"] = q_spans
+                titles_seen.update(t for _, _, t in q_spans)
             if a_spans:
-                entry["a_entities"] = a_spans
-            annotations[cid] = entry
+                entry["a"] = a_spans
+                titles_seen.update(t for _, _, t in a_spans)
+            raw[cid] = entry
         if i % 1000 == 0:
             print(f"  {i:,}/{len(cards):,} cards", flush=True)
 
+    # Second pass: build the title table and rewrite spans as [s, e, idx].
+    titles_sorted = sorted(titles_seen)
+    title_idx = {t: j for j, t in enumerate(titles_sorted)}
+    out_cards: dict[str, dict[str, list[list[int]]]] = {}
+    for cid in sorted(raw):
+        entry_norm: dict[str, list[list[int]]] = {}
+        for key in ("q", "a"):
+            if key in raw[cid]:
+                entry_norm[key] = [[s, e, title_idx[t]] for s, e, t in raw[cid][key]]
+        out_cards[cid] = entry_norm
+
     ANNOTATIONS_FILE.write_text(
-        json.dumps(annotations, sort_keys=True, ensure_ascii=False, indent=2) + "\n"
+        json.dumps(
+            {"titles": titles_sorted, "cards": out_cards},
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+        + "\n"
     )
     print(
-        f"Done: {len(annotations):,} annotated cards in {time.time() - t0:.1f}s",
+        f"Done: {len(out_cards):,} annotated cards, "
+        f"{len(titles_sorted):,} unique titles "
+        f"in {time.time() - t0:.1f}s",
         flush=True,
     )
 

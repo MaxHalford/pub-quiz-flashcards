@@ -9,8 +9,10 @@ const SCRAPE_DIR = join(__dirname, '..', 'scrape');
 const STATIC_DIR = join(__dirname, 'static');
 const ANNOTATIONS_FILE = join(SCRAPE_DIR, 'wikipedia_annotations.json');
 
-type EntitySpan = { start: number; end: number; title: string; url: string };
-type Annotation = { q_entities?: EntitySpan[]; a_entities?: EntitySpan[] };
+// Span tuple: [start, end, title_idx_into_titles_table]
+type SpanTuple = [number, number, number];
+type Annotation = { q?: SpanTuple[]; a?: SpanTuple[] };
+type AnnotationsFile = { titles: string[]; cards: Record<string, Annotation> };
 type Card = {
   id: string;
   q: string;
@@ -19,9 +21,10 @@ type Card = {
   source_date: string;
   source_url: string;
   tier?: string;
-  q_entities?: EntitySpan[];
-  a_entities?: EntitySpan[];
+  qe?: SpanTuple[];
+  ae?: SpanTuple[];
 };
+type CardsFile = { titles: string[]; cards: Card[] };
 
 function shortId(sourceUrl: string, question: string): string {
   return createHash('sha1').update(`${sourceUrl}\n${question}`).digest('hex').slice(0, 12);
@@ -31,10 +34,10 @@ function contentHash(payload: string): string {
   return createHash('sha256').update(payload).digest('hex').slice(0, 10);
 }
 
-async function loadAnnotations(): Promise<Record<string, Annotation>> {
-  if (!existsSync(ANNOTATIONS_FILE)) return {};
+async function loadAnnotations(): Promise<AnnotationsFile> {
+  if (!existsSync(ANNOTATIONS_FILE)) return { titles: [], cards: {} };
   const raw = await readFile(ANNOTATIONS_FILE, 'utf8');
-  return JSON.parse(raw) as Record<string, Annotation>;
+  return JSON.parse(raw) as AnnotationsFile;
 }
 
 function buildCard(args: {
@@ -57,8 +60,8 @@ function buildCard(args: {
     source_url: args.source_url
   };
   if (args.tier) card.tier = args.tier;
-  if (ann?.q_entities?.length) card.q_entities = ann.q_entities;
-  if (ann?.a_entities?.length) card.a_entities = ann.a_entities;
+  if (ann?.q?.length) card.qe = ann.q;
+  if (ann?.a?.length) card.ae = ann.a;
   return card;
 }
 
@@ -139,7 +142,7 @@ const LOADERS: Record<string, (annotations: Record<string, Annotation>) => Promi
 // --- main ------------------------------------------------------------------
 
 async function main() {
-  const annotations = await loadAnnotations();
+  const { titles, cards: annotations } = await loadAnnotations();
   const annotatedCount = Object.keys(annotations).length;
 
   // Warn about scrape dirs without a loader so a new source isn't silently dropped.
@@ -161,7 +164,8 @@ async function main() {
   for (const c of all) dedup.set(c.id, c);
   const cards = [...dedup.values()].sort((a, b) => a.id.localeCompare(b.id));
 
-  const payload = JSON.stringify(cards);
+  const out: CardsFile = { titles, cards };
+  const payload = JSON.stringify(out);
   const hash = contentHash(payload);
   const generatedAt = new Date().toISOString();
 
