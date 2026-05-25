@@ -38,7 +38,7 @@ jobs:
         run: |
           for i in $(seq 1 10); do
             echo "=== Run $i ==="
-            make run the_guardian_weekly
+            make the_guardian_weekly
             git add -A
             if git diff --cached --quiet; then
               echo "No changes, stopping"
