@@ -38,6 +38,7 @@ function hydrate(file: WireCardsFile): Card[] {
       source_url: c.source_url
     };
     if (c.tier) card.tier = c.tier;
+    if (c.topic) card.topic = c.topic;
     if (c.qe?.length) card.q_entities = materialise(c.qe);
     if (c.ae?.length) card.a_entities = materialise(c.ae);
     return card;
