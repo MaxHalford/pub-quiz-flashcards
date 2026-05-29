@@ -23,7 +23,9 @@ leaves.
 from __future__ import annotations
 
 import json
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
@@ -40,8 +42,20 @@ LIFTWING_URL = (
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 
 REQUEST_TIMEOUT = 30
-POLITENESS_DELAY = 0.1
 REV_ID_BATCH = 50
+# Anonymous LiftWing tier allows 15 req/s. 6 workers averaging ~0.5s/request
+# stays around ~10 req/s, comfortably under the ceiling.
+TOPIC_CONCURRENCY = 6
+RETRY_BACKOFF_S = 2.0
+FLUSH_EVERY = 200
+
+# We store only the top-K most likely topics per article, rounded to N
+# decimals. The full output is ~52 topics × ~20-char floats per entity (~98 MB
+# committed); top-10 + 3 dp shrinks that to ~13 MB while only changing 3.6 %
+# of card top-1 buckets. Loosening these caps requires re-fetching from
+# LiftWing — the trimming is lossy.
+TOPIC_KEEP_TOP_K = 10
+TOPIC_DECIMALS = 3
 
 
 def fetch_rev_ids(titles: list[str]) -> dict[str, int]:
@@ -81,26 +95,42 @@ def fetch_rev_ids(titles: list[str]) -> dict[str, int]:
 
 
 def fetch_topics(rev_id: int) -> dict[str, float] | None:
-    """Return raw topic probabilities for one revision, or None if unscored."""
-    r = requests.post(
-        LIFTWING_URL,
-        json={"rev_id": rev_id},
-        headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
-        timeout=REQUEST_TIMEOUT,
-    )
-    # LiftWing returns 400 for revisions it can't score (redirects, very short
-    # articles, etc.). Treat as "no topics" — we still cache the empty result
-    # so we don't retry next run.
-    if r.status_code == 400:
-        return None
-    r.raise_for_status()
-    score = r.json()["enwiki"]["scores"][str(rev_id)]["articletopic"]["score"]
-    return score["probability"]
+    """Return raw topic probabilities for one revision, or None if unscored.
+
+    On 429 (rate-limited) sleeps once and retries; any other failure bubbles
+    up so the caller can decide whether to cache the miss.
+    """
+    for attempt in range(2):
+        r = requests.post(
+            LIFTWING_URL,
+            json={"rev_id": rev_id},
+            headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
+            timeout=REQUEST_TIMEOUT,
+        )
+        if r.status_code == 429 and attempt == 0:
+            time.sleep(RETRY_BACKOFF_S)
+            continue
+        # LiftWing returns 400 for revisions it can't score (redirects, very
+        # short articles, etc.). Treat as "no topics" — the caller caches the
+        # empty result so we don't retry next run.
+        if r.status_code == 400:
+            return None
+        r.raise_for_status()
+        score = r.json()["enwiki"]["scores"][str(rev_id)]["articletopic"]["score"]
+        return score["probability"]
+    raise RuntimeError("unreachable")
 
 
-def strip_parents(probs: dict[str, float]) -> dict[str, float]:
-    """Drop '*' parent-rollup labels (e.g. 'STEM.STEM*')."""
-    return {t: p for t, p in probs.items() if not t.endswith("*")}
+def trim(probs: dict[str, float]) -> dict[str, float]:
+    """Drop '*' parent rollups, keep top-K leaves, round to N decimals.
+
+    Entries that round to zero are dropped — they'd contribute nothing during
+    aggregation.
+    """
+    leaves = ((t, p) for t, p in probs.items() if not t.endswith("*"))
+    top = sorted(leaves, key=lambda x: -x[1])[:TOPIC_KEEP_TOP_K]
+    rounded = ((t, round(p, TOPIC_DECIMALS)) for t, p in top)
+    return {t: p for t, p in rounded if p > 0}
 
 
 def main() -> None:
@@ -126,23 +156,52 @@ def main() -> None:
         print("Looking up rev_ids…")
         rev_ids = fetch_rev_ids(todo)
         print(f"  resolved {len(rev_ids)}/{len(todo)} titles")
-        for i, title in enumerate(todo, start=1):
-            rid = rev_ids.get(title)
-            if rid is None:
-                cache[title] = {}
-                continue
+
+        unscoreable = [t for t in todo if t not in rev_ids]
+        scoreable = [(t, rev_ids[t]) for t in todo if t in rev_ids]
+        for t in unscoreable:
+            cache[t] = {}
+
+        # LiftWing requests are I/O-bound — a small thread pool gives a clean
+        # 5–8× speed-up over serial. Cache writes are guarded by a lock and
+        # flushed periodically so a crash doesn't lose progress.
+        lock = threading.Lock()
+        done = 0
+        throttled = 0
+
+        def fetch(title: str, rid: int) -> tuple[str, dict[str, float] | None]:
+            """Returns (title, scores). scores is None if the request was
+            rate-limited even after one retry — the caller leaves the cache
+            untouched so the next run picks it up."""
             try:
                 probs = fetch_topics(rid)
             except requests.HTTPError as e:
-                print(f"  [{i}/{len(todo)}] {title}: skip ({e})")
-                cache[title] = {}
-                continue
-            cache[title] = strip_parents(probs) if probs else {}
-            if i % 25 == 0 or i == len(todo):
-                print(f"  [{i}/{len(todo)}] cached through {title}")
-                # Flush periodically so a crash doesn't lose progress.
-                _write(cache)
-            time.sleep(POLITENESS_DELAY)
+                status = e.response.status_code if e.response is not None else None
+                if status == 429:
+                    return title, None
+                print(f"  {title}: skip ({e})")
+                return title, {}
+            return title, trim(probs) if probs else {}
+
+        with ThreadPoolExecutor(max_workers=TOPIC_CONCURRENCY) as pool:
+            futures = [pool.submit(fetch, t, rid) for t, rid in scoreable]
+            for fut in as_completed(futures):
+                title, scores = fut.result()
+                with lock:
+                    if scores is None:
+                        throttled += 1
+                    else:
+                        cache[title] = scores
+                    done += 1
+                    if done % FLUSH_EVERY == 0 or done == len(scoreable):
+                        print(f"  [{done}/{len(scoreable)}] cached")
+                        _write(cache)
+
+        if throttled:
+            print(
+                f"  {throttled} titles skipped due to sustained rate-limiting; "
+                "re-run to pick them up."
+            )
 
     _write(cache)
     scored = sum(1 for v in cache.values() if v)
