@@ -8,6 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCRAPE_DIR = join(__dirname, '..', 'scrape');
 const STATIC_DIR = join(__dirname, 'static');
 const ANNOTATIONS_FILE = join(SCRAPE_DIR, 'wikipedia_annotations.json');
+const CARD_TOPICS_FILE = join(SCRAPE_DIR, 'wikipedia_card_topics.json');
 
 // Span tuple: [start, end, title_idx_into_titles_table]
 type SpanTuple = [number, number, number];
@@ -23,6 +24,7 @@ type Card = {
   source_date: string;
   source_url: string;
   tier?: string;
+  topic?: string;
   qe?: SpanTuple[];
   ae?: SpanTuple[];
 };
@@ -42,6 +44,12 @@ async function loadAnnotations(): Promise<AnnotationsFile> {
   return JSON.parse(raw) as AnnotationsFile;
 }
 
+async function loadCardTopics(): Promise<Record<string, string>> {
+  if (!existsSync(CARD_TOPICS_FILE)) return {};
+  const raw = await readFile(CARD_TOPICS_FILE, 'utf8');
+  return JSON.parse(raw) as Record<string, string>;
+}
+
 function buildCard(args: {
   source: string;
   source_url: string;
@@ -50,6 +58,7 @@ function buildCard(args: {
   answer: string;
   tier?: string | null;
   annotations: Record<string, Annotation>;
+  cardTopics: Record<string, string>;
 }): Card {
   const id = shortId(args.source_url, args.question);
   const ann = args.annotations[id];
@@ -62,6 +71,7 @@ function buildCard(args: {
     source_url: args.source_url
   };
   if (args.tier) card.tier = args.tier;
+  if (args.cardTopics[id]) card.topic = args.cardTopics[id];
   if (ann?.q?.length) card.qe = ann.q;
   if (ann?.a?.length) card.ae = ann.a;
   return card;
@@ -82,7 +92,7 @@ type GuardianEntry = {
   pairs: Array<{ question: string; answer: string }>;
 };
 
-async function loadGuardian(annotations: Record<string, Annotation>): Promise<Card[]> {
+async function loadGuardian(ctx: LoaderContext): Promise<Card[]> {
   const entries = await readEntries<GuardianEntry>('the_guardian_weekly');
   if (!entries) return [];
   const cards: Card[] = [];
@@ -95,7 +105,8 @@ async function loadGuardian(annotations: Record<string, Annotation>): Promise<Ca
           source_date: entry.source_date,
           question: pair.question,
           answer: pair.answer,
-          annotations
+          annotations: ctx.annotations,
+          cardTopics: ctx.cardTopics
         })
       );
     }
@@ -111,7 +122,7 @@ type Jeu1000EurosEntry = {
   pairs: Array<{ question: string; answer: string | null; tier: string | null }>;
 };
 
-async function loadJeu1000Euros(annotations: Record<string, Annotation>): Promise<Card[]> {
+async function loadJeu1000Euros(ctx: LoaderContext): Promise<Card[]> {
   const entries = await readEntries<Jeu1000EurosEntry>('le_jeu_des_1000_euros');
   if (!entries) return [];
   const cards: Card[] = [];
@@ -128,7 +139,8 @@ async function loadJeu1000Euros(annotations: Record<string, Annotation>): Promis
           question: pair.question,
           answer: pair.answer,
           tier: pair.tier,
-          annotations
+          annotations: ctx.annotations,
+          cardTopics: ctx.cardTopics
         })
       );
     }
@@ -136,7 +148,12 @@ async function loadJeu1000Euros(annotations: Record<string, Annotation>): Promis
   return cards;
 }
 
-const LOADERS: Record<string, (annotations: Record<string, Annotation>) => Promise<Card[]>> = {
+type LoaderContext = {
+  annotations: Record<string, Annotation>;
+  cardTopics: Record<string, string>;
+};
+
+const LOADERS: Record<string, (ctx: LoaderContext) => Promise<Card[]>> = {
   the_guardian_weekly: loadGuardian,
   le_jeu_des_1000_euros: loadJeu1000Euros
 };
@@ -145,6 +162,7 @@ const LOADERS: Record<string, (annotations: Record<string, Annotation>) => Promi
 
 async function main() {
   const { titles, cards: annotations } = await loadAnnotations();
+  const cardTopics = await loadCardTopics();
   const annotatedCount = Object.keys(annotations).length;
 
   // Warn about scrape dirs without a loader so a new source isn't silently dropped.
@@ -155,9 +173,10 @@ async function main() {
     if (!(name in LOADERS)) console.warn(`  ${name}: no loader registered, skipping`);
   }
 
+  const ctx: LoaderContext = { annotations, cardTopics };
   const all: Card[] = [];
   for (const [name, loader] of Object.entries(LOADERS)) {
-    const cards = await loader(annotations);
+    const cards = await loader(ctx);
     all.push(...cards);
     console.log(`  ${name}: ${cards.length} cards`);
   }

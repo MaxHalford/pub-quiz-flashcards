@@ -15,6 +15,7 @@ export type Card = {
   source_date: string;
   source_url: string;
   tier?: string;
+  topic?: string;
   q_entities?: EntitySpan[];
   a_entities?: EntitySpan[];
 };

@@ -269,15 +269,23 @@
             <p class="font-serif text-2xl leading-snug text-(--color-accent)">
               <RichText text={currentCard.a} spans={currentCard.a_entities} />
             </p>
-            <a
-              class="mt-4 inline-block text-xs text-(--color-muted) underline-offset-4 hover:underline"
-              href={currentCard.source_url}
-              target="_blank"
-              rel="noopener"
-              tabindex={revealed ? 0 : -1}
-            >
-              {sourceLabel(currentCard.source)}, {currentCard.source_date}
-            </a>
+            <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-(--color-muted)">
+              <a
+                class="underline-offset-4 hover:underline"
+                href={currentCard.source_url}
+                target="_blank"
+                rel="noopener"
+                tabindex={revealed ? 0 : -1}
+              >
+                {sourceLabel(currentCard.source)}, {currentCard.source_date}
+              </a>
+              {#if currentCard.topic}
+                <span
+                  class="rounded-full border border-(--color-muted)/30 px-2 py-0.5 tracking-wide"
+                  >{currentCard.topic}</span
+                >
+              {/if}
+            </div>
           </div>
         {/key}
       </div>
