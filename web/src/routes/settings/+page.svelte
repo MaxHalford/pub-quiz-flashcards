@@ -73,5 +73,30 @@
       <p>Cards reviewed: {cardCount}</p>
       <p class="mt-1 font-mono">Device: {deviceId.slice(0, 8)}…</p>
     </div>
+
+    <div class="border-t border-(--color-muted)/20 pt-6 text-xs text-(--color-muted)">
+      <p>
+        Made by <a
+          class="underline hover:text-(--color-ink)"
+          href="https://maxhalford.github.io/"
+          target="_blank"
+          rel="noopener noreferrer">Max Halford</a
+        >.
+      </p>
+      <p class="mt-1">
+        Source on <a
+          class="underline hover:text-(--color-ink)"
+          href="https://github.com/MaxHalford/pub-quiz-flashcards"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        >.
+      </p>
+      <p class="mt-1">
+        Questions or feedback? <a
+          class="underline hover:text-(--color-ink)"
+          href="mailto:maxhalford25@gmail.com">maxhalford25@gmail.com</a
+        >
+      </p>
+    </div>
   </section>
 </main>
