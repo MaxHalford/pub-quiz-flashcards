@@ -3,7 +3,7 @@
   import { base } from '$app/paths';
   import { loadState, saveState } from '$lib/storage';
   import { loadCards, sourceLabel } from '$lib/cards';
-  import SourcePill from '$lib/components/SourcePill.svelte';
+  import SourceRow from '$lib/components/SourceRow.svelte';
 
   let cardCount = $state(0);
   let deviceId = $state('');
@@ -53,16 +53,16 @@
         <p class="mt-1 text-sm text-(--color-muted)">
           Choose which sources to draw flashcards from. Changes apply on your next session.
         </p>
-        <div class="mt-4 flex flex-wrap gap-2">
+        <div class="mt-4 space-y-2">
           {#each sourceCounts as { source, count } (source)}
             {@const enabled = !disabledSources[source]}
             {@const locked = enabled && sourceCounts.length - Object.keys(disabledSources).length === 1}
-            <SourcePill
+            <SourceRow
               {source}
               {count}
-              {enabled}
-              {locked}
-              onToggle={(c) => toggleSource(source, c)}
+              checked={enabled}
+              disabled={locked}
+              onchange={(c) => toggleSource(source, c)}
             />
           {/each}
         </div>
