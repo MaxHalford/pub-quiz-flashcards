@@ -56,6 +56,7 @@ export type AppState = {
   settings: {
     dailyGoal: number;
     disabledSources?: Record<string, true>;
+    disabledTopics?: Record<string, true>;
     onboarded?: boolean;
   };
 };
