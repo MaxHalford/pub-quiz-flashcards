@@ -6,4 +6,5 @@
 logs/
 .env
 scrape/_enwiki_titles.gz
+scrape/_frwiki_titles.gz
 scrape/*/transcripts/

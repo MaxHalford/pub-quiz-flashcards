@@ -11,8 +11,10 @@ const ANNOTATIONS_FILE = join(SCRAPE_DIR, 'wikipedia_annotations.json');
 
 // Span tuple: [start, end, title_idx_into_titles_table]
 type SpanTuple = [number, number, number];
+// Titles table entry: [lang, title] — lang is "en" or "fr"
+type TitleEntry = [string, string];
 type Annotation = { q?: SpanTuple[]; a?: SpanTuple[] };
-type AnnotationsFile = { titles: string[]; cards: Record<string, Annotation> };
+type AnnotationsFile = { titles: TitleEntry[]; cards: Record<string, Annotation> };
 type Card = {
   id: string;
   q: string;
@@ -24,7 +26,7 @@ type Card = {
   qe?: SpanTuple[];
   ae?: SpanTuple[];
 };
-type CardsFile = { titles: string[]; cards: Card[] };
+type CardsFile = { titles: TitleEntry[]; cards: Card[] };
 
 function shortId(sourceUrl: string, question: string): string {
   return createHash('sha1').update(`${sourceUrl}\n${question}`).digest('hex').slice(0, 12);
@@ -35,7 +37,7 @@ function contentHash(payload: string): string {
 }
 
 async function loadAnnotations(): Promise<AnnotationsFile> {
-  if (!existsSync(ANNOTATIONS_FILE)) return { titles: [], cards: {} };
+  if (!existsSync(ANNOTATIONS_FILE)) return { titles: [] as TitleEntry[], cards: {} };
   const raw = await readFile(ANNOTATIONS_FILE, 'utf8');
   return JSON.parse(raw) as AnnotationsFile;
 }

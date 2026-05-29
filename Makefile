@@ -1,4 +1,4 @@
-.PHONY: the_guardian_weekly le_jeu_des_1000_euros entities
+.PHONY: the_guardian_weekly le_jeu_des_1000_euros wiki-entities wiki-topics wiki-card-topics annotate
 
 CLAUDE_FLAGS = --append-system-prompt-file CLAUDE.md \
 	--effort medium \
@@ -37,5 +37,23 @@ le_jeu_des_1000_euros:
 	bash log_usage.sh le_jeu_des_1000_euros "$$LABEL"; \
 	rm -f .pairs_before
 
-entities:
+# Annotation pipeline (run in this order; each step's output is the next's input):
+#   1. wiki-entities     — match question text against Wikipedia titles
+#                          (writes scrape/wikipedia_annotations.json)
+#   2. wiki-topics       — fetch ORES articletopic scores for every linked
+#                          title (writes scrape/wikipedia_topics.json; hits
+#                          LiftWing, incremental: only new titles are fetched)
+#   3. wiki-card-topics  — collapse per-entity scores into one editorial topic
+#                          per card (writes scrape/wikipedia_card_topics.json)
+# Use `make annotate` to run the whole chain.
+
+wiki-entities:
 	uv run python scrape/build_entities.py
+
+wiki-topics:
+	uv run python scrape/build_topics.py
+
+wiki-card-topics:
+	uv run python scrape/aggregate_topics.py
+
+annotate: wiki-entities wiki-topics wiki-card-topics

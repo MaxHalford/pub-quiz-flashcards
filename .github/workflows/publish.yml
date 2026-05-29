@@ -34,18 +34,34 @@ jobs:
         id: cachekey
         run: echo "week=$(date -u +%Y-W%V)" >> "$GITHUB_OUTPUT"
 
-      - name: Cache Wikipedia titles dump
-        # Cache keyed by ISO week. Most publishes hit; once a week the dump
-        # is refreshed so new article titles eventually become matchable.
+      - name: Cache Wikipedia titles dumps
+        # Cache keyed by ISO week. Most publishes hit; once a week the dumps
+        # are refreshed so new article titles eventually become matchable.
         uses: actions/cache@v4
         with:
-          path: scrape/_enwiki_titles.gz
-          key: enwiki-titles-${{ steps.cachekey.outputs.week }}
+          path: |
+            scrape/_enwiki_titles.gz
+            scrape/_frwiki_titles.gz
+          key: wiki-titles-${{ steps.cachekey.outputs.week }}
           restore-keys: |
-            enwiki-titles-
+            wiki-titles-
 
+      # Annotation pipeline. See Makefile for what each step produces.
+      #   1. entities  — Wikipedia entity spans per card (offline; uses
+      #                  the cached titles dump from the step above)
+      #   2. topics    — ORES articletopic scores per linked title
+      #                  (incremental fetch from LiftWing; the committed
+      #                  scrape/wikipedia_topics.json is the cache, so a
+      #                  steady-state build hits the network 0 times)
+      #   3. card-topics — editorial topic per card (pure derivation)
       - name: Build entity annotations
-        run: uv run python scrape/build_entities.py
+        run: make wiki-entities
+
+      - name: Fetch article topics
+        run: make wiki-topics
+
+      - name: Aggregate card topics
+        run: make wiki-card-topics
 
       - uses: actions/setup-node@v6
         with:

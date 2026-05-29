@@ -4,23 +4,30 @@ import type { Card, EntitySpan } from './types';
 export type Manifest = { hash: string; count: number; generatedAt: string };
 
 type SpanTuple = [number, number, number];
+type TitleEntry = [string, string]; // [lang, title]
 type WireCard = Omit<Card, 'q_entities' | 'a_entities'> & {
   qe?: SpanTuple[];
   ae?: SpanTuple[];
 };
-type WireCardsFile = { titles: string[]; cards: WireCard[] };
+type WireCardsFile = { titles: TitleEntry[]; cards: WireCard[] };
 
-function titleToUrl(title: string): string {
-  return `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`;
+const WIKI_HOSTS: Record<string, string> = {
+  en: 'en.wikipedia.org',
+  fr: 'fr.wikipedia.org'
+};
+
+function titleToUrl(lang: string, title: string): string {
+  const host = WIKI_HOSTS[lang] ?? 'en.wikipedia.org';
+  return `https://${host}/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`;
 }
 
 function hydrate(file: WireCardsFile): Card[] {
-  // Precompute URLs once per title — strings are then shared across all spans
-  // that reference the same title (V8 keeps the reference, so memory stays
-  // close to the normalised form).
-  const urls = file.titles.map(titleToUrl);
+  // Precompute URLs and bare titles once per index — strings are then shared
+  // across all spans that reference the same entity.
+  const titles = file.titles.map(([, title]) => title);
+  const urls = file.titles.map(([lang, title]) => titleToUrl(lang, title));
   const materialise = (spans: SpanTuple[]): EntitySpan[] =>
-    spans.map(([start, end, i]) => ({ start, end, title: file.titles[i], url: urls[i] }));
+    spans.map(([start, end, i]) => ({ start, end, title: titles[i], url: urls[i] }));
   return file.cards.map((c) => {
     const card: Card = {
       id: c.id,
