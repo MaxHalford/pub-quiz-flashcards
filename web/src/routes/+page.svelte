@@ -10,7 +10,7 @@
   import RichText from '$lib/components/RichText.svelte';
   import Tooltip from '$lib/components/Tooltip.svelte';
   import Onboarding from '$lib/components/Onboarding.svelte';
-  import type { Card, AppState, CardRating } from '$lib/types';
+  import type { Card, AppState, CardRating, SessionEntity } from '$lib/types';
 
   let cardIndex = $state<Map<string, Card>>(new Map());
   let sourceCounts = $state<Array<{ source: string; count: number }>>([]);
@@ -34,6 +34,34 @@
     appState !== null && currentCard === null && cardIndex.size > 0
   );
   const streak = $derived(appState ? streakDays(appState.history) : 0);
+
+  const groupedEntities = $derived.by(() => {
+    const groups: Record<CardRating, SessionEntity[]> = { unknown: [], knew: [], skipped: [] };
+    if (!appState) return groups;
+    const priority: Record<CardRating, number> = { skipped: 0, knew: 1, unknown: 2 };
+    const seen = new Map<string, { entity: SessionEntity; rating: CardRating }>();
+    for (const r of appState.daily.results) {
+      const card = cardIndex.get(r.id);
+      if (!card) continue;
+      for (const span of [...(card.q_entities ?? []), ...(card.a_entities ?? [])]) {
+        const existing = seen.get(span.title);
+        if (!existing || priority[r.rating] > priority[existing.rating]) {
+          seen.set(span.title, {
+            entity: { title: span.title, url: span.url },
+            rating: r.rating
+          });
+        }
+      }
+    }
+    for (const { entity, rating } of seen.values()) {
+      groups[rating].push(entity);
+    }
+    return groups;
+  });
+  const hasEntities = $derived(
+    groupedEntities.unknown.length + groupedEntities.knew.length + groupedEntities.skipped.length >
+      0
+  );
 
   onMount(async () => {
     canHost = window.matchMedia('(min-width: 768px) and (pointer: fine)').matches;
@@ -84,13 +112,6 @@
       appState.tombstoned[card.id] = true;
     } else {
       appState.cards[card.id] = applyRating(appState.cards[card.id], rating === 'knew');
-      const seenTitles = new Set(appState.daily.entities.map((e) => e.title));
-      for (const span of [...(card.q_entities ?? []), ...(card.a_entities ?? [])]) {
-        if (!seenTitles.has(span.title)) {
-          seenTitles.add(span.title);
-          appState.daily.entities.push({ title: span.title, url: span.url });
-        }
-      }
     }
     const today = todayKey();
     appState.history[today] = (appState.history[today] ?? 0) + 1;
@@ -176,28 +197,39 @@
       </div>
 
       <button
-        class="mt-12 rounded-full bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-95"
+        class="group relative mt-12 rounded-full bg-(--color-ink) px-6 py-3 text-sm font-medium text-(--color-paper) transition active:scale-95"
         onclick={keepGoing}
       >
         Keep going (+{appState.settings.dailyGoal})
+        <Tooltip
+          text="Queue up another {appState.settings.dailyGoal} questions for today"
+          placement="bottom-center"
+        />
       </button>
 
-      {#if appState.daily.entities.length > 0}
-        <div class="mt-12 text-left">
-          <p class="text-xs tracking-wider text-(--color-muted) uppercase">Mentioned today</p>
-          <ul class="mt-4 space-y-2 text-lg leading-snug">
-            {#each appState.daily.entities as e (e.title)}
-              <li>
-                <a
-                  href={e.url}
-                  target="_blank"
-                  rel="noopener"
-                  class="decoration-(--color-accent)/50 decoration-1 underline underline-offset-[0.2em] hover:decoration-(--color-accent) hover:decoration-2"
-                  >{e.title}</a
-                >
-              </li>
-            {/each}
-          </ul>
+      {#if hasEntities}
+        <div class="mt-12 space-y-8 text-left">
+          {#each [{ key: 'unknown' as const, label: "Didn't know" }, { key: 'knew' as const, label: 'Knew it' }, { key: 'skipped' as const, label: "Don't want to know" }] as group (group.key)}
+            {@const items = groupedEntities[group.key]}
+            {#if items.length > 0}
+              <div>
+                <p class="text-xs tracking-wider text-(--color-muted) uppercase">{group.label}</p>
+                <ul class="mt-4 space-y-2 text-lg leading-snug">
+                  {#each items as e (e.title)}
+                    <li>
+                      <a
+                        href={e.url}
+                        target="_blank"
+                        rel="noopener"
+                        class="decoration-(--color-accent)/50 decoration-1 underline underline-offset-[0.2em] hover:decoration-(--color-accent) hover:decoration-2"
+                        >{e.title}</a
+                      >
+                    </li>
+                  {/each}
+                </ul>
+              </div>
+            {/if}
+          {/each}
         </div>
       {/if}
     </div>
@@ -266,14 +298,14 @@
             style:background-color="color-mix(in srgb, var(--color-muted) 30%, transparent)"
             onclick={() => rate('unknown')}
           >
-            Don't know
+            Didn't know
             <Tooltip text="See this card again soon" placement="top-center" />
           </button>
           <button
             class="group relative rounded-2xl border border-transparent bg-(--color-ink) px-6 py-4 text-base font-medium text-(--color-paper) transition active:scale-[0.98]"
             onclick={() => rate('knew')}
           >
-            Know
+            Knew it
             <Tooltip text="Push the next review further out" placement="top-center" />
           </button>
         </div>

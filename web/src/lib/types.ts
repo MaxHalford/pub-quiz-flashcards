@@ -42,7 +42,6 @@ export type DailyState = {
   reviewed: number;
   extras: number;
   queue: string[];
-  entities: SessionEntity[];
   results: DailyResult[];
 };
 

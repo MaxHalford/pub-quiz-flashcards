@@ -39,8 +39,8 @@
       A daily helping of trivia, scraped from weekly quizzes around the web.
     </p>
     <p class="text-base text-(--color-muted)">
-      You'll get asked 10 questions each day. Two buttons — <em>Know</em>
-      and <em>Don't know</em> — schedule each card for its next review using
+      You'll get asked 10 questions each day. Two buttons — <em>Knew it</em>
+      and <em>Didn't know</em> — schedule each card for its next review using
       <a
         class="underline decoration-(--color-accent)/50 underline-offset-[0.2em] hover:decoration-(--color-accent)"
         href="https://en.wikipedia.org/wiki/Spaced_repetition"

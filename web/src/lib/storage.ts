@@ -11,7 +11,7 @@ export function todayKey(now: Date = new Date()): string {
 }
 
 function freshDaily(): DailyState {
-  return { date: todayKey(), reviewed: 0, extras: 0, queue: [], entities: [], results: [] };
+  return { date: todayKey(), reviewed: 0, extras: 0, queue: [], results: [] };
 }
 
 function emptyState(): AppState {
@@ -35,7 +35,6 @@ export function loadState(): AppState {
     if (parsed.version !== SCHEMA) return emptyState();
     parsed.tombstoned ??= {};
     parsed.daily ??= freshDaily();
-    parsed.daily.entities ??= [];
     parsed.daily.results ??= [];
     return parsed;
   } catch {

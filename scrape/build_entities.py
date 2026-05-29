@@ -93,9 +93,12 @@ TITLE_STOPWORDS = frozenset(
 )
 
 # Skip single-significant-word titles whose lowercase form has zipf-frequency
-# >= this. 3.8 catches "fictional" (3.86), "Who is" (Who=6.34), "singers" (3.81)
-# while keeping "Einstein" (3.74), "octopus" (3.46), "Rihanna" (3.46).
+# >= this in any of FREQ_LANGS. 3.8 catches "fictional" (3.86), "Who is"
+# (Who=6.34), "singers" (3.81) while keeping "Einstein" (3.74), "octopus"
+# (3.46), "Rihanna" (3.46). Checking French too catches stopwords like "une"
+# (en=3.34, fr=7.0) and "et" (en=4.66, fr=7.31) that match French quiz text.
 COMMON_WORD_THRESHOLD = 3.8
+FREQ_LANGS = ("en", "fr")
 
 # Plural concept-noun articles that wordfreq doesn't separate from real
 # entities by frequency alone. These all appeared as top-linked surfaces in
@@ -257,13 +260,16 @@ def _filter_line(line: str):
     if not significant or not all(w[0].isupper() for w in significant):
         return
 
-    # If a single significant word, additionally drop common English words.
-    # ("Who is" -> significant=["Who"], zipf("who")=6.34, drop.)
-    if (
-        len(significant) == 1
-        and zipf_frequency(significant[0].lower(), "en") >= COMMON_WORD_THRESHOLD
-    ):
-        return
+    # If a single significant word, additionally drop common words in any of
+    # FREQ_LANGS. ("Who is" -> significant=["Who"], zipf_en("who")=6.34, drop.
+    # "Une" -> zipf_fr=7.0, drop.)
+    if len(significant) == 1:
+        word = significant[0].lower()
+        if (
+            max(zipf_frequency(word, lang) for lang in FREQ_LANGS)
+            >= COMMON_WORD_THRESHOLD
+        ):
+            return
 
     surface = title.replace("_", " ")
     if surface in SURFACE_BLOCKLIST:

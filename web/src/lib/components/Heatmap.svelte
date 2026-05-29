@@ -1,5 +1,6 @@
 <script lang="ts">
   import { heatmapCells } from '$lib/streak';
+  import Tooltip from './Tooltip.svelte';
 
   let { history, weeks = 12 }: { history: Record<string, number>; weeks?: number } = $props();
 
@@ -11,6 +12,17 @@
     if (count <= 9) return 2;
     return 3;
   }
+
+  function tooltipFor(date: string, count: number): string {
+    const [y, m, d] = date.split('-').map(Number);
+    const formatted = new Date(y, m - 1, d).toLocaleDateString(undefined, {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+    if (count === 0) return `${formatted} · no activity`;
+    return `${formatted} · ${count} answered`;
+  }
 </script>
 
 <div class="inline-grid grid-flow-col grid-rows-7 gap-1" role="img" aria-label="Activity heatmap">
@@ -20,14 +32,16 @@
         <div class="h-3 w-3"></div>
       {:else}
         {@const lvl = level(cell.count)}
-        <div
-          class="h-3 w-3 rounded-[3px]"
-          class:bg-l0={lvl === 0}
-          class:bg-l1={lvl === 1}
-          class:bg-l2={lvl === 2}
-          class:bg-l3={lvl === 3}
-          title={`${cell.date}: ${cell.count}`}
-        ></div>
+        <div class="group relative h-3 w-3">
+          <div
+            class="h-full w-full rounded-[3px]"
+            class:bg-l0={lvl === 0}
+            class:bg-l1={lvl === 1}
+            class:bg-l2={lvl === 2}
+            class:bg-l3={lvl === 3}
+          ></div>
+          <Tooltip text={tooltipFor(cell.date, cell.count)} placement="top-center" />
+        </div>
       {/if}
     {/each}
   {/each}
