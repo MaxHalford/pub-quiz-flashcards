@@ -24,17 +24,23 @@
     const { cards } = await loadCards();
     const srcCounts = new Map<string, number>();
     const tpcCounts = new Map<string, number>();
+    let untagged = 0;
     for (const c of cards) {
       srcCounts.set(c.source, (srcCounts.get(c.source) ?? 0) + 1);
       if (c.topic) tpcCounts.set(c.topic, (tpcCounts.get(c.topic) ?? 0) + 1);
+      else untagged++;
     }
     sourceCounts = [...srcCounts.entries()]
       .map(([source, count]) => ({ source, count }))
       .sort((a, b) => sourceLabel(a.source).localeCompare(sourceLabel(b.source)));
-    // Sort topics by count desc — most-populous buckets read first.
-    topicCounts = [...tpcCounts.entries()]
+    // Sort topics by count desc — most-populous buckets read first. Untagged
+    // is appended at the end (keyed by '' to match scheduler logic) so users
+    // can choose whether to include questions the topic classifier skipped.
+    const sorted = [...tpcCounts.entries()]
       .map(([topic, count]) => ({ topic, count }))
       .sort((a, b) => b.count - a.count);
+    if (untagged > 0) sorted.push({ topic: '', count: untagged });
+    topicCounts = sorted;
   });
 
   function toggleSource(source: string, enabled: boolean) {
@@ -96,12 +102,13 @@
       <div>
         <h2 class="font-serif text-xl">Topics</h2>
         <p class="mt-1 text-sm text-(--color-muted)">
-          Hide topics you're not interested in. Untagged questions always come through.
+          Hide topics you're not interested in. Untagged questions are the ones the topic
+          classifier couldn't place with confidence.
         </p>
         <div class="mt-4 flex flex-wrap gap-2">
           {#each topicCounts as { topic, count } (topic)}
             <TopicPill
-              label={topic}
+              label={topic || 'Untagged'}
               {count}
               enabled={!disabledTopics[topic]}
               onToggle={(e) => toggleTopic(topic, e)}

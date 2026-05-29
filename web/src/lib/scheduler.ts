@@ -62,9 +62,9 @@ export function planSession(
     if (exclude.has(c.id)) continue;
     if (state.tombstoned[c.id]) continue;
     if (disabledSources[c.source]) continue;
-    // Untagged cards (no topic) always pass through — the filter only hides
-    // topics the user explicitly disabled.
-    if (c.topic && disabledTopics[c.topic]) continue;
+    // Untagged cards are keyed by '' in disabledTopics, matching the
+    // "Untagged" pill in settings.
+    if (disabledTopics[c.topic ?? '']) continue;
     const s = state.cards[c.id];
     if (!s) {
       unseen.push(c);
