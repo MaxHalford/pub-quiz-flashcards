@@ -111,7 +111,11 @@
     if (rating === 'skipped') {
       appState.tombstoned[card.id] = true;
     } else {
-      appState.cards[card.id] = applyRating(appState.cards[card.id], rating === 'knew');
+      appState.cards[card.id] = applyRating(
+        appState.cards[card.id],
+        rating === 'knew',
+        appState.settings.shortTerm
+      );
     }
     const today = todayKey();
     appState.history[today] = (appState.history[today] ?? 0) + 1;

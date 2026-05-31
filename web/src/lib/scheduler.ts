@@ -1,7 +1,22 @@
-import { fsrs, createEmptyCard, Rating, type Card as FSRSCard } from 'ts-fsrs';
+import {
+  fsrs,
+  generatorParameters,
+  createEmptyCard,
+  Rating,
+  type Card as FSRSCard,
+  type FSRS
+} from 'ts-fsrs';
 import type { Card, StoredCard, AppState } from './types';
 
-const f = fsrs();
+// Two scheduler instances — one with FSRS Learning/Relearning steps enabled
+// (sub-day intervals possible), one without (every rating schedules in days).
+// The user picks via settings.shortTerm; default is the long-term scheduler.
+const longTerm = fsrs(generatorParameters({ enable_short_term: false }));
+const shortTerm = fsrs(generatorParameters({ enable_short_term: true }));
+
+function pickScheduler(useShortTerm: boolean | undefined): FSRS {
+  return useShortTerm ? shortTerm : longTerm;
+}
 
 export function toFSRSCard(stored: StoredCard | undefined, now: Date = new Date()): FSRSCard {
   if (!stored) return createEmptyCard(now);
@@ -35,11 +50,12 @@ export function fromFSRSCard(card: FSRSCard): StoredCard {
 export function applyRating(
   stored: StoredCard | undefined,
   knew: boolean,
+  useShortTerm: boolean | undefined = false,
   now: Date = new Date()
 ): StoredCard {
   const card = toFSRSCard(stored, now);
   const rating = knew ? Rating.Good : Rating.Again;
-  const next = f.next(card, now, rating);
+  const next = pickScheduler(useShortTerm).next(card, now, rating);
   return fromFSRSCard(next.card);
 }
 

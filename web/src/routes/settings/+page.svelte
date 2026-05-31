@@ -12,6 +12,7 @@
   let topicCounts = $state<Array<{ topic: string; count: number }>>([]);
   let disabledSources = $state<Record<string, true>>({});
   let disabledTopics = $state<Record<string, true>>({});
+  let shortTerm = $state(false);
 
   $effect(() => {
     const s = loadState();
@@ -19,6 +20,7 @@
     deviceId = s.deviceId;
     disabledSources = { ...(s.settings.disabledSources ?? {}) };
     disabledTopics = { ...(s.settings.disabledTopics ?? {}) };
+    shortTerm = s.settings.shortTerm ?? false;
   });
   onMount(async () => {
     const { cards } = await loadCards();
@@ -64,6 +66,13 @@
     const s = loadState();
     s.settings.disabledTopics = next;
     s.daily.queue = [];
+    saveState(s);
+  }
+
+  function toggleShortTerm(enabled: boolean) {
+    shortTerm = enabled;
+    const s = loadState();
+    s.settings.shortTerm = enabled;
     saveState(s);
   }
 </script>
@@ -117,6 +126,33 @@
         </div>
       </div>
     {/if}
+
+    <div>
+      <h2 class="font-serif text-xl">Scheduling</h2>
+      <p class="mt-1 text-sm text-(--color-muted)">
+        Controls how the spaced-repetition algorithm (FSRS) picks the next time you'll see a card.
+      </p>
+      <label
+        class="mt-4 flex items-start gap-3 rounded-xl border border-(--color-muted)/20 px-4 py-3 text-sm"
+      >
+        <input
+          type="checkbox"
+          checked={shortTerm}
+          onchange={(e) => toggleShortTerm((e.currentTarget as HTMLInputElement).checked)}
+          class="mt-0.5 h-4 w-4 accent-(--color-ink)"
+        />
+        <span class="flex-1">
+          <span class="block">Allow same-day and next-day repeats</span>
+          <span class="mt-1 block text-xs text-(--color-muted)">
+            When on, new or just-failed cards go through short learning steps (minutes to hours),
+            so you might see the same card again within the session or the next day — useful for
+            drilling something into memory in one sitting. When off (the default), every review
+            schedules at least a day ahead, so a correct answer always buys you a real gap before
+            the card returns.
+          </span>
+        </span>
+      </label>
+    </div>
 
     <div class="border-t border-(--color-muted)/20 pt-6 text-xs text-(--color-muted)">
       <p>Cards reviewed: {cardCount}</p>

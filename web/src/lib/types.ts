@@ -58,5 +58,10 @@ export type AppState = {
     disabledSources?: Record<string, true>;
     disabledTopics?: Record<string, true>;
     onboarded?: boolean;
+    // When true, FSRS uses Learning/Relearning steps with sub-day intervals,
+    // so a card answered correctly can resurface the same day or the next.
+    // When false (default), every rating schedules in days — no same-day or
+    // next-day repeats, at the cost of losing intra-session drilling on lapses.
+    shortTerm?: boolean;
   };
 };
