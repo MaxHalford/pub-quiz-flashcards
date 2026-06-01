@@ -4,6 +4,15 @@
 
 - Model: claude-haiku-4-5-20251001
 - Questions added: 0
+- Duration: 0m08s
+- Cost: $0.0246
+- Turns: 3
+- Tokens: 60408 input / 643 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
 - Duration: 0m05s
 - Cost: $0.0204
 - Turns: 2
