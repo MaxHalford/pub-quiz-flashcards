@@ -1,5 +1,14 @@
 # Logbook
 
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 15
+- Duration: 0m20s
+- Cost: $0.0457
+- Turns: 6
+- Tokens: 125420 input / 1474 output
+
 ## 2026-05-23 -- `the_guardian_weekly`
 
 - Model: claude-haiku-4-5-20251001
