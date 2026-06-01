@@ -1,5 +1,14 @@
 # Logbook
 
+## 2026-05-23 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 15
+- Duration: 0m31s
+- Cost: $0.0387
+- Turns: 3
+- Tokens: 68475 input / 753 output
+
 ## 2026-05-04 — à Collégien | 1 -- `le_jeu_des_1000_euros`
 
 - Model: claude-sonnet-4-6
