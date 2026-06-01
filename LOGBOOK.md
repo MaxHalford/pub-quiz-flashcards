@@ -1,5 +1,95 @@
 # Logbook
 
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m05s
+- Cost: $0.0199
+- Turns: 2
+- Tokens: 39344 input / 379 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m26s
+- Cost: $0.0208
+- Turns: 2
+- Tokens: 39453 input / 538 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m06s
+- Cost: $0.0201
+- Turns: 2
+- Tokens: 39373 input / 413 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m04s
+- Cost: $0.0198
+- Turns: 2
+- Tokens: 39344 input / 369 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m06s
+- Cost: $0.0208
+- Turns: 2
+- Tokens: 39503 input / 519 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m08s
+- Cost: $0.0246
+- Turns: 3
+- Tokens: 60408 input / 643 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m05s
+- Cost: $0.0204
+- Turns: 2
+- Tokens: 39398 input / 458 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 0
+- Duration: 0m05s
+- Cost: $0.0198
+- Turns: 2
+- Tokens: 39279 input / 376 output
+
+## 2026-05-30 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 15
+- Duration: 0m20s
+- Cost: $0.0457
+- Turns: 6
+- Tokens: 125420 input / 1474 output
+
+## 2026-05-23 -- `the_guardian_weekly`
+
+- Model: claude-haiku-4-5-20251001
+- Questions added: 15
+- Duration: 0m31s
+- Cost: $0.0387
+- Turns: 3
+- Tokens: 68475 input / 753 output
+
 ## 2026-05-04 — à Collégien | 1 -- `le_jeu_des_1000_euros`
 
 - Model: claude-sonnet-4-6
